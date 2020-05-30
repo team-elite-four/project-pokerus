@@ -11,4 +11,4 @@ Enjoy the power of elite four!
 Installion requires android studio.
 
 # Team Member
-Syaphen, 
+Syaphen,
