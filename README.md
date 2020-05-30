@@ -6,6 +6,6 @@ Enjoy the power of elite four!
 
 ## This will be published on the Android store in the future stay tuned!
 
-# Installation
+# Installation Requirements
 
 Installion requires android studio.
