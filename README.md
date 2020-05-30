@@ -4,7 +4,7 @@ This mobile application serves the purpose of an enhanced experience in looking 
 
 Enjoy the power of elite four!
 
-## This will be published on the Android store in the future stay tuned!
+## This will be published on the Android store in the future stay tuned! We may even port our code to IOS.
 
 # Installation Requirements
 
