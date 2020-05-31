@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.viewmodel.PokedexViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        app = (application as PokedexApp)
+        app = PokedexApp.getApp(this)
 
         pokedexViewModel.init(app.apiManager)
 
