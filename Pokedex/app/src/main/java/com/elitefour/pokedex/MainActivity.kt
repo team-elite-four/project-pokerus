@@ -3,26 +3,40 @@ package com.elitefour.pokedex
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import com.elitefour.pokedex.managers.APIManager
-import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.viewmodel.PokedexViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var apiManager: APIManager
+    companion object {
+        val TAG = "elite"
+    }
+
+    private lateinit var app: PokedexApp
+
+    private val pokedexViewModel: PokedexViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var pokemonList: List<Pokemon> = emptyList()
-        apiManager = (application as PokedexApp).apiManager
+        app = (application as PokedexApp)
 
-        apiManager.fetchPokemonList ({ resultList ->
-            pokemonList = resultList
-            Log.i("erik", pokemonList.toString())
-        }, {
-            Toast.makeText(this, "Failed to fetch the list", Toast.LENGTH_SHORT).show()
+        pokedexViewModel.init(app.apiManager)
+
+        pokedexViewModel.pokemonList.observe(this,  Observer { pokemonList ->
+            Log.i( TAG, pokemonList.toString())
         })
+
+        pokedexViewModel.failure.observe(this, Observer { failure ->
+            if (failure) {
+                Log.i(TAG, "We have failed")
+            }
+
+        })
+
+        pokedexViewModel.getPokemonList()
     }
 }
