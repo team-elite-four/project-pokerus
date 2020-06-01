@@ -1,7 +1,6 @@
 package com.elitefour.pokedex.fragments
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +12,7 @@ import com.elitefour.pokedex.MainActivity
 import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
+import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.viewmodel.PokedexViewModel
 
@@ -25,6 +25,7 @@ class PokedexFragment : Fragment() {
     private lateinit var viewModel: PokedexViewModel
     private lateinit var app: PokedexApp
     private lateinit var pokemonList: ArrayList<Pokemon>
+    private lateinit var pokemonListAdapter: PokemonListAdapter
 
 
     override fun onCreateView(
@@ -43,7 +44,7 @@ class PokedexFragment : Fragment() {
 
         viewModel.pokemonList.observe(this,  Observer { pokemonList ->
             this.pokemonList = pokemonList
-
+            initAdapter()
 
         })
 
@@ -58,6 +59,11 @@ class PokedexFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.updatePokemonList()
+
     }
 
+    private fun initAdapter() {
+        pokemonListAdapter = PokemonListAdapter(pokemonList, viewModel)
+        //pokemonListAdapter.onPokemonClickListener = {pokemon: Pokemon ->
+    }
 }
