@@ -14,6 +14,7 @@ class APIManager(context: Context) {
 
     private val queue: RequestQueue = Volley.newRequestQueue(context)
     private val POKEAPI_URL = "https://pokeapi.co/api/v2/"
+    private val POKEIMAGE_URL = "https://pokeres.bastionbot.org/images/pokemon/"
     private val POKEMON = "pokemon/"
 
     fun fetchPokemonList(onDataReady: (List<Pokemon>) -> Unit, onError: (() -> Unit)? = null) {
@@ -28,6 +29,10 @@ class APIManager(context: Context) {
             }
         )
         queue.add(request)
+    }
+
+    fun fetchPokemonImageURL(number: Int):String {
+        return "$POKEIMAGE_URL$number.png"
     }
 
 

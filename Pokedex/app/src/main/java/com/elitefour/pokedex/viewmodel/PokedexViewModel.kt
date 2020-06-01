@@ -17,8 +17,8 @@ class PokedexViewModel : ViewModel(){
         this.apiManager = apiManager
     }
 
-    fun getPokemon() {
-
+    fun getPokemonImageResource(number: Int): String {
+        return apiManager.fetchPokemonImageURL(number)
     }
 
     fun getPokemonList() {
