@@ -1,4 +1,4 @@
-package com.elitefour.pokedex.fragments
+package com.elitefour.pokedex.ui.pokedex
 
 import android.content.Context
 import android.os.Bundle
@@ -14,7 +14,6 @@ import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.model.Pokemon
-import com.elitefour.pokedex.viewmodel.PokedexViewModel
 
 class PokedexFragment : Fragment() {
 

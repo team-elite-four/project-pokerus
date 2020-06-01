@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Pokedex</string>
 
+    <string name="hello_blank_fragment">Hello!</string>
     <string name="image_of_pokemon">Image of Pokemon</string>
     <string name="title_pokemon_list">Pokemon List</string>
     <string name="title_item_list">Item List</string>

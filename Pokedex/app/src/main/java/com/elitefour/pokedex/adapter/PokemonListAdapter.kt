@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.model.Pokemon
-import com.elitefour.pokedex.viewmodel.PokedexViewModel
+import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.squareup.picasso.Picasso
 
 class PokemonListAdapter(pokemonListInitial: ArrayList<Pokemon>, viewModelInitial: PokedexViewModel): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {

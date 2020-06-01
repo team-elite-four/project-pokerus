@@ -1,4 +1,4 @@
-package com.elitefour.pokedex.fragments
+package com.elitefour.pokedex.ui.favorites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ItemInfoFragment.newInstance] factory method to
+ * Use the [TeamListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ItemInfoFragment : Fragment() {
+class TeamListFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,7 +36,7 @@ class ItemInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_info, container, false)
+        return inflater.inflate(R.layout.fragment_team_list, container, false)
     }
 
     companion object {
@@ -46,12 +46,12 @@ class ItemInfoFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ItemInfoFragment.
+         * @return A new instance of fragment TeamListFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ItemInfoFragment().apply {
+            TeamListFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

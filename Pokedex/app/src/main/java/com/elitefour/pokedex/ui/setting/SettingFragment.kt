@@ -1,4 +1,4 @@
-package com.elitefour.pokedex.fragments
+package com.elitefour.pokedex.ui.setting
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

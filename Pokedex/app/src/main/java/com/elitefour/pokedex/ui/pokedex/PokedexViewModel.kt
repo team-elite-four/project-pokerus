@@ -1,4 +1,4 @@
-package com.elitefour.pokedex.viewmodel
+package com.elitefour.pokedex.ui.pokedex
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -2,10 +2,8 @@ package com.elitefour.pokedex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import com.elitefour.pokedex.viewmodel.PokedexViewModel
+import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 
 class MainActivity : AppCompatActivity() {
 
