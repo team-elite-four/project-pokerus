@@ -14,11 +14,13 @@ import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.model.Pokemon
+import kotlinx.android.synthetic.main.pokedex_fragment.*
 
 class PokedexFragment : Fragment() {
 
     companion object {
         fun newInstance() = PokedexFragment()
+        val TAG = PokedexFragment::class.simpleName
     }
 
     private lateinit var viewModel: PokedexViewModel
@@ -38,6 +40,8 @@ class PokedexFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         app = PokedexApp.getApp(context)
+
+        viewModel = PokedexViewModel()
 
         viewModel.init(app.apiManager)
 
@@ -63,6 +67,7 @@ class PokedexFragment : Fragment() {
 
     private fun initAdapter() {
         pokemonListAdapter = PokemonListAdapter(pokemonList, viewModel)
+        rvPokemon.adapter = pokemonListAdapter
         //pokemonListAdapter.onPokemonClickListener = {pokemon: Pokemon ->
     }
 }

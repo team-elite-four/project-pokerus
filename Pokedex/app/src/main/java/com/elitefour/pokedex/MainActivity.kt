@@ -3,6 +3,7 @@ package com.elitefour.pokedex
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private lateinit var app: PokedexApp
+    private lateinit var pokedexFragment: PokedexFragment
 
     private val pokedexViewModel: PokedexViewModel by viewModels()
 
@@ -19,5 +21,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        pokedexFragment = PokedexFragment.newInstance()
+
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.nav_host_fragment, pokedexFragment, PokedexFragment.TAG)
+            .commit()
     }
 }
