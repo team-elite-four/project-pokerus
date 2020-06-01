@@ -5,11 +5,13 @@ import androidx.lifecycle.ViewModel
 
 import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.model.PokemonInfo
 
 class PokedexViewModel : ViewModel(){
 
     private lateinit var apiManager: APIManager
 
+    var currPokemonInfo = MutableLiveData<PokemonInfo>()
     var pokemonList = MutableLiveData<ArrayList<Pokemon>>()
     var failure = MutableLiveData<Boolean>()
 
@@ -17,13 +19,32 @@ class PokedexViewModel : ViewModel(){
         this.apiManager = apiManager
     }
 
-    fun getPokemonImageResource(number: Int): String {
-        return apiManager.fetchPokemonImageURL(number)
+    /**
+     * @param id The id of the pokemon
+     * @return The image url of the sprite of the pokemon
+     */
+    fun getPokemonImageResource(id: Int): String {
+        return apiManager.fetchPokemonImageURL(id)
     }
 
+    /**
+     * Update the current list of pokemon
+     */
     fun updatePokemonList() {
         apiManager.fetchPokemonList ({ resultList ->
             pokemonList.value = resultList as ArrayList<Pokemon>
+        }, {
+            failure.value = true
+        })
+    }
+
+    /**
+     * Update the current information of the pokemon
+     * @param url The url requesting the detail of a pokemon.
+     */
+    fun updatePokemonInfo(url: String) {
+        apiManager.fetchPokemonInfo (url, { pokemonInfo ->
+            currPokemonInfo.value = pokemonInfo
         }, {
             failure.value = true
         })
