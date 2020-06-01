@@ -36,6 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        pokedexViewModel.getPokemonList()
+        pokedexViewModel.updatePokemonList()
     }
 }

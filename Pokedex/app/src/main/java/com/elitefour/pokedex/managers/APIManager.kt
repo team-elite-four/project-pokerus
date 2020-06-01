@@ -13,12 +13,17 @@ import com.google.gson.Gson
 class APIManager(context: Context) {
 
     private val queue: RequestQueue = Volley.newRequestQueue(context)
-    private val POKEAPI_URL = "https://pokeapi.co/api/v2/"
-    private val POKEIMAGE_URL = "https://pokeres.bastionbot.org/images/pokemon/"
-    private val POKEMON = "pokemon/"
+
+    companion object {
+        private const val POKEAPI_URL = "https://pokeapi.co/api/v2/"
+        private const val POKEIMAGE_URL = "https://pokeres.bastionbot.org/images/pokemon/"
+        private const val POKEMON_LIST = "pokemon?limit="
+        private const val NUM_OF_POKEMONS = 964
+    }
 
     fun fetchPokemonList(onDataReady: (List<Pokemon>) -> Unit, onError: (() -> Unit)? = null) {
-        val request = StringRequest(Request.Method.GET, POKEAPI_URL+POKEMON,
+        val url = POKEAPI_URL + POKEMON_LIST + NUM_OF_POKEMONS
+        val request = StringRequest(Request.Method.GET, url,
             { response ->
                 // Success
                 val gson = Gson()
@@ -31,10 +36,9 @@ class APIManager(context: Context) {
         queue.add(request)
     }
 
-    fun fetchPokemonImageURL(number: Int):String {
+    fun fetchPokemonImageURL(number: Int): String {
         return "$POKEIMAGE_URL$number.png"
     }
-
 
 
 }

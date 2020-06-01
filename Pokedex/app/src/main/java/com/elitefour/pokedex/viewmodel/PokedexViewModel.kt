@@ -21,7 +21,7 @@ class PokedexViewModel : ViewModel(){
         return apiManager.fetchPokemonImageURL(number)
     }
 
-    fun getPokemonList() {
+    fun updatePokemonList() {
         apiManager.fetchPokemonList ({ resultList ->
             pokemonList.value = resultList as ArrayList<Pokemon>
         }, {
