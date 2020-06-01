@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Pokedex</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_pokemon_list">Pokemon List</string>
+    <string name="title_item_list">Item List</string>
+    <string name="title_setting">Setting</string>
 </resources>
