@@ -21,21 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        app = PokedexApp.getApp(this)
 
-        pokedexViewModel.init(app.apiManager)
-
-        pokedexViewModel.pokemonList.observe(this,  Observer { pokemonList ->
-            Log.i( TAG, pokemonList.toString())
-        })
-
-        pokedexViewModel.failure.observe(this, Observer { failure ->
-            if (failure) {
-                Log.i(TAG, "We have failed")
-            }
-
-        })
-
-        pokedexViewModel.updatePokemonList()
     }
 }
