@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_pokedex"
         android:icon="@drawable/ic_pokedex_list_temp_24dp"
-        android:title="@string/title_pokemon_list" />
+        android:title="@string/title_pokedex" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_item_list"
         android:icon="@drawable/ic_item_list_temp_24dp"
         android:title="@string/title_item_list" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_setting"
         android:icon="@drawable/ic_settings_temp_24dp"
         android:title="@string/title_setting" />
 
