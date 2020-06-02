@@ -28,7 +28,7 @@ class PokedexFragment : Fragment() {
     private lateinit var app: PokedexApp
     private lateinit var pokemonList: ArrayList<Pokemon>
     private lateinit var pokemonListAdapter: PokemonListAdapter
-    private var onPokemonClickListener: OnClickListenerExtention? = null
+    private var mainActivityListener: OnClickListenerExtention? = null
 
 
     override fun onCreateView(
@@ -43,8 +43,9 @@ class PokedexFragment : Fragment() {
         super.onAttach(context)
         app = PokedexApp.getApp(context)
 
+
         if (context is OnClickListenerExtention) {
-            onPokemonClickListener = context
+            mainActivityListener = context
         }
 
         viewModel = PokedexViewModel()
@@ -75,7 +76,7 @@ class PokedexFragment : Fragment() {
         pokemonListAdapter = PokemonListAdapter(pokemonList, viewModel)
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
-            onPokemonClickListener?.onPokemonClicked(pokemon)
+            mainActivityListener?.onPokemonClicked(pokemon)
         }
     }
 }
