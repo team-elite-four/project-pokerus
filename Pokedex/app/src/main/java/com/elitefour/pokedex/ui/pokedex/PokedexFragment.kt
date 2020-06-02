@@ -13,6 +13,7 @@ import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
+import com.elitefour.pokedex.interfaces.OnClickListenerExtention
 import com.elitefour.pokedex.model.Pokemon
 import kotlinx.android.synthetic.main.pokedex_fragment.*
 
@@ -27,6 +28,7 @@ class PokedexFragment : Fragment() {
     private lateinit var app: PokedexApp
     private lateinit var pokemonList: ArrayList<Pokemon>
     private lateinit var pokemonListAdapter: PokemonListAdapter
+    private var onPokemonClickListener: OnClickListenerExtention? = null
 
 
     override fun onCreateView(
@@ -40,6 +42,10 @@ class PokedexFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         app = PokedexApp.getApp(context)
+
+        if (context is OnClickListenerExtention) {
+            onPokemonClickListener = context
+        }
 
         viewModel = PokedexViewModel()
 
@@ -68,6 +74,8 @@ class PokedexFragment : Fragment() {
     private fun initAdapter() {
         pokemonListAdapter = PokemonListAdapter(pokemonList, viewModel)
         rvPokemon.adapter = pokemonListAdapter
-        //pokemonListAdapter.onPokemonClickListener = {pokemon: Pokemon ->
+        pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
+            onPokemonClickListener?.onPokemonClicked(pokemon)
+        }
     }
 }
