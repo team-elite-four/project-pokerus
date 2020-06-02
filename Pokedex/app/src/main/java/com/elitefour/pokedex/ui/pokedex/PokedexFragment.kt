@@ -14,7 +14,7 @@ import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.model.Pokemon
-import kotlinx.android.synthetic.main.pokedex_fragment.*
+import kotlinx.android.synthetic.main.fragment_pokedex.*
 
 class PokedexFragment : Fragment() {
 
@@ -33,7 +33,7 @@ class PokedexFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.pokedex_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_pokedex, container, false)
     }
 
 
