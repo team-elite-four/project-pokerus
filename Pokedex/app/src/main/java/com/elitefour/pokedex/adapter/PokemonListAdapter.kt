@@ -40,9 +40,9 @@ class PokemonListAdapter(pokemonListInitial: ArrayList<Pokemon>, viewModelInitia
             pokeName.text = pokemon.name.capitalize()
             Picasso.get().load(viewModel.getPokemonImageResource(position + 1)).into(pokeImage)
 
-//            itemView.setOnClickListener {
-//                onPokemonClickListener?.invoke(pokemon)
-//            }
+            itemView.setOnClickListener {
+                onPokemonClickListener?.invoke(pokemon)
+            }
         }
     }
 }
