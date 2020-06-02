@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5sp"
-    android:background="@color/colorAccent"
+    android:layout_marginHorizontal="6dp"
+    android:layout_marginVertical="2dp"
+    android:elevation="8dp"
+    android:background="@drawable/pokedex_item_background"
     android:foreground="?selectableItemBackground"
-    android:padding="12dp">
+    android:padding="6dp">
 
     <ImageView
         android:id="@+id/pokeImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="1"
         android:contentDescription="@string/image_of_pokemon"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,16 +24,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pokeNumber"
+        android:id="@+id/pokeID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="10sp"
-
         android:paddingEnd="10sp"
         android:singleLine="true"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pokeImage"
+        android:textColor="@color/textDarkDefault"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1" />
 
@@ -39,11 +42,10 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:textSize="25sp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pokeNumber"
+        android:textColor="@color/textDarkDefault"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/pokeImage"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Bulbasaur" />
+        tools:text="Pokemon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

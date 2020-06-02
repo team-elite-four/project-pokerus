@@ -31,13 +31,13 @@ class PokemonListAdapter(pokemonListInitial: ArrayList<Pokemon>, viewModelInitia
     }
 
     inner class PokemonListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val pokeNumber = itemView.findViewById<TextView>(R.id.pokeNumber)
+        private val pokeNumber = itemView.findViewById<TextView>(R.id.pokeID)
         private val pokeName = itemView.findViewById<TextView>(R.id.pokeName)
         private val pokeImage = itemView.findViewById<ImageView>(R.id.pokeImage)
 
         fun bind(pokemon: Pokemon, position: Int) {
-            pokeNumber.text = (position + 1).toString()
-            pokeName.text = pokemon.name
+            pokeNumber.text = "# ${position+1}"
+            pokeName.text = pokemon.name.capitalize()
             Picasso.get().load(viewModel.getPokemonImageResource(position + 1)).into(pokeImage)
 
 //            itemView.setOnClickListener {

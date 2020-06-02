@@ -1,8 +1,8 @@
 package com.elitefour.pokedex
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 //            .add(R.id.nav_host_fragment, pokedexFragment, PokedexFragment.TAG)
 //            .commit()
 
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
