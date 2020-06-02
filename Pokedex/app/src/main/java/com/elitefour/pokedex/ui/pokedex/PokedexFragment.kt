@@ -7,13 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.elitefour.pokedex.MainActivity
 import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
-import com.elitefour.pokedex.interfaces.OnClickListenerExtention
+import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Pokemon
 import kotlinx.android.synthetic.main.fragment_pokedex.*
 
@@ -24,11 +25,10 @@ class PokedexFragment : Fragment() {
         val TAG = PokedexFragment::class.simpleName
     }
 
-    private lateinit var viewModel: PokedexViewModel
-    private lateinit var app: PokedexApp
+    private val pokedexViewModel: PokedexViewModel by activityViewModels()
     private lateinit var pokemonList: ArrayList<Pokemon>
     private lateinit var pokemonListAdapter: PokemonListAdapter
-    private var mainActivityListener: OnClickListenerExtention? = null
+    private var mainActivityListener: OnClickListenerExtension? = null
 
 
     override fun onCreateView(
@@ -41,24 +41,22 @@ class PokedexFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        app = PokedexApp.getApp(context)
+        val app = PokedexApp.getApp(context)
 
 
-        if (context is OnClickListenerExtention) {
+        if (context is OnClickListenerExtension) {
             mainActivityListener = context
         }
 
-        viewModel = PokedexViewModel()
-
-        viewModel.init(app.apiManager)
-
-        viewModel.pokemonList.observe(this,  Observer { pokemonList ->
+        pokedexViewModel.init(app.apiManager)
+        
+        pokedexViewModel.pokemonList.observe(this,  Observer { pokemonList ->
             this.pokemonList = pokemonList
             initAdapter()
 
         })
 
-        viewModel.failure.observe(this, Observer { failure ->
+        pokedexViewModel.failure.observe(this, Observer { failure ->
             if (failure) {
                 Log.i(MainActivity.TAG, "We have failed")
             }
@@ -68,12 +66,12 @@ class PokedexFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.updatePokemonList()
+        pokedexViewModel.updatePokemonList()
 
     }
 
     private fun initAdapter() {
-        pokemonListAdapter = PokemonListAdapter(pokemonList, viewModel)
+        pokemonListAdapter = PokemonListAdapter(pokemonList, pokedexViewModel)
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
             mainActivityListener?.onPokemonClicked(pokemon)
