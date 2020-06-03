@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
+import com.elitefour.pokedex.interfaces.OnPokedexReadyListener
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
@@ -16,7 +17,7 @@ import com.elitefour.pokedex.ui.pokedex.PokemonInfoFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), OnClickListenerExtension{
+class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     companion object {
         val TAG = "elite"
@@ -64,4 +65,5 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension{
             .commit()
         Log.i(TAG, pokemon.name)
     }
+
 }

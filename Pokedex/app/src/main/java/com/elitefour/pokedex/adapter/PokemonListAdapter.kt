@@ -43,6 +43,7 @@ class PokemonListAdapter(pokemonListInitial: ArrayList<Pokemon>, viewModelInitia
             itemView.setOnClickListener {
                 onPokemonClickListener?.invoke(pokemon)
             }
+
         }
     }
 }

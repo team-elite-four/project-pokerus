@@ -3,6 +3,7 @@ package com.elitefour.pokedex
 import android.app.Application
 import android.content.Context
 import com.elitefour.pokedex.managers.APIManager
+import com.elitefour.pokedex.managers.PokedexManager
 
 class PokedexApp: Application()  {
 
@@ -13,11 +14,13 @@ class PokedexApp: Application()  {
     }
 
     lateinit var apiManager: APIManager
+    lateinit var pokedexManager: PokedexManager
 
     override fun onCreate() {
         super.onCreate()
 
         apiManager = APIManager(this)
+        pokedexManager = PokedexManager(this)
     }
 
 }

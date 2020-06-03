@@ -15,6 +15,7 @@ import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
+import com.elitefour.pokedex.interfaces.OnPokedexReadyListener
 import com.elitefour.pokedex.model.Pokemon
 import kotlinx.android.synthetic.main.fragment_pokedex.*
 
@@ -46,8 +47,11 @@ class PokedexFragment : Fragment() {
         if (context is OnClickListenerExtension) {
             mainActivityListener = context
         }
+//        if (context is OnPokedexReadyListener) {
+//            onPokedexReadyListener = context
+//        }
 
-        pokedexViewModel.init(app.apiManager)
+        pokedexViewModel.init(app.apiManager, app.pokedexManager)
 
     }
 
