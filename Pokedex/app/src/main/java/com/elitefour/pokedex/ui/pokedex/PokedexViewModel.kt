@@ -19,19 +19,6 @@ class PokedexViewModel : ViewModel(){
 
     fun init(apiManager: APIManager) {
         this.apiManager = apiManager
-        var type = "hello"
-        apiManager.fetchTypeList({ resultList ->
-            Log.i("elite", resultList.toString())
-            type = resultList.get(5).url;
-            apiManager.fetchTypeInfo(type, { typeFullInfo ->
-                Log.i("elite", typeFullInfo.toString())
-            }, {
-                failure.value = true
-            })
-        }, {
-            failure.value = true
-        })
-
     }
 
     /**
