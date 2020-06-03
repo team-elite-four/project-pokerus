@@ -1,11 +1,13 @@
 package com.elitefour.pokedex.ui.pokedex
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.model.PokemonFullInfo
+import com.elitefour.pokedex.model.Type
 
 class PokedexViewModel : ViewModel(){
 
