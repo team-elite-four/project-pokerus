@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension{
         val TAG = "elite"
     }
 
-    private lateinit var app: PokedexApp
-    private lateinit var pokedexFragment: PokedexFragment
 
     private val pokedexViewModel: PokedexViewModel by viewModels()
 

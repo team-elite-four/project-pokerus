@@ -17,8 +17,8 @@ class APIManager(context: Context) {
         private const val POKEIMAGE_URL = "https://pokeres.bastionbot.org/images/pokemon/"
         private const val POKEMON_LIST = "pokemon?limit="
         private const val ITEM_LIST = "item?limit="
-        private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
-        private const val NUM_OF_ITEMS = 807 // All items
+        private const val NUM_OF_POKEMONS = 807 // 807: Excluding pokemon from sword and shield
+        private const val NUM_OF_ITEMS = 954 // All items
     }
 
     /**
@@ -46,7 +46,7 @@ class APIManager(context: Context) {
      * returns the information of a specific pokemon in the promise
      * @param url The url requesting the detail of a pokemon.
      */
-    fun fetchPokemonInfo(url: String, onDataReady: (PokemonFullInfo) -> Unit, onError: (() -> Unit)? = null) {
+    fun fetchPokemonFullInfo(url: String, onDataReady: (PokemonFullInfo) -> Unit, onError: (() -> Unit)? = null) {
         val request = StringRequest(Request.Method.GET, url,
             { response ->
                 // Success

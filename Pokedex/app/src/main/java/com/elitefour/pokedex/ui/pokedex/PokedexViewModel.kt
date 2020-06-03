@@ -43,7 +43,7 @@ class PokedexViewModel : ViewModel(){
      * @param url The url requesting the detail of a pokemon.
      */
     fun updatePokemonInfo(url: String) {
-        apiManager.fetchPokemonInfo (url, { pokemonFullInfo ->
+        apiManager.fetchPokemonFullInfo (url, { pokemonFullInfo ->
             currPokemonInfo.value = pokemonFullInfo
         }, {
             failure.value = true
