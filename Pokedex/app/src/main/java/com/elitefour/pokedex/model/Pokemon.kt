@@ -90,3 +90,8 @@ data class TypeSlot (
     val slot: Int,
     val type: Type
 )
+
+data class PokemonSlot (
+    val pokemon: Pokemon,
+    val slot: Int
+)

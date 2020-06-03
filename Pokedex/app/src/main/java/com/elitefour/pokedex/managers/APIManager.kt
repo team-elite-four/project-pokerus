@@ -17,6 +17,7 @@ class APIManager(context: Context) {
         private const val POKEIMAGE_URL = "https://pokeres.bastionbot.org/images/pokemon/"
         private const val POKEMON_LIST = "pokemon?limit="
         private const val ITEM_LIST = "item?limit="
+        private const val TYPE_LIST = "type/"
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
         private const val NUM_OF_ITEMS = 807 // All items
     }
@@ -26,6 +27,9 @@ class APIManager(context: Context) {
      * returns the results list from the entire pokemon collection in the promise
      * The results list contains the name of each pokemon and its info url
      */
+
+
+
     fun fetchPokemonList(onDataReady: (List<Pokemon>) -> Unit, onError: (() -> Unit)? = null) {
         val url = POKEAPI_URL + POKEMON_LIST + NUM_OF_POKEMONS
         val request = StringRequest(Request.Method.GET, url,
@@ -101,6 +105,35 @@ class APIManager(context: Context) {
                 val gson = Gson()
                 val itemInfo = gson.fromJson(response, ItemInfo::class.java )
                 onDataReady(itemInfo)
+            }, {
+                onError?.invoke()
+            }
+        )
+        queue.add(request)
+    }
+
+    fun fetchTypeList(onDataReady: (List<Type>) -> Unit, onError: (() -> Unit)? = null) {
+        val url = POKEAPI_URL + TYPE_LIST
+        val request = StringRequest(Request.Method.GET, url,
+            { response ->
+                // Success
+                val gson = Gson()
+                val collection = gson.fromJson(response, TypeCollection::class.java)
+                onDataReady(collection.results)
+            }, {
+                onError?.invoke()
+            }
+        )
+        queue.add(request)
+    }
+
+    fun fetchTypeInfo(url: String, onDataReady: (TypeInfo) -> Unit, onError: (() -> Unit)? = null) {
+        val request = StringRequest(Request.Method.GET, url,
+            { response ->
+                // Success
+                val gson = Gson()
+                val typeInfo = gson.fromJson(response, TypeInfo::class.java )
+                onDataReady(typeInfo)
             }, {
                 onError?.invoke()
             }

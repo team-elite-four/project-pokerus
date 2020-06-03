@@ -1,11 +1,13 @@
 package com.elitefour.pokedex.ui.pokedex
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.model.PokemonFullInfo
+import com.elitefour.pokedex.model.Type
 
 class PokedexViewModel : ViewModel(){
 
@@ -17,6 +19,19 @@ class PokedexViewModel : ViewModel(){
 
     fun init(apiManager: APIManager) {
         this.apiManager = apiManager
+        var type = "hello"
+        apiManager.fetchTypeList({ resultList ->
+            Log.i("elite", resultList.toString())
+            type = resultList.get(5).url;
+            apiManager.fetchTypeInfo(type, { typeFullInfo ->
+                Log.i("elite", typeFullInfo.toString())
+            }, {
+                failure.value = true
+            })
+        }, {
+            failure.value = true
+        })
+
     }
 
     /**
