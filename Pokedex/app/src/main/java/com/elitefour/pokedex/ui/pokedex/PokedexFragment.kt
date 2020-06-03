@@ -49,10 +49,12 @@ class PokedexFragment : Fragment() {
         }
 
         pokedexViewModel.init(app.apiManager)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         pokedexViewModel.pokemonList.observe(viewLifecycleOwner,  Observer { pokemonList ->
             this.pokemonList = pokemonList
@@ -60,14 +62,13 @@ class PokedexFragment : Fragment() {
 
         })
 
-        pokedexViewModel.failure.observe(viewLifecycleOwner, Observer { failure ->
-            if (failure) {
-                Log.i(MainActivity.TAG, "We have failed")
-            }
-        })
+//        pokedexViewModel.failure.observe(viewLifecycleOwner, Observer { failure ->
+//            if (failure) {
+//                Log.i(MainActivity.TAG, "We have failed")
+//            }
+//        })
 
         pokedexViewModel.updatePokemonList()
-
     }
 
     private fun initAdapter() {

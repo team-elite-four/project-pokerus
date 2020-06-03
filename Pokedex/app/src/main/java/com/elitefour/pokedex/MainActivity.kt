@@ -12,7 +12,9 @@ import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
+import com.elitefour.pokedex.ui.pokedex.PokemonInfoFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), OnClickListenerExtension{
 
@@ -50,9 +52,19 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension{
             R.id.navigation_pokedex, R.id.navigation_item_list, R.id.navigation_setting))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        search_view.setOnClickListener {
+            search_view.onActionViewExpanded()
+        }
     }
 
     override fun onPokemonClicked(pokemon: Pokemon) {
+        var pokemonInfoFragment = PokemonInfoFragment.getInstance()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, pokemonInfoFragment, PokemonInfoFragment.TAG)
+            .addToBackStack(PokemonInfoFragment.TAG)
+            .commit()
         Log.i(TAG, pokemon.name)
     }
 }

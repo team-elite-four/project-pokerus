@@ -6,4 +6,5 @@
     <string name="title_pokedex">Pokedex</string>
     <string name="title_item_list">Item List</string>
     <string name="title_setting">Setting</string>
+    <string name="search">search</string>
 </resources>

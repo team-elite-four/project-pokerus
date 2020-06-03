@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_item_list"
-        android:name="com.elitefour.pokedex.ui.movelist.MoveListFragment"
+        android:name="com.elitefour.pokedex.ui.itemlist.ItemListFragment"
         android:label="@string/title_item_list"
         tools:layout="@layout/fragment_item_list" />
 

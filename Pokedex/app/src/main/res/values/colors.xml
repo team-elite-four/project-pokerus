@@ -17,4 +17,11 @@
     <color name="textHighlightDefault">#ffad03</color>
 
 
+    <color name="typeNormal">#a6a575</color>
+    <color name="typeFighting">#cb2c1d</color>
+    <color name="typeFlying">#a389ea</color>
+    <color name="typeFire">#f7920a</color>
+    <color name="typeWater">#618cf8</color>
+    <color name="typeGrass">#6dcd37</color>
+
 </resources>

@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<!--    <style name="SearchStyle" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        <item name="editTextColor">@color/colorAccent</item>-->
+<!--        <item name="android:searchIcon">@drawable/ic_search</item>-->
+<!--        <item name="android:closeIcon">@drawable/ic_close</item>-->
+<!--        <item name="android:searchHintIcon">null</item> // add desired drawble, set null for no background-->
+<!--    </style>-->
+
+
 </resources>
