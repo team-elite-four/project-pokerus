@@ -1,7 +1,6 @@
 package com.elitefour.pokedex.managers
 
 import android.content.Context
-import android.util.Log
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
@@ -33,7 +32,7 @@ class APIManager(context: Context) {
             { response ->
                 // Success
                 val gson = Gson()
-                val collection = gson.fromJson(response, PokemonCollection::class.java )
+                val collection = gson.fromJson(response, PokemonCollection::class.java)
                 onDataReady(collection.results)
             }, {
                 onError?.invoke()
@@ -47,12 +46,12 @@ class APIManager(context: Context) {
      * returns the information of a specific pokemon in the promise
      * @param url The url requesting the detail of a pokemon.
      */
-    fun fetchPokemonInfo(url: String, onDataReady: (PokemonInfo) -> Unit, onError: (() -> Unit)? = null) {
+    fun fetchPokemonInfo(url: String, onDataReady: (PokemonFullInfo) -> Unit, onError: (() -> Unit)? = null) {
         val request = StringRequest(Request.Method.GET, url,
             { response ->
                 // Success
                 val gson = Gson()
-                val pokemonInfo = gson.fromJson(response, PokemonInfo::class.java )
+                val pokemonInfo = gson.fromJson(response, PokemonFullInfo::class.java )
                 onDataReady(pokemonInfo)
             }, {
                 onError?.invoke()

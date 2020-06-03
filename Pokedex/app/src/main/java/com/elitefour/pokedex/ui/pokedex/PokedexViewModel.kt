@@ -5,13 +5,13 @@ import androidx.lifecycle.ViewModel
 
 import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.model.Pokemon
-import com.elitefour.pokedex.model.PokemonInfo
+import com.elitefour.pokedex.model.PokemonFullInfo
 
 class PokedexViewModel : ViewModel(){
 
     private lateinit var apiManager: APIManager
 
-    var currPokemonInfo = MutableLiveData<PokemonInfo>()
+    var currPokemonInfo = MutableLiveData<PokemonFullInfo>()
     var pokemonList = MutableLiveData<ArrayList<Pokemon>>()
     var failure = MutableLiveData<Boolean>()
 
@@ -43,8 +43,8 @@ class PokedexViewModel : ViewModel(){
      * @param url The url requesting the detail of a pokemon.
      */
     fun updatePokemonInfo(url: String) {
-        apiManager.fetchPokemonInfo (url, { pokemonInfo ->
-            currPokemonInfo.value = pokemonInfo
+        apiManager.fetchPokemonInfo (url, { pokemonFullInfo ->
+            currPokemonInfo.value = pokemonFullInfo
         }, {
             failure.value = true
         })

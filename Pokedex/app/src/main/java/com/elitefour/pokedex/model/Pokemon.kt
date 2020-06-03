@@ -5,7 +5,7 @@ data class Pokemon (
     val url: String
 )
 
-data class PokemonInfo (
+data class PokemonFullInfo (
     val abilities: List<AbilitySlot>,
     val base_experience: Int,
     val forms: List<Form>,
