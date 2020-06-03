@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension{
         val TAG = "elite"
     }
 
-
     private val pokedexViewModel: PokedexViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

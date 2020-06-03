@@ -26,7 +26,6 @@ class PokedexFragment : Fragment() {
     }
 
     private val pokedexViewModel: PokedexViewModel by activityViewModels()
-    private lateinit var pokemonList: ArrayList<Pokemon>
     private lateinit var pokemonListAdapter: PokemonListAdapter
     private var mainActivityListener: OnClickListenerExtension? = null
 
@@ -57,22 +56,14 @@ class PokedexFragment : Fragment() {
 
 
         pokedexViewModel.pokemonList.observe(viewLifecycleOwner,  Observer { pokemonList ->
-            this.pokemonList = pokemonList
             initAdapter()
-
         })
-
-//        pokedexViewModel.failure.observe(viewLifecycleOwner, Observer { failure ->
-//            if (failure) {
-//                Log.i(MainActivity.TAG, "We have failed")
-//            }
-//        })
 
         pokedexViewModel.updatePokemonList()
     }
 
     private fun initAdapter() {
-        pokemonListAdapter = PokemonListAdapter(pokemonList, pokedexViewModel)
+        pokemonListAdapter = PokemonListAdapter(pokedexViewModel.pokemonList.value!!, pokedexViewModel)
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
             mainActivityListener?.onPokemonClicked(pokemon)
