@@ -2,7 +2,9 @@ package com.elitefour.pokedex.model
 
 data class Pokemon (
     val name: String,
-    val url: String
+    val url: String,
+    val imageURL: String?,
+    val types: List<TypeSlot>?
 )
 
 data class PokemonFullInfo (
@@ -11,7 +13,7 @@ data class PokemonFullInfo (
     val forms: List<Form>,
     val game_indices: List<GameIndex>,
     val height: Int,
-    val held_items: List<String>,
+    val held_items: List<ItemSlot>,
     val id: Int,
     val is_default: Boolean,
     val location_area_encounters: String,

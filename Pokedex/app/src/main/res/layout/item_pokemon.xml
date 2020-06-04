@@ -50,16 +50,31 @@
 
     <Button
         android:id="@+id/pokeType1"
-        android:text="Grass"
-        android:backgroundTint="@color/typeGrass"
-        android:textColor="@color/textLightDefault"
         android:layout_width="75dp"
         android:layout_height="25dp"
-        android:enabled="true"
-        android:background="@drawable/pokedex_type_background"
         android:layout_marginStart="12dp"
+        android:background="@drawable/pokedex_type_background"
+        android:backgroundTint="@color/typeUnknown"
+        android:enabled="true"
+        android:text="@string/unknown"
+        android:textColor="@color/textLightDefault"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pokeImage"
+        app:layout_constraintTop_toBottomOf="@+id/pokeName" />
+
+    <Button
+        android:id="@+id/pokeType2"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/pokedex_type_background"
+        android:backgroundTint="@color/typeGrass"
+        android:enabled="true"
+        android:text="@string/grass"
+        android:textColor="@color/textLightDefault"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pokeType1"
         app:layout_constraintTop_toBottomOf="@+id/pokeName" />
 
 

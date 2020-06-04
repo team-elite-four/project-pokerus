@@ -1,12 +1,14 @@
 package com.elitefour.pokedex.managers
 
 import android.content.Context
+import android.util.Log
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.elitefour.pokedex.model.*
 import com.google.gson.Gson
+import java.lang.Exception
 
 class APIManager(context: Context) {
 
@@ -52,8 +54,12 @@ class APIManager(context: Context) {
             { response ->
                 // Success
                 val gson = Gson()
-                val pokemonInfo = gson.fromJson(response, PokemonFullInfo::class.java )
-                onDataReady(pokemonInfo)
+                try {
+                    val pokemonInfo = gson.fromJson(response, PokemonFullInfo::class.java )
+                    onDataReady(pokemonInfo)
+                } catch (e: Exception) {
+                    Log.e("elite", e.toString() + url)
+                }
             }, {
                 onError?.invoke()
             }
@@ -62,13 +68,23 @@ class APIManager(context: Context) {
     }
 
     /**
-     * Takes an url, a promise function and a error handling function
-     * returns the information of a specific pokemon in the promise
+     * Takes the id of a pokemon to return the pokemon's image URL
      * @param id The url requesting the detail of a pokemon.
+     * @return the string URL of the pokemon image
      */
     fun fetchPokemonImageURL(id: Int): String {
         return "${POKEIMAGE_URL+id}.png"
     }
+
+    /**
+     * Takes the id of a type to return the URL for that specific type
+     * @param id The url requesting the detail of a type.
+     * @return the string URL of the type
+     */
+    fun fetchTypeURL(id: Int): String {
+        return "${POKEAPI_URL+ TYPE_LIST+id}"
+    }
+
 
     /**
      * Takes a promise function and a error handling function

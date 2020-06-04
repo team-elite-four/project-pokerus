@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i("Adapter", R.color.typeBug.toString())
 
 //        pokedexFragment = PokedexFragment.newInstance()
 //
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             .replace(R.id.nav_host_fragment, pokemonInfoFragment, PokemonInfoFragment.TAG)
             .addToBackStack(PokemonInfoFragment.TAG)
             .commit()
-        Log.i(TAG, pokemon.name)
+        Log.i(TAG, pokemon.toString())
     }
 
 }

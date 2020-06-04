@@ -37,30 +37,30 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
         return apiManager.fetchPokemonImageURL(id)
     }
 
-    /**
-     * Update the current list of pokemon
-     */
-    fun updatePokemonList() {
-        apiManager.fetchPokemonList ({ resultList ->
-            pokemonList.value = resultList as ArrayList<Pokemon>
-        }, {
-            failure.value = true
-        })
-    }
-
-    /**
-     * Update the current information of the pokemon
-     * @param url The url requesting the detail of a pokemon.
-     */
-    fun updatePokemonInfo(url: String) {
-        apiManager.fetchPokemonFullInfo (url, { pokemonFullInfo ->
-            currPokemonInfo.value = pokemonFullInfo
-        }, {
-            failure.value = true
-        })
-    }
+//    /**
+//     * Update the current list of pokemon
+//     */
+//    fun updatePokemonList() {
+//        apiManager.fetchPokemonList ({ resultList ->
+//            pokemonList.value = resultList as ArrayList<Pokemon>
+//        }, {
+//            failure.value = true
+//        })
+//    }
+//
+//    /**
+//     * Update the current information of the pokemon
+//     * @param url The url requesting the detail of a pokemon.
+//     */
+//    fun updatePokemonInfo(url: String) {
+//        apiManager.fetchPokemonFullInfo (url, { pokemonFullInfo ->
+//            currPokemonInfo.value = pokemonFullInfo
+//        }, {
+//            failure.value = true
+//        })
+//    }
 
     override fun ready() {
-        Log.i("Elite", "Yes, ready!")
+        pokemonList.value = pokedexManager.getPokemonList() as ArrayList<Pokemon>
     }
 }

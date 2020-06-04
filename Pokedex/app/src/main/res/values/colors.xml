@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates -->
+
     <color name="colorPrimary">#59beac</color>
     <color name="colorPrimaryDark">#6bab84</color>
     <color name="colorAccent">#ffad03</color>
@@ -17,11 +19,28 @@
     <color name="textHighlightDefault">#ffad03</color>
 
 
-    <color name="typeNormal">#a6a575</color>
-    <color name="typeFighting">#cb2c1d</color>
-    <color name="typeFlying">#a389ea</color>
-    <color name="typeFire">#f7920a</color>
-    <color name="typeWater">#618cf8</color>
-    <color name="typeGrass">#6dcd37</color>
+    <color name="typeNormal">#A8A878</color>
+    <color name="typeFire">#F08030</color>
+    <color name="typeFighting">#C03028</color>
+    <color name="typeWater">#6890F0</color>
+    <color name="typeFlying">#A890F0</color>
+    <color name="typeGrass">#78C850</color>
+    <color name="typePoison">#A040A0</color>
+    <color name="typeElectric">#F8D030</color>
+    <color name="typeGround">#E0C068</color>
+    <color name="typePsychic">#F85888</color>
+    <color name="typeRock">#B8A038</color>
+    <color name="typeIce">#98D8D8</color>
+    <color name="typeBug">#A8B820</color>
+    <color name="typeDragon">#7038F8</color>
+    <color name="typeGhost">#705898</color>
+    <color name="typeDark">#705848</color>
+    <color name="typeSteel">#B8B8D0</color>
+    <color name="typeFairy">#EE99AC</color>
+    <color name="typeUnknown">#68A090</color>
+
+
+
+
 
 </resources>

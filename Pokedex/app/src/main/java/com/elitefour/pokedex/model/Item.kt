@@ -10,4 +10,11 @@ data class ItemInfo (
     val babay_trigger_for: String?
 )
 
+// ArmMask Added this for Pokemon.kt
+
+data class ItemSlot (
+    val item: Item,
+    val version_details: List<Version>
+)
+
 // TODO

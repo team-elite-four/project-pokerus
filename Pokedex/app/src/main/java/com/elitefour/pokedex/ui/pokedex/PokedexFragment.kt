@@ -60,14 +60,18 @@ class PokedexFragment : Fragment() {
 
 
         pokedexViewModel.pokemonList.observe(viewLifecycleOwner,  Observer { pokemonList ->
-            initAdapter()
+            if (this::pokemonListAdapter.isInitialized) {
+                pokemonListAdapter.notifyDataSetChanged()
+            } else {
+                initAdapter()
+            }
         })
 
-        pokedexViewModel.updatePokemonList()
+        //pokedexViewModel.updatePokemonList()
     }
 
     private fun initAdapter() {
-        pokemonListAdapter = PokemonListAdapter(pokedexViewModel.pokemonList.value!!, pokedexViewModel)
+        pokemonListAdapter = PokemonListAdapter(pokedexViewModel.pokemonList.value!!)
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
             mainActivityListener?.onPokemonClicked(pokemon)
