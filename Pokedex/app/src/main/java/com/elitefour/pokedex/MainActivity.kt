@@ -10,6 +10,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.interfaces.OnPokedexReadyListener
+import com.elitefour.pokedex.model.Item
+import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
@@ -65,6 +67,14 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             .addToBackStack(PokemonInfoFragment.TAG)
             .commit()
         Log.i(TAG, pokemon.toString())
+    }
+
+    override fun onItemClicked(item: Item) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onMoveClicked(move: Move) {
+        TODO("Not yet implemented")
     }
 
 }
