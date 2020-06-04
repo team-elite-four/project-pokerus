@@ -59,7 +59,7 @@ class PokedexFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        pokedexViewModel.pokemonList.observe(viewLifecycleOwner,  Observer { pokemonList ->
+        pokedexViewModel.pokemonListFetchSuccess.observe(viewLifecycleOwner,  Observer { pokemonListFetchSuccess ->
             if (this::pokemonListAdapter.isInitialized) {
                 pokemonListAdapter.notifyDataSetChanged()
             } else {
@@ -67,11 +67,10 @@ class PokedexFragment : Fragment() {
             }
         })
 
-        //pokedexViewModel.updatePokemonList()
     }
 
     private fun initAdapter() {
-        pokemonListAdapter = PokemonListAdapter(pokedexViewModel.pokemonList.value!!)
+        pokemonListAdapter = PokemonListAdapter(pokedexViewModel.getPokemonList())
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
             mainActivityListener?.onPokemonClicked(pokemon)

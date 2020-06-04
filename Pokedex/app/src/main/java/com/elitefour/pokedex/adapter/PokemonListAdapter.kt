@@ -15,8 +15,9 @@ import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.squareup.picasso.Picasso
 
-class PokemonListAdapter(pokemonListInitial: ArrayList<Pokemon>): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
-    private var pokemonList: ArrayList<Pokemon> = pokemonListInitial
+class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
+
+    private var pokemonList: List<Pokemon> = pokemonListInitial
     var onPokemonClickListener: ((pokemon: Pokemon) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonListViewHolder {
@@ -69,21 +70,19 @@ class PokemonListAdapter(pokemonListInitial: ArrayList<Pokemon>): RecyclerView.A
             pokeName.text = pokemon.name.capitalize()
             pokemon.types?.let {types ->
                 if (types.size == 2 ) {
-                    var type = types[1].type.name
-                    pokeType2.text = type.capitalize()
+                    val type = types[1].type.name
+                    pokeType2.text = type
                     pokeType2.background.setTint(itemView.context.getColor(getColorResource(type)))
                     pokeType2.visibility = View.VISIBLE
                 } else {
                     pokeType2.visibility = View.INVISIBLE
                 }
                 if (types.isNotEmpty()) {
-                    var type = types[0].type.name
-                    pokeType1.text = type.capitalize()
+                    val type = types[0].type.name
+                    pokeType1.text = type
                     pokeType1.background.setTint(itemView.context.getColor(getColorResource(type)))
                 }
             }
-            //pokeType1.text = ""
-
             Picasso.get().load(pokemon.imageURL).into(pokeImage)
 
             itemView.setOnClickListener {

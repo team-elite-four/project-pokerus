@@ -23,12 +23,18 @@ class PokedexManager(context: Context) {
     }
 
 
-    fun initializePokemonList() {
+//    fun getPokemonList(): ArrayList<Pokemon> {
+//        return pokemonList
+//    }
+//
+    private fun initializePokemonList() {
         apiManager.fetchPokemonList ({ resultList ->
             pokemonList = resultList as ArrayList<Pokemon>
-            pokemonList.forEachIndexed{index:Int, pokemon:Pokemon ->
+            pokemonList.forEachIndexed {index:Int, pokemon:Pokemon ->
+
                 // Set image url
                 pokemonList[index] = pokemon.copy(imageURL = apiManager.fetchPokemonImageURL(index+1))
+
                 apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
                     pokemonFullInfoList.add(pokemonFullInfo)
 
@@ -41,6 +47,7 @@ class PokedexManager(context: Context) {
                     if (pokemonFullInfoList.size == pokemonList.size) {
                         Log.i("Manager", "HOOOOOOOOOORAAAAAAAAAAAAAAAAYYYYYYYYY we downloaded everything!!!!")
                     }
+
                 }, {
                     Log.i("Manager", "Pokemon List Fetch error in manager")
                 })
@@ -54,10 +61,7 @@ class PokedexManager(context: Context) {
     }
 
     fun getPokemonList(): List<Pokemon> {
-        if (dataReady) {
-            return pokemonList
-        }
-        return emptyList()
+        return pokemonList
     }
 
 }

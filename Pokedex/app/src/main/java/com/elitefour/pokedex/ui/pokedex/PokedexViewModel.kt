@@ -15,10 +15,8 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
     private lateinit var apiManager: APIManager
     private lateinit var pokedexManager: PokedexManager
 
-    var currPokemonInfo = MutableLiveData<PokemonFullInfo>()
-    var pokemonList = MutableLiveData<ArrayList<Pokemon>>()
+//    var pokemonList = MutableLiveData<ArrayList<Pokemon>>()
     var pokemonListFetchSuccess = MutableLiveData<Boolean>()
-    var failure = MutableLiveData<Boolean>()
 
 
     fun init(apiManager: APIManager, pokedexManager: PokedexManager) {
@@ -37,17 +35,13 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
         return apiManager.fetchPokemonImageURL(id)
     }
 
-//    /**
-//     * Update the current list of pokemon
-//     */
-//    fun updatePokemonList() {
-//        apiManager.fetchPokemonList ({ resultList ->
-//            pokemonList.value = resultList as ArrayList<Pokemon>
-//        }, {
-//            failure.value = true
-//        })
-//    }
-//
+    /**
+     * Update the current list of pokemon
+     */
+    fun getPokemonList(): List<Pokemon> {
+        return pokedexManager.getPokemonList()
+    }
+
 //    /**
 //     * Update the current information of the pokemon
 //     * @param url The url requesting the detail of a pokemon.
@@ -60,7 +54,8 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
 //        })
 //    }
 
+
     override fun ready() {
-        pokemonList.value = pokedexManager.getPokemonList() as ArrayList<Pokemon>
+        pokemonListFetchSuccess.value = true
     }
 }
