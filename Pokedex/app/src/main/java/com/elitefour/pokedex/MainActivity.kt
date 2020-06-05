@@ -54,6 +54,10 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     override fun onPokemonClicked(pokemon: Pokemon) {
         var pokemonInfoFragment = PokemonInfoFragment.getInstance()
+        val pokemonBundle = Bundle().apply {
+            putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
+        }
+        pokemonInfoFragment.arguments = pokemonBundle
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_host_fragment, pokemonInfoFragment, PokemonInfoFragment.TAG)

@@ -11,12 +11,10 @@ class PokedexManager(context: Context) {
     var pokedexNameImageReady: Boolean = false
     var pokedexTypeReady: Boolean = false
     var onPokedexReadyListener: OnPokedexReadyListener? = null
-
-
-    private var pokemonTypeMap: MutableMap<Type, List<PokemonSlot>> = mutableMapOf()
     private var pokemonList: ArrayList<Pokemon> = ArrayList()
-    private var pokemonFullInfoList: ArrayList<PokemonFullInfo> = ArrayList()
+    private var pokemonFullInfoMap: HashMap<Int, PokemonFullInfo> = HashMap()
     private var apiManager: APIManager = (context.applicationContext as PokedexApp).apiManager
+    private var pokemonTypeMap: MutableMap<Type, List<PokemonSlot>> = mutableMapOf()
 
     init {
         initializePokedexNameImage()
@@ -89,6 +87,26 @@ class PokedexManager(context: Context) {
         }
     }
 
+    private fun initializePokemonInfo(pokemon: Pokemon, index: Int) {
+        apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
+            pokemonFullInfoMap[(index + 1)] = pokemonFullInfo
+            // Notify changes
+            this.onPokedexReadyListener?.readyInfo()
+        }, {
+            Log.i("Manager", "Pokemon List Fetch error in manager")
+        })
+    }
+
+    fun getPokemonInfo(url: String): PokemonFullInfo? {
+        val id = getIDFromPokemonURL(url)
+        if (pokemonFullInfoMap.contains(id)) {
+
+        } else {
+            initializePokemonInfo(pokemonList[id - 1], id - 1)
+        }
+        return null
+    }
+
     /**
      * Any pokemon ID beyond the limit will be neglected, as a result of returning -1
      * @return The ID of the pokemon in the given url for that pokemon or -1
@@ -103,5 +121,6 @@ class PokedexManager(context: Context) {
     fun getPokemonList(): List<Pokemon> {
         return pokemonList
     }
+
 
 }
