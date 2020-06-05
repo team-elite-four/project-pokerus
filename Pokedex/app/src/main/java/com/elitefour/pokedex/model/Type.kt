@@ -41,10 +41,14 @@ data class Language(
     val url: String
 )
 
-
-
 data class TypeGameIndex (
     val game_index: Int,
     val generation: Generation
 )
+
+data class PokemonSlot (
+    val pokemon: Pokemon,
+    val slot: Int
+)
+
 

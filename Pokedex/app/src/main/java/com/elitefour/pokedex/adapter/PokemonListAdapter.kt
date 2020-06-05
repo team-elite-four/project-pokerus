@@ -69,6 +69,7 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
             pokeNumber.text = "# ${position+1}"
             pokeName.text = pokemon.name.capitalize()
             pokemon.types?.let {types ->
+                // Display second type
                 if (types.size == 2 ) {
                     val type = types[1].type.name
                     pokeType2.text = type
@@ -77,6 +78,7 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
                 } else {
                     pokeType2.visibility = View.INVISIBLE
                 }
+                // Display first type
                 if (types.isNotEmpty()) {
                     val type = types[0].type.name
                     pokeType1.text = type

@@ -21,7 +21,8 @@ class APIManager(context: Context) {
         private const val ITEM_LIST = "item?limit="
         private const val TYPE_LIST = "type/"
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
-        private const val NUM_OF_ITEMS = 807 // All items
+        private const val NUM_OF_ITEMS = 954 // All items
+        const val NUM_OF_TYPES = 18 // Total of 18 types
     }
 
     /**
@@ -77,16 +78,6 @@ class APIManager(context: Context) {
     }
 
     /**
-     * Takes the id of a type to return the URL for that specific type
-     * @param id The url requesting the detail of a type.
-     * @return the string URL of the type
-     */
-    fun fetchTypeURL(id: Int): String {
-        return "${POKEAPI_URL+ TYPE_LIST+id}"
-    }
-
-
-    /**
      * Takes a promise function and a error handling function
      * returns the results list from the entire item collection in the promise
      * The results list contains the name of each item and its info url
@@ -125,22 +116,28 @@ class APIManager(context: Context) {
         queue.add(request)
     }
 
-    fun fetchTypeList(onDataReady: (List<Type>) -> Unit, onError: (() -> Unit)? = null) {
-        val url = POKEAPI_URL + TYPE_LIST
-        val request = StringRequest(Request.Method.GET, url,
-            { response ->
-                // Success
-                val gson = Gson()
-                val collection = gson.fromJson(response, TypeCollection::class.java)
-                onDataReady(collection.results)
-            }, {
-                onError?.invoke()
-            }
-        )
-        queue.add(request)
-    }
+//    fun fetchTypeList(onDataReady: (List<Type>) -> Unit, onError: (() -> Unit)? = null) {
+//        val url = POKEAPI_URL + TYPE_LIST
+//        val request = StringRequest(Request.Method.GET, url,
+//            { response ->
+//                // Success
+//                val gson = Gson()
+//                val collection = gson.fromJson(response, TypeCollection::class.java)
+//                onDataReady(collection.results)
+//            }, {
+//                onError?.invoke()
+//            }
+//        )
+//        queue.add(request)
+//    }
 
-    fun fetchTypeInfo(url: String, onDataReady: (TypeInfo) -> Unit, onError: (() -> Unit)? = null) {
+    /**
+     * Takes an id, a promise function and a error handling function
+     * returns the information of a specific type in the promise
+     * @param id The url requesting the detail of an item.
+     */
+    fun fetchTypeInfo(id: Int, onDataReady: (TypeInfo) -> Unit, onError: (() -> Unit)? = null) {
+        val url = "$POKEAPI_URL$TYPE_LIST/$id"
         val request = StringRequest(Request.Method.GET, url,
             { response ->
                 // Success
@@ -152,5 +149,29 @@ class APIManager(context: Context) {
             }
         )
         queue.add(request)
+    }
+
+    /**
+     * Return the number of types in the entire pokemon generation
+     * @return the number of types
+     */
+    fun getNumberOfTypes(): Int {
+        return NUM_OF_TYPES
+    }
+
+    /**
+     * Return the number of pokemons in the entire pokemon generation
+     * @return the number of pokemons
+     */
+    fun getNumberOfPokemons(): Int {
+        return NUM_OF_POKEMONS
+    }
+
+    /**
+     * Return the url of types in the entire pokemon generation
+     * @return the url of types
+     */
+    fun getTypeUrl(id: Int): String {
+        return "$POKEAPI_URL$TYPE_LIST/$id"
     }
 }

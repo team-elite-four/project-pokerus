@@ -32,13 +32,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         setContentView(R.layout.activity_main)
         Log.i("Adapter", R.color.typeBug.toString())
 
-//        pokedexFragment = PokedexFragment.newInstance()
-//
-//        supportFragmentManager
-//            .beginTransaction()
-//            .add(R.id.nav_host_fragment, pokedexFragment, PokedexFragment.TAG)
-//            .commit()
-
         try {
             this.supportActionBar!!.hide()
         } catch (e: NullPointerException) {
