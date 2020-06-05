@@ -25,6 +25,14 @@ class APIManager(context: Context) {
     }
 
     /**
+     * Return the number of pokemons in the entire pokemon generation
+     * @return the number of pokemons
+     */
+    fun getNumberOfPokemons(): Int {
+        return NUM_OF_POKEMONS
+    }
+
+    /**
      * Takes a promise function and a error handling function
      * returns the results list from the entire pokemon collection in the promise
      * The results list contains the name of each pokemon and its info url

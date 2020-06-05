@@ -2,7 +2,6 @@ package com.elitefour.pokedex.managers
 
 import android.content.Context
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.interfaces.OnPokedexReadyListener
 import com.elitefour.pokedex.model.*
@@ -11,13 +10,13 @@ class PokedexManager(context: Context) {
 
     var dataReady: Boolean = false
     private var pokemonList: ArrayList<Pokemon>
-    private var pokemonFullInfoList: ArrayList<PokemonFullInfo>
+    private lateinit var pokemonFullInfoMap: HashMap<Int, PokemonFullInfo>
     private var apiManager: APIManager
     var onPokedexReadyListener: OnPokedexReadyListener? = null
 
     init {
         pokemonList = ArrayList()
-        pokemonFullInfoList = ArrayList()
+        pokemonFullInfoMap = HashMap()
         apiManager = (context.applicationContext as PokedexApp).apiManager
         initializePokemonList()
     }
@@ -35,29 +34,48 @@ class PokedexManager(context: Context) {
                 // Set image url
                 pokemonList[index] = pokemon.copy(imageURL = apiManager.fetchPokemonImageURL(index+1))
 
-                apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
-                    pokemonFullInfoList.add(pokemonFullInfo)
+                initializePokemonInfo(pokemon, index)
 
-                    // Set up Types
-                    pokemonList[index] = pokemonList[index].copy(types = pokemonFullInfo.types)
-
-                    // Notify changes
-                    this.onPokedexReadyListener?.ready()
-
-                    if (pokemonFullInfoList.size == pokemonList.size) {
-                        Log.i("Manager", "HOOOOOOOOOORAAAAAAAAAAAAAAAAYYYYYYYYY we downloaded everything!!!!")
-                    }
-
-                }, {
-                    Log.i("Manager", "Pokemon List Fetch error in manager")
-                })
+                if (pokemonFullInfoMap.size == pokemonList.size) {
+                    Log.i("Manager", "HOOOOOOOOOORAAAAAAAAAAAAAAAAYYYYYYYYY we downloaded everything!!!!")
+                }
 
             }
             dataReady = true
-            this.onPokedexReadyListener?.ready()
+            this.onPokedexReadyListener?.readyList()
         }, {
             Log.i("Manager", "Pokemon List Fetch error in manager")
         })
+    }
+
+    fun initializePokemonInfo(pokemon: Pokemon, index: Int) {
+        apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
+            pokemonFullInfoMap[(index + 1)] = pokemonFullInfo
+            // Set up Types commented out since Erik was working on TypeList implementation for types set up in pokedex
+            pokemonList[index] = pokemonList[index].copy(types = pokemonFullInfo.types)
+            // Notify changes
+            this.onPokedexReadyListener?.readyList()
+            this.onPokedexReadyListener?.readyInfo()
+        }, {
+            Log.i("Manager", "Pokemon List Fetch error in manager")
+        })
+    }
+
+    fun getPokemonInfo(url: String): PokemonFullInfo? {
+        val id = getIDFromPokemonURL(url)
+        if (pokemonFullInfoMap.contains(id)) {
+
+        } else {
+            initializePokemonInfo(pokemonList[id - 1], id - 1)
+        }
+        return null
+    }
+
+    private fun getIDFromPokemonURL(url: String): Int {
+        val arr = url.split("/")
+        val limit = apiManager.getNumberOfPokemons()
+        val id = arr[arr.lastIndex-1].toInt()
+        return if (id > limit) -1 else id
     }
 
     fun getPokemonList(): List<Pokemon> {

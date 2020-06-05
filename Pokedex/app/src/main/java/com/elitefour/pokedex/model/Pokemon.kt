@@ -25,7 +25,22 @@ data class PokemonFullInfo (
     val stats: List<StatBaseInfo>,
     val types: List<TypeSlot>,
     val weight: Int
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        other?.let {
+            if (other is PokemonFullInfo) {
+                if((it as PokemonFullInfo).id == this.id) {
+                    return true
+                }
+            }
+        }
+        return false;
+    }
+
+    override fun hashCode(): Int {
+        return id.hashCode()
+    }
+}
 
 data class AbilitySlot (
     val ability: Ability,

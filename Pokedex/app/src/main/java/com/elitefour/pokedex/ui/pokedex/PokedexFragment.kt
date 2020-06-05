@@ -52,6 +52,7 @@ class PokedexFragment : Fragment() {
 //        }
 
         pokedexViewModel.init(app.apiManager, app.pokedexManager)
+        pokedexViewModel.initList()
 
     }
 
