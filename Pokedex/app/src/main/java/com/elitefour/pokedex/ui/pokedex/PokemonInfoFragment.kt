@@ -1,8 +1,6 @@
 package com.elitefour.pokedex.ui.pokedex
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +19,7 @@ import com.elitefour.pokedex.model.PokemonFullInfo
  */
 class PokemonInfoFragment : Fragment() {
 
-    private val pokedexViewModel: PokedexViewModel by activityViewModels()
+    private val pokedexVM: PokedexViewModel by activityViewModels()
     private lateinit var pokemonFullInfo: PokemonFullInfo
     private  var url: String? = null
 
@@ -47,13 +45,23 @@ class PokemonInfoFragment : Fragment() {
         arguments.let { it ->
             url = it?.getString(POKEMON_URL_BUNDLE_KEY)
         }
-        Log.i("InfoElite", url.toString())
-        pokedexViewModel.pokemonInfoFetchSuccess.observe(viewLifecycleOwner,  Observer { pokemonInfoFetchSuccess ->
-            url?.let { url ->
-                pokedexViewModel.getPokemonInfo(url)?.let{pokemonFullInfo = it
-                    Log.i("InfoElite", it.toString())
-                }}
+        pokedexVM.pokedexFullInfoSuccess.observe(viewLifecycleOwner,  Observer { success ->
+            if (success and pokedexVM.pokedexFullInfoSuccess.value!!) {
+                url?.let { url ->
+                    pokedexVM.getPokemonInfo(url)?.let{pokemonFullInfo = it
+                        updateUI()
+                    }
+                }
+            }
+
         })
-        url?.let { url -> pokedexViewModel.getPokemonInfo(url)?.let{pokemonFullInfo = it}}
+        url?.let { url -> pokedexVM.getPokemonInfo(url)?.let{pokemonFullInfo = it
+                updateUI()
+            }
+        }
+    }
+
+    private fun updateUI() {
+        // Now that we have the full pokemon info we will need to print stuff
     }
 }

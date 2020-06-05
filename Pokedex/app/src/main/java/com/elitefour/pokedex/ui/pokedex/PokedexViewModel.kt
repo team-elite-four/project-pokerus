@@ -15,12 +15,13 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
 
     var pokedexNameImageSuccess = MutableLiveData<Boolean>()
     var pokedexTypeSuccess = MutableLiveData<Boolean>()
-    var pokemonInfoFetchSuccess = MutableLiveData<Boolean>()
+    var pokedexFullInfoSuccess = MutableLiveData<Boolean>()
 
     fun init(pokedexManager: PokedexManager) {
 
         pokedexNameImageSuccess.value = false
         pokedexTypeSuccess.value = false
+        pokedexFullInfoSuccess.value = false
 
         this.pokedexManager = pokedexManager
         if (!pokedexManager.pokedexNameImageReady or !pokedexManager.pokedexTypeReady) {
@@ -56,7 +57,7 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
         pokedexTypeSuccess.value = true
     }
 
-    override fun readyInfo() {
-        pokemonInfoFetchSuccess.value = true
+    override fun pokedexFullInfoReady() {
+        pokedexFullInfoSuccess.value = true
     }
 }

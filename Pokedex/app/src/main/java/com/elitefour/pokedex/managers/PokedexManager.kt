@@ -91,18 +91,19 @@ class PokedexManager(context: Context) {
         apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
             pokemonFullInfoMap[(index + 1)] = pokemonFullInfo
             // Notify changes
-            this.onPokedexReadyListener?.readyInfo()
+            this.onPokedexReadyListener?.pokedexFullInfoReady()
         }, {
-            Log.i("Manager", "Pokemon List Fetch error in manager")
+            Log.i("Manager", "Pokemon Info Fetch error in manager")
         })
     }
 
     fun getPokemonInfo(url: String): PokemonFullInfo? {
         val id = getIDFromPokemonURL(url)
         if (pokemonFullInfoMap.contains(id)) {
-
+            return pokemonFullInfoMap[id]
         } else {
-            initializePokemonInfo(pokemonList[id - 1], id - 1)
+            val index = id - 1
+            initializePokemonInfo(pokemonList[index], index)
         }
         return null
     }
