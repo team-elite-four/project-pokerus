@@ -29,34 +29,42 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
         }
     }
 
-//    /**
-//     * @re
-//     */
-//    fun initList() {
-//        if (!pokedexManager.dataReady) {
-//            pokedexManager.onPokedexReadyListener = this
-//        }
-//    }
 
     /**
-     * Update the current list of pokemon
+     * @return the current pokemon list from the PokedexManager
      */
     fun getPokemonList(): List<Pokemon> {
         return pokedexManager.getPokemonList()
     }
 
+    /**
+     * @return the current pokemon info from the PokedexManager, or null otherwise,
+     * with a promise of calling a mutable live data observer
+     */
     fun getPokemonInfo(url: String): PokemonFullInfo? {
         return pokedexManager.getPokemonInfo(url)
     }
 
+    /**
+     * This method is called from the pokedex manager and will
+     * notify any observers for [pokedexNameImageSuccess]
+     */
     override fun pokedexNameImageReady() {
         pokedexNameImageSuccess.value = true
     }
 
+    /**
+     * This method is called from the pokedex manager and will
+     * notify any observers for [pokedexTypeSuccess]
+     */
     override fun pokedexTypeReady() {
         pokedexTypeSuccess.value = true
     }
 
+    /**
+     * This method is called from the pokedex manager and will
+     * notify any observers for [pokedexFullInfoSuccess]
+     */
     override fun pokedexFullInfoReady() {
         pokedexFullInfoSuccess.value = true
     }

@@ -87,9 +87,14 @@ class PokedexManager(context: Context) {
         }
     }
 
+    /**
+     * @param pokemon contains information about the pokemon to retrieve full information about
+     * @param index contains the index that the pokemon will appear in map. Easily translatible between id and index
+     * This method will fetch the full info about the pokemon and will store the full pokemon
+     */
     private fun initializePokemonInfo(pokemon: Pokemon, index: Int) {
         apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
-            pokemonFullInfoMap[(index + 1)] = pokemonFullInfo
+            pokemonFullInfoMap[(index + 1)] = pokemonFullInfo// index + 1 is the same thing as ID
             // Notify changes
             this.onPokedexReadyListener?.pokedexFullInfoReady()
         }, {
@@ -119,6 +124,9 @@ class PokedexManager(context: Context) {
         return if (id > limit) -1 else id
     }
 
+    /**
+     * @return the current list of pokemon available to this manager
+     */
     fun getPokemonList(): List<Pokemon> {
         return pokemonList
     }
