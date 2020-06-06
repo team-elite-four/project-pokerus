@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         val TAG = "elite"
     }
 
-    private val pokedexViewModel: PokedexViewModel by viewModels()
+    private val pokedexVM: PokedexViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             this.supportActionBar!!.hide()
         } catch (e: NullPointerException) {
         }
+
+        val app = PokedexApp.getApp(this)
+        pokedexVM.init(app.pokedexManager)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
