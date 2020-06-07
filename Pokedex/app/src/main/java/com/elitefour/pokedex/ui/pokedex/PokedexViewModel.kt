@@ -37,11 +37,21 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
 
     /**
      * @return the current pokemon info from the PokedexManager, or null otherwise,
+    * with a promise of calling a mutable live data observer
+    */
+    fun getPokemonFullInfo(url: String): PokemonFullInfo? {
+        val id = pokedexManager.getIDFromPokemonURL(url)
+        return pokedexManager.getPokemonFullInfo(id)
+    }
+
+    /**
+     *
      * with a promise of calling a mutable live data observer
      */
-    fun getPokemonInfo(url: String): PokemonFullInfo? {
-        return pokedexManager.getPokemonFullInfo(url)
+    fun initializePokemonFullInfo(url: String) {
+        pokedexManager.initializePokemonFullInfo(url)
     }
+
 
     /**
      * This method is called from the pokedex manager and will

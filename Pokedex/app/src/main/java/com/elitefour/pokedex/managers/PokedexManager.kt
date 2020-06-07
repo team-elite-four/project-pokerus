@@ -90,36 +90,39 @@ class PokedexManager(context: Context) {
     }
 
     /**
-     * @param pokemon contains information about the pokemon to retrieve full information about
-     * @param index contains the index that the pokemon will appear in map. Easily translatible between id and index
+     * @param url contains the url of the pokemon
      * This method will fetch the full info about the pokemon and will store the full pokemon
      */
-    private fun initializePokemonFullInfo(pokemon: Pokemon, index: Int) {
-        apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
-            pokemonFullInfoMap[(index + 1)] = pokemonFullInfo// index + 1 is the same thing as ID
-            // Notify changes
+    fun initializePokemonFullInfo(url: String) {
+        val id = getIDFromPokemonURL(url)
+        if (!pokemonFullInfoMap.contains(id)) {
+            apiManager.fetchPokemonFullInfo (url, { pokemonFullInfo ->
+                pokemonFullInfoMap[id] = pokemonFullInfo // maps ID to pokemon full information
+                // Notify changes
+                this.onPokedexReadyListener?.pokedexFullInfoReady()
+            }, {
+                Log.i("Manager", "Pokemon Info Fetch error in manager")
+            })
+        } else {
             this.onPokedexReadyListener?.pokedexFullInfoReady()
-        }, {
-            Log.i("Manager", "Pokemon Info Fetch error in manager")
-        })
+        }
     }
 
-    fun getPokemonFullInfo(url: String): PokemonFullInfo? {
-        val id = getIDFromPokemonURL(url)
-        if (pokemonFullInfoMap.contains(id)) {
-            return pokemonFullInfoMap[id]
-        } else {
-            val index = id - 1
-            initializePokemonFullInfo(pokemonList[index], index)
-        }
-        return null
+    /**
+     * Using the given ID, fetch the pokemon from the hash map
+     * @param id the id of the pokemon
+     */
+    fun getPokemonFullInfo(id: Int): PokemonFullInfo? {
+        return pokemonFullInfoMap[id]
     }
+
+
 
     /**
      * Any pokemon ID beyond the limit will be neglected, as a result of returning -1
      * @return The ID of the pokemon in the given url for that pokemon or -1
      */
-    private fun getIDFromPokemonURL(url: String): Int {
+    fun getIDFromPokemonURL(url: String): Int {
         val arr = url.split("/")
         val limit = apiManager.getNumberOfPokemons()
         val id = arr[arr.lastIndex-1].toInt()

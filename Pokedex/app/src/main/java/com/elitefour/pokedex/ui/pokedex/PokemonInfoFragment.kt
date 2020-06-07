@@ -42,26 +42,20 @@ class PokemonInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         arguments.let { url ->
             this.url = url?.getString(POKEMON_URL_BUNDLE_KEY)
         }
-
         pokedexVM.pokedexFullInfoSuccess.observe(viewLifecycleOwner,  Observer { success ->
-            if (success and pokedexVM.pokedexFullInfoSuccess.value!!) {
+            if (success) {
                 url?.let { url ->
-                    pokedexVM.getPokemonInfo(url)?.let{pokemonFullInfo = it
-
+                    pokedexVM.getPokemonFullInfo(url)?.let{
+                        pokemonFullInfo = it
                         updateUI()
                     }
                 }
             }
-
         })
-        url?.let { url -> pokedexVM.getPokemonInfo(url)?.let{pokemonFullInfo = it
-                updateUI()
-            }
-        }
+        url?.let { pokedexVM.initializePokemonFullInfo(it) }
     }
 
     private fun updateUI() {
