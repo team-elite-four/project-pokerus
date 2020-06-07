@@ -5,19 +5,15 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
-import com.elitefour.pokedex.interfaces.OnPokedexReadyListener
 import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
+import com.elitefour.pokedex.ui.pokedex.PokedexInfoViewPagerFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
-import com.elitefour.pokedex.ui.pokedex.PokemonInfoFragment
+import com.elitefour.pokedex.ui.pokedex.pokepager.PokemonInfoFragment
 import com.elitefour.pokedex.ui.setting.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -63,8 +59,8 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             }
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.nav_host_fragment, selectedFragment, PokemonInfoFragment.TAG)
-                .addToBackStack(PokemonInfoFragment.TAG)
+                .replace(R.id.nav_host_fragment, selectedFragment, selectedFragment.tag)
+                .addToBackStack(selectedFragment.tag)
                 .commit()
             return@setOnNavigationItemSelectedListener true
         }
@@ -75,15 +71,15 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     override fun onPokemonClicked(pokemon: Pokemon) {
-        var pokemonInfoFragment = PokemonInfoFragment.getInstance()
+        var pokedexInfoViewPagerFragment = PokedexInfoViewPagerFragment()
         //pokedexVM.setCu
         val pokemonBundle = Bundle().apply {
             putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
         }
-        pokemonInfoFragment.arguments = pokemonBundle
+        pokedexInfoViewPagerFragment.arguments = pokemonBundle
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.nav_host_fragment, pokemonInfoFragment, PokemonInfoFragment.TAG)
+            .replace(R.id.nav_host_fragment, pokedexInfoViewPagerFragment, PokemonInfoFragment.TAG)
             .addToBackStack(PokemonInfoFragment.TAG)
             .commit()
         Log.i(TAG, pokemon.toString())

@@ -7,7 +7,7 @@
     android:background="@color/backgroundMediumDefault"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".ui.pokedex.PokemonInfoFragment">
+    tools:context=".ui.pokedex.pokepager.PokemonInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/poke_type_container"
