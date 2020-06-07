@@ -97,7 +97,9 @@ class PokedexManager(context: Context) {
         val id = getIDFromPokemonURL(url)
         if (!pokemonFullInfoMap.contains(id)) {
             apiManager.fetchPokemonFullInfo (url, { pokemonFullInfo ->
-                pokemonFullInfoMap[id] = pokemonFullInfo // maps ID to pokemon full information
+                val pokemonFullInfoWithImage = pokemonFullInfo.copy(
+                    imageURL = apiManager.fetchPokemonImageURL(id))
+                pokemonFullInfoMap[id] = pokemonFullInfoWithImage // maps ID to pokemon full information
                 // Notify changes
                 this.onPokedexReadyListener?.pokedexFullInfoReady()
             }, {
@@ -115,8 +117,6 @@ class PokedexManager(context: Context) {
     fun getPokemonFullInfo(id: Int): PokemonFullInfo? {
         return pokemonFullInfoMap[id]
     }
-
-
 
     /**
      * Any pokemon ID beyond the limit will be neglected, as a result of returning -1

@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.model.PokemonFullInfo
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_pokemon_info.*
 
 
 /**
@@ -58,8 +60,8 @@ class PokemonInfoFragment : Fragment() {
         url?.let { pokedexVM.initializePokemonFullInfo(it) }
     }
 
+    // We need to decide on what information we include
     private fun updateUI() {
-        Log.i("Elite", "UI start $pokemonFullInfo")
-        // Now that we have the full pokemon info we will need to print stuff
+        Picasso.get().load(pokemonFullInfo.imageURL).into(pokeImage)
     }
 }

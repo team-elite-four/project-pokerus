@@ -24,7 +24,8 @@ data class PokemonFullInfo (
     val sprites: Sprites,
     val stats: List<StatBaseInfo>,
     val types: List<TypeSlot>,
-    val weight: Int
+    val weight: Int,
+    val imageURL: String?
 ) {
     override fun equals(other: Any?): Boolean {
         other?.let {
