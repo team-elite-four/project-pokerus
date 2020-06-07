@@ -1,6 +1,7 @@
 package com.elitefour.pokedex.ui.pokedex
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,7 @@ class PokemonInfoFragment : Fragment() {
 
     private val pokedexVM: PokedexViewModel by activityViewModels()
     private lateinit var pokemonFullInfo: PokemonFullInfo
-    private  var url: String? = null
+    private var url: String? = null
 
     companion object {
         val TAG: String = PokemonInfoFragment::class.java.simpleName
@@ -42,13 +43,15 @@ class PokemonInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments.let { it ->
-            url = it?.getString(POKEMON_URL_BUNDLE_KEY)
+        arguments.let { url ->
+            this.url = url?.getString(POKEMON_URL_BUNDLE_KEY)
         }
+
         pokedexVM.pokedexFullInfoSuccess.observe(viewLifecycleOwner,  Observer { success ->
             if (success and pokedexVM.pokedexFullInfoSuccess.value!!) {
                 url?.let { url ->
                     pokedexVM.getPokemonInfo(url)?.let{pokemonFullInfo = it
+
                         updateUI()
                     }
                 }
@@ -62,6 +65,7 @@ class PokemonInfoFragment : Fragment() {
     }
 
     private fun updateUI() {
+        Log.i("Elite", "UI start $pokemonFullInfo")
         // Now that we have the full pokemon info we will need to print stuff
     }
 }

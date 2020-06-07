@@ -1,6 +1,5 @@
 package com.elitefour.pokedex.ui.pokedex
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.elitefour.pokedex.interfaces.OnPokedexReadyListener
@@ -29,7 +28,6 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
         }
     }
 
-
     /**
      * @return the current pokemon list from the PokedexManager
      */
@@ -42,7 +40,7 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
      * with a promise of calling a mutable live data observer
      */
     fun getPokemonInfo(url: String): PokemonFullInfo? {
-        return pokedexManager.getPokemonInfo(url)
+        return pokedexManager.getPokemonFullInfo(url)
     }
 
     /**

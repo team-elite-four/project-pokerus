@@ -33,18 +33,18 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.i("Adapter", R.color.typeBug.toString())
-
-        try {
-            this.supportActionBar!!.hide()
-        } catch (e: NullPointerException) {
-        }
-
+        // Hide action bar for visual enhancement
+        this.supportActionBar?.hide()
+        // Connect view model for the pokedex fragment
         val app = PokedexApp.getApp(this)
         pokedexVM.init(app.pokedexManager)
-
+        // Expand search view for easier interaction
+        search_view.setOnClickListener {
+            search_view.onActionViewExpanded()
+        }
+        // We still decide not to use navigation controller for now
+        // because we cannot fully utilize its mechanics to achieve our expected behavior.
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
 //        val navController = findNavController(R.id.nav_host_fragment)
 //        // Passing each menu ID as a set of Ids because each
 //        // menu should be considered as top level destinations.
@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 //        navView.setupWithNavController(navController)
 
+        // We overwrite this listener for navView to manually implement the behavior of tab switching.
         navView.setOnNavigationItemSelectedListener { menuItem ->
-            Log.i("Elite", menuItem.itemId.toString())
             var selectedFragment: Fragment = PokedexFragment() // default
             when (menuItem.itemId) {
                 R.id.navigation_pokedex -> selectedFragment = PokedexFragment()
@@ -64,18 +64,19 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.nav_host_fragment, selectedFragment, PokemonInfoFragment.TAG)
+                .addToBackStack(PokemonInfoFragment.TAG)
                 .commit()
             return@setOnNavigationItemSelectedListener true
         }
-
-        navView.setOnNavigationItemReselectedListener {}
-        search_view.setOnClickListener {
-            search_view.onActionViewExpanded()
+        // To achieve intuitive interaction
+        navView.setOnNavigationItemReselectedListener {
+            supportFragmentManager.popBackStack()
         }
     }
 
     override fun onPokemonClicked(pokemon: Pokemon) {
         var pokemonInfoFragment = PokemonInfoFragment.getInstance()
+        //pokedexVM.setCu
         val pokemonBundle = Bundle().apply {
             putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
         }

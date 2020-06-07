@@ -13,8 +13,8 @@ class PokedexManager(context: Context) {
     var onPokedexReadyListener: OnPokedexReadyListener? = null
     private var pokemonList: ArrayList<Pokemon> = ArrayList()
     private var pokemonFullInfoMap: HashMap<Int, PokemonFullInfo> = HashMap()
-    private var apiManager: APIManager = (context.applicationContext as PokedexApp).apiManager
     private var pokemonTypeMap: MutableMap<Type, List<PokemonSlot>> = mutableMapOf()
+    private var apiManager: APIManager = (context.applicationContext as PokedexApp).apiManager
 
     init {
         initializePokedexNameImage()
@@ -37,7 +37,9 @@ class PokedexManager(context: Context) {
     }
 
     /**
-     *
+     * This function initialize a map that maps each type to a list of pokemons that
+     * have that type in one of the two type slots. It not only makes the initialization
+     * of pokedex faster, but also provides information for filtering
      * Notice here in the pokemon slots, image urls and types are null
      * So never call on these 2 variables
      *
@@ -92,7 +94,7 @@ class PokedexManager(context: Context) {
      * @param index contains the index that the pokemon will appear in map. Easily translatible between id and index
      * This method will fetch the full info about the pokemon and will store the full pokemon
      */
-    private fun initializePokemonInfo(pokemon: Pokemon, index: Int) {
+    private fun initializePokemonFullInfo(pokemon: Pokemon, index: Int) {
         apiManager.fetchPokemonFullInfo (pokemon.url, { pokemonFullInfo ->
             pokemonFullInfoMap[(index + 1)] = pokemonFullInfo// index + 1 is the same thing as ID
             // Notify changes
@@ -102,13 +104,13 @@ class PokedexManager(context: Context) {
         })
     }
 
-    fun getPokemonInfo(url: String): PokemonFullInfo? {
+    fun getPokemonFullInfo(url: String): PokemonFullInfo? {
         val id = getIDFromPokemonURL(url)
         if (pokemonFullInfoMap.contains(id)) {
             return pokemonFullInfoMap[id]
         } else {
             val index = id - 1
-            initializePokemonInfo(pokemonList[index], index)
+            initializePokemonFullInfo(pokemonList[index], index)
         }
         return null
     }
@@ -130,6 +132,4 @@ class PokedexManager(context: Context) {
     fun getPokemonList(): List<Pokemon> {
         return pokemonList
     }
-
-
 }

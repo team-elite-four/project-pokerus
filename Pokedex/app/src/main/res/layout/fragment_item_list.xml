@@ -8,7 +8,7 @@
     tools:context=".ui.itemlist.ItemListFragment">
 
     <TextView
-        android:id="@+id/text_title"
+        android:id="@+id/pokeName"
         android:text="List of Items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
