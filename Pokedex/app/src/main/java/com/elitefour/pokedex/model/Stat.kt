@@ -7,3 +7,8 @@ data class Stat (
     val name: String,
     val url: String
 )
+
+data class StatEntry(
+    val change: Int,
+    val stat: Stat
+)

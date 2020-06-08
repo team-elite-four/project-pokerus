@@ -20,7 +20,7 @@ class APIManager(context: Context) {
         private const val POKEMON_LIST = "pokemon?limit="
         private const val ITEM_LIST = "item?limit="
         private const val TYPE_LIST = "type/"
-        private const val MOVE_LIST = "move?limit=/"
+        private const val MOVE_LIST = "move?limit="
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
         private const val NUM_OF_ITEMS = 954 // All items
         private const val NUM_OF_MOVES = 746 // All moves
@@ -159,7 +159,7 @@ class APIManager(context: Context) {
      * The results list contains the name of each pokemon and its info url
      */
 
-    fun fetchMoveList(onDataReady: (List<Pokemon>) -> Unit, onError: (() -> Unit)? = null) {
+    fun fetchMoveList(onDataReady: (List<Move>) -> Unit, onError: (() -> Unit)? = null) {
         val url = POKEAPI_URL + MOVE_LIST + NUM_OF_MOVES
         val request = StringRequest(Request.Method.GET, url,
             { response ->
