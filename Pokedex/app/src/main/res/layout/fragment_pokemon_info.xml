@@ -11,7 +11,7 @@
     tools:context=".ui.pokedex.pokemoninfopager.PokemonInfoFragment">
 
     <ImageView
-        android:id="@+id/pokeImage"
+        android:id="@+id/ivItemImage"
         android:layout_width="179dp"
         android:layout_height="178dp"
         android:src="@drawable/ic_launcher_foreground"
@@ -27,10 +27,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pokeImage">
+        app:layout_constraintTop_toBottomOf="@+id/ivItemImage">
 
         <TextView
-            android:id="@+id/pokeName"
+            android:id="@+id/tvItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PokeName"

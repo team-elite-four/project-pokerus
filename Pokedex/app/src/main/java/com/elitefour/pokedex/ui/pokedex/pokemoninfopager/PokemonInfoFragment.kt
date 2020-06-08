@@ -1,8 +1,6 @@
 package com.elitefour.pokedex.ui.pokedex.pokemoninfopager
 
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -64,8 +62,8 @@ class PokemonInfoFragment : Fragment() {
 
     // We need to decide on what information we include
     private fun updateUI(view: View) {
-        Picasso.get().load(pokemonFullInfo.imageURL).into(pokeImage)
-        pokeName.text = pokemonFullInfo.name.capitalize()
+        Picasso.get().load(pokemonFullInfo.imageURL).into(ivItemImage)
+        tvItemName.text = pokemonFullInfo.name.capitalize()
         pokeID.text = pokemonFullInfo.id.toString()
         pokeBaseExp.text = "${pokemonFullInfo.base_experience} EXP"
         pokemonFullInfo.types.let {types ->

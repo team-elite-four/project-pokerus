@@ -19,6 +19,7 @@ class APIManager(context: Context) {
         private const val POKEIMAGE_URL = "https://pokeres.bastionbot.org/images/pokemon/"
         private const val POKEMON_LIST = "pokemon?limit="
         private const val ITEM_LIST = "item?limit="
+        private const val ITEM_IMG_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/"
         private const val TYPE_LIST = "type/"
         private const val MOVE_LIST = "move?limit="
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
@@ -115,6 +116,10 @@ class APIManager(context: Context) {
             }
         )
         queue.add(request)
+    }
+
+    fun fetchItemImageUrl(itemName: String): String {
+        return "${ITEM_IMG_URL + itemName}.png"
     }
 
 //    fun fetchTypeList(onDataReady: (List<Type>) -> Unit, onError: (() -> Unit)? = null) {

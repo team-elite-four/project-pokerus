@@ -57,8 +57,8 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
 
     inner class PokemonListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val pokeNumber = itemView.findViewById<TextView>(R.id.pokeID)
-        private val pokeName = itemView.findViewById<TextView>(R.id.pokeName)
-        private val pokeImage = itemView.findViewById<ImageView>(R.id.pokeImage)
+        private val pokeName = itemView.findViewById<TextView>(R.id.tvItemName)
+        private val pokeImage = itemView.findViewById<ImageView>(R.id.ivItemImage)
         private val pokeType1 = itemView.findViewById<Button>(R.id.pokeType1)
         private val pokeType2 = itemView.findViewById<Button>(R.id.pokeType2)
 
