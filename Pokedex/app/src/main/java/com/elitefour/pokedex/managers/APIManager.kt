@@ -23,7 +23,6 @@ class APIManager(context: Context) {
         private const val MOVE_LIST = "move?limit="
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
         private const val NUM_OF_ITEMS = 954 // All items
-        const val NUM_OF_MOVES = 746 // All moves
         const val NUM_OF_TYPES = 18 // Total of 18 types
     }
 
@@ -153,49 +152,6 @@ class APIManager(context: Context) {
         queue.add(request)
     }
 
-    /**
-     * Takes a promise function and a error handling function
-     * returns the results list from the entire pokemon collection in the promise
-     * The results list contains the name of each pokemon and its info url
-     */
-
-    fun fetchMoveList(onDataReady: (List<Move>) -> Unit, onError: (() -> Unit)? = null) {
-        val url = POKEAPI_URL + MOVE_LIST + NUM_OF_MOVES
-        val request = StringRequest(Request.Method.GET, url,
-            { response ->
-                // Success
-                val gson = Gson()
-                val collection = gson.fromJson(response, MoveCollection::class.java)
-                onDataReady(collection.results)
-            }, {
-                onError?.invoke()
-            }
-        )
-        queue.add(request)
-    }
-
-    /**
-     * Takes an url, a promise function and a error handling function
-     * returns the information of a specific pokemon in the promise
-     * @param url The url requesting the detail of a pokemon.
-     */
-    fun fetchMoveFullInfo(url: String, onDataReady: (MoveFullInfo) -> Unit, onError: (() -> Unit)? = null) {
-        val request = StringRequest(Request.Method.GET, url,
-            { response ->
-                // Success
-                val gson = Gson()
-                try {
-                    val moveInfo = gson.fromJson(response, MoveFullInfo::class.java )
-                    onDataReady(moveInfo)
-                } catch (e: Exception) {
-                    Log.e("elite", e.toString() + url)
-                }
-            }, {
-                onError?.invoke()
-            }
-        )
-        queue.add(request)
-    }
 
     /**
      * Return the number of types in the entire pokemon generation

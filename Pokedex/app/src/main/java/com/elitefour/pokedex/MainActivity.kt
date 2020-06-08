@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Move
+import com.elitefour.pokedex.model.MoveFullInfo
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
@@ -18,7 +19,10 @@ import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment
 import com.elitefour.pokedex.ui.setting.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.gson.Gson
+import java.io.File
+import java.io.IOException
+
 
 class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
@@ -69,6 +73,20 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         navView.setOnNavigationItemReselectedListener {
             supportFragmentManager.popBackStack()
         }
+
+        //val obj = getGsonFromAsset("ugh/5.json")
+        //Log.i("YES", obj.toString())
+    }
+
+    private fun getGsonFromAsset(fileName: String): MoveFullInfo {
+        var jsonString: String = ""
+        try {
+            jsonString = this.assets.open(fileName).bufferedReader().use { it.readText() }
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+        }
+        val gson = Gson()
+        return gson.fromJson(jsonString, MoveFullInfo::class.java)
     }
 
     override fun onPokemonClicked(pokemon: Pokemon) {

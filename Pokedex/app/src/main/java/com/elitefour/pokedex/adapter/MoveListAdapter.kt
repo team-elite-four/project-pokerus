@@ -41,10 +41,18 @@ class MoveListAdapter(moveListInitial: List<Move>): RecyclerView.Adapter<MoveLis
     inner class MoveListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val moveName = itemView.findViewById<TextView>(R.id.moveName)
         private val moveDmg = itemView.findViewById<TextView>(R.id.moveDmg)
-        private val moveType = itemView.findViewById<ImageView>(R.id.moveType)
+        private val moveType = itemView.findViewById<Button>(R.id.moveType)
         private val moveClass = itemView.findViewById<Button>(R.id.moveClass)
 
         fun bind(move: Move, position: Int) {
+            moveName.text = move.name
+            moveDmg.text = move.power?.toString()
+            move.type?.let { type ->
+                moveType.text = type
+            }
+            move.damage_class?.let { damage_class ->
+                moveClass.text = damage_class
+            }
 
             itemView.setOnClickListener {
                 onMoveClickListener?.invoke(move)
