@@ -1,17 +1,17 @@
 package com.elitefour.pokedex.ui.movelist
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 
 import com.elitefour.pokedex.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.elitefour.pokedex.adapter.MoveListAdapter
+import com.elitefour.pokedex.interfaces.OnClickListenerExtension
+import com.elitefour.pokedex.model.Move
 
 /**
  * A simple [Fragment] subclass.
@@ -19,16 +19,24 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MoveListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+
+
+    private val moveListVM: MoveListViewModel by viewModels()
+    private lateinit var moveListAdapter: MoveListAdapter
+    private lateinit var moveList: ArrayList<Move>
+    private var mainActivityListener: OnClickListenerExtension? = null
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnClickListenerExtension) {
+            mainActivityListener = context
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -39,23 +47,24 @@ class MoveListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_move_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        arguments.let { it ->
+            moveList = it?.getParcelableArrayList<Move>(LIST_KEY) as ArrayList<Move>
+            initAdapter()
+        }
+
+        if (!this::moveList.isInitialized) {
+            // do fetch from vm
+        }
+    }
+
+    private fun initAdapter() {
+
+    }
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MoveListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MoveListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        val TAG = MoveListFragment::class.simpleName
+        val LIST_KEY = "list_key"
     }
 }

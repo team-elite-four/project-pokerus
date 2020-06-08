@@ -31,11 +31,6 @@ data class Generation (
     val url: String
 )
 
-data class MoveDamageClass(
-    val name: String,
-    val url: String
-)
-
 data class Language(
     val name: String,
     val url: String
