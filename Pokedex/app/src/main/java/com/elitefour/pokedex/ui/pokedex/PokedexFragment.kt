@@ -14,6 +14,7 @@ import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Pokemon
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_pokedex.*
 
 class PokedexFragment : Fragment() {
@@ -44,6 +45,10 @@ class PokedexFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        search_view.setOnClickListener {
+            search_view.onActionViewExpanded()
+        }
 
         pokedexVM.pokedexNameImageSuccess.observe(viewLifecycleOwner,  Observer { success ->
             if (success and pokedexVM.pokedexTypeSuccess.value!!) {

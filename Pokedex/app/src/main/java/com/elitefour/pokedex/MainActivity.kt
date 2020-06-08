@@ -36,10 +36,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         // Connect view model for the pokedex fragment
         val app = PokedexApp.getApp(this)
         pokedexVM.init(app.pokedexManager)
-        // Expand search view for easier interaction
-        search_view.setOnClickListener {
-            search_view.onActionViewExpanded()
-        }
+
         // We still decide not to use navigation controller for now
         // because we cannot fully utilize its mechanics to achieve our expected behavior.
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
