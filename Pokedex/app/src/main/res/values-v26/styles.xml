@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RecyclerListItemTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">6dp</item>
+        <item name="android:layout_marginVertical">3dp</item>
+        <item name="elevation">8dp</item>
+        <item name="background">@drawable/pokedex_item_background</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+        <item name="android:padding">6dp</item>
+    </style>
+</resources>
