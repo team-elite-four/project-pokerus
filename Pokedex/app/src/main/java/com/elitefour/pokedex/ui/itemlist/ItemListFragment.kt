@@ -31,8 +31,6 @@ class ItemListFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        Log.i("lol", "Fragment start")
-
         itemListManager = (context.applicationContext as PokedexApp).itemListManager
         itemListManager.initializeItemList()
         itemVM.init(itemListManager)
@@ -55,7 +53,6 @@ class ItemListFragment : Fragment() {
 
         itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
             if (success and itemVM.itemListReady.value!!) {
-                Log.i("lmao", "item vm init")
                 initAdapter()
             }
         })

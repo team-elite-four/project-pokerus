@@ -14,6 +14,7 @@ class ItemViewModel: ViewModel(), OnItemListReadyListener {
     fun init(manager: ItemListManager) {
         itemListManager = manager
         itemListReady.value = false
+        itemListManager.onItemListReadyListener = this
     }
 
     override fun itemListReady() {

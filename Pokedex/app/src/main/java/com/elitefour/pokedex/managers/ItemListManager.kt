@@ -16,8 +16,8 @@ class ItemListManager(context: Context) {
         apiManager.fetchItemList({list ->
             Log.i("Manager", "item list fetch success")
             itemList = list as ArrayList<Item>
-            itemList.forEach {item ->
-                item.copy(imgUrl = apiManager.fetchItemImageUrl(item.name))
+            itemList.forEachIndexed {index: Int, item: Item ->
+                itemList[index] = item.copy(imgUrl = apiManager.fetchItemImageUrl(item.name))
             }
             onItemListReadyListener?.itemListReady()
         }, {
