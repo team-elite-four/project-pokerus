@@ -52,7 +52,7 @@ class ItemListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
-            if (success and itemVM.itemListReady.value!!) {
+            if (success) {
                 initAdapter()
             }
         })

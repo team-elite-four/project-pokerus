@@ -45,7 +45,12 @@ class MoveListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        move_search_view.setOnClickListener {
+            move_search_view.onActionViewExpanded()
+        }
         initAdapter()
+
 //        moveListVM.pokedexNameImageSuccess.observe(viewLifecycleOwner,  Observer { success ->
 //            if (success) {
 //                initAdapter()

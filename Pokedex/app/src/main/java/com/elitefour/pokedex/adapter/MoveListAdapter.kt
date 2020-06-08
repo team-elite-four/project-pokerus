@@ -26,8 +26,7 @@ class MoveListAdapter(moveListInitial: List<MoveFullInfo>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: MoveListViewHolder, position: Int) {
-        val move = moveList[position]
-        holder.bind(move, position)
+        holder.bind(moveList[position])
     }
 
     private fun getClassColorResource(type: String): Int {
@@ -69,22 +68,16 @@ class MoveListAdapter(moveListInitial: List<MoveFullInfo>): RecyclerView.Adapter
         private val moveType = itemView.findViewById<Button>(R.id.moveType)
         private val moveClass = itemView.findViewById<Button>(R.id.moveClass)
 
-        fun bind(moveFullInfo: MoveFullInfo, position: Int) {
+        fun bind(moveFullInfo: MoveFullInfo) {
             moveName.text = moveFullInfo.name.capitalize()
-            moveDmg.text = moveFullInfo.power?.toString()
-            moveFullInfo.type?.let { type ->
-                moveType.text = type.name
-                moveType.background.setTint(itemView.context.getColor(getTypeColorResource(type.name)))
-            }
-            moveFullInfo.damage_class?.let { damage_class ->
-                moveClass.text = damage_class.name
-                moveClass.background.setTint(itemView.context.getColor(getClassColorResource(damage_class.name)))
-            }
-
+            moveDmg.text = moveFullInfo.power.toString()
+            moveType.text = moveFullInfo.type.name
+            moveType.background.setTint(itemView.context.getColor(getTypeColorResource(moveFullInfo.type.name)))
+            moveClass.text = moveFullInfo.damage_class.name
+            moveClass.background.setTint(itemView.context.getColor(getClassColorResource(moveFullInfo.damage_class.name)))
             itemView.setOnClickListener {
                 onMoveClickListener?.invoke(moveFullInfo)
             }
-
         }
     }
 }

@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.nav_host_fragment, selectedFragment, selectedFragment.tag)
-                .addToBackStack(selectedFragment.tag)
                 .commit()
             return@setOnNavigationItemSelectedListener true
         }
@@ -110,8 +109,8 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         TODO("Not yet implemented")
     }
 
-    override fun onMoveClicked(move: MoveFullInfo) {
-        Log.i("Elite", "move clicked! $move")
+    override fun onMoveClicked(moveFullInfo: MoveFullInfo) {
+        Log.i("Elite", "move clicked! $moveFullInfo")
     }
 
 }
