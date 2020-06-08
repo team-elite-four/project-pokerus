@@ -1,6 +1,5 @@
 package com.elitefour.pokedex.adapter
 
-import android.R.color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

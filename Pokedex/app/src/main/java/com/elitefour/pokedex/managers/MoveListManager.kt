@@ -1,5 +1,7 @@
 package com.elitefour.pokedex.managers
 
-class MoveListManager {
+import android.content.Context
+
+class MoveListManager(context: Context)  {
 
 }

@@ -10,7 +10,6 @@ data class Move(
     var damage_class: String?,
     var type: String?,
     var power: Int?
-
 ): Parcelable
 
 data class MoveFullInfo(

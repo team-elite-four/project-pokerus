@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.model.Move
-import com.elitefour.pokedex.model.Pokemon
-import com.squareup.picasso.Picasso
 
 class MoveListAdapter(moveListInitial: List<Move>): RecyclerView.Adapter<MoveListAdapter.MoveListViewHolder>() {
 
@@ -41,14 +39,12 @@ class MoveListAdapter(moveListInitial: List<Move>): RecyclerView.Adapter<MoveLis
     }
 
     inner class MoveListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val pokeNumber = itemView.findViewById<TextView>(R.id.moveName)
-        private val pokeName = itemView.findViewById<TextView>(R.id.moveDmg)
-        private val pokeImage = itemView.findViewById<ImageView>(R.id.moveType)
-        private val pokeType1 = itemView.findViewById<Button>(R.id.moveClass)
-        //private val pokeType2 = itemView.findViewById<Button>(R.id.movePP)
+        private val moveName = itemView.findViewById<TextView>(R.id.moveName)
+        private val moveDmg = itemView.findViewById<TextView>(R.id.moveDmg)
+        private val moveType = itemView.findViewById<ImageView>(R.id.moveType)
+        private val moveClass = itemView.findViewById<Button>(R.id.moveClass)
 
         fun bind(move: Move, position: Int) {
-
 
             itemView.setOnClickListener {
                 onMoveClickListener?.invoke(move)

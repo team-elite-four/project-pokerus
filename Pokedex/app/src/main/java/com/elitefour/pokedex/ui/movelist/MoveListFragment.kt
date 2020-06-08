@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 
 import com.elitefour.pokedex.R
@@ -20,9 +21,8 @@ import com.elitefour.pokedex.model.Move
  */
 class MoveListFragment : Fragment() {
 
-    private val moveListVM: MoveListViewModel by viewModels()
+    private val moveListVM: MoveListViewModel by activityViewModels()
     private lateinit var moveListAdapter: MoveListAdapter
-    private lateinit var moveList: ArrayList<Move>
     private var mainActivityListener: OnClickListenerExtension? = null
 
     override fun onAttach(context: Context) {
@@ -30,10 +30,6 @@ class MoveListFragment : Fragment() {
         if (context is OnClickListenerExtension) {
             mainActivityListener = context
         }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -46,14 +42,7 @@ class MoveListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments.let { it ->
-            moveList = it?.getParcelableArrayList<Move>(LIST_KEY) as ArrayList<Move>
-            initAdapter()
-        }
 
-        if (!this::moveList.isInitialized) {
-            // do fetch from vm
-        }
     }
 
     private fun initAdapter() {
@@ -62,6 +51,5 @@ class MoveListFragment : Fragment() {
 
     companion object {
         val TAG = MoveListFragment::class.simpleName
-        val LIST_KEY = "list_key"
     }
 }
