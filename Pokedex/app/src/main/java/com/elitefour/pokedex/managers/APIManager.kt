@@ -152,7 +152,6 @@ class APIManager(context: Context) {
         queue.add(request)
     }
 
-
     /**
      * Return the number of types in the entire pokemon generation
      * @return the number of types

@@ -4,17 +4,17 @@ import android.content.Context
 import android.util.Log
 import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
+import com.elitefour.pokedex.model.Pokemon
 import com.google.gson.Gson
 import java.io.IOException
 
 class MoveListManager(context: Context)  {
     var moveListFullInfoReady: Boolean = false
-    private var moveList: ArrayList<Move> = ArrayList()
     private var moveFullInfoList: ArrayList<MoveFullInfo> = ArrayList()
 
     companion object {
         const val NUM_OF_MOVES = 728 // All moves
-        const val moveListDir = "movelist/move"
+        const val moveListDir = "move_list/move"
     }
 
     init {
@@ -27,7 +27,13 @@ class MoveListManager(context: Context)  {
                 Log.i("Manager", "Error adding move $n")
             }
         }
-        Log.i("Manager", moveFullInfoList.size.toString())
+    }
+
+    /**
+     * @return the current list of pokemon available to this manager
+     */
+    fun getMoveFullInfoList(): List<MoveFullInfo> {
+        return moveFullInfoList
     }
 
     private fun getGsonFromAsset(context: Context, fileName: String): MoveFullInfo? {
