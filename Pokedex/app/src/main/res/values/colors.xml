@@ -39,6 +39,10 @@
     <color name="typeFairy">#EE99AC</color>
     <color name="typeUnknown">#68A090</color>
 
+    <color name="classPhysical">#C82011</color>
+    <color name="classSpecial">#4E5770</color>
+    <color name="classStatus">#8C888B</color>
+    <color name="classUnknown">#E7E7E7</color>
 
 
 

@@ -20,13 +20,10 @@ import com.elitefour.pokedex.model.Move
  */
 class MoveListFragment : Fragment() {
 
-
-
     private val moveListVM: MoveListViewModel by viewModels()
     private lateinit var moveListAdapter: MoveListAdapter
     private lateinit var moveList: ArrayList<Move>
     private var mainActivityListener: OnClickListenerExtension? = null
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

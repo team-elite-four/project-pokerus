@@ -7,13 +7,12 @@
     android:background="@color/backgroundLightDefault"
     tools:context=".ui.pokedex.PokedexFragment">
 
-
     <SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="700dp"
-        android:background="@color/backgroundMediumDefault"
+        android:background="@color/backgroundLightDefault"
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
