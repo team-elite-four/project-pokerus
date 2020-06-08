@@ -23,7 +23,7 @@ class APIManager(context: Context) {
         private const val MOVE_LIST = "move?limit="
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
         private const val NUM_OF_ITEMS = 954 // All items
-        private const val NUM_OF_MOVES = 746 // All moves
+        const val NUM_OF_MOVES = 746 // All moves
         const val NUM_OF_TYPES = 18 // Total of 18 types
     }
 

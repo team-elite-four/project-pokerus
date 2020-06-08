@@ -13,11 +13,34 @@ class PokedexManager(context: Context) {
     var onPokedexReadyListener: OnPokedexReadyListener? = null
     private var pokemonList: ArrayList<Pokemon> = ArrayList()
     private var pokemonFullInfoMap: HashMap<Int, PokemonFullInfo> = HashMap()
+    private var moveFullInfoMap: HashMap<Int, MoveFullInfo> = HashMap()
     private var pokemonTypeMap: MutableMap<Type, List<PokemonSlot>> = mutableMapOf()
     private var apiManager: APIManager = (context.applicationContext as PokedexApp).apiManager
 
     init {
         initializePokedexNameImage()
+//        var time = System.currentTimeMillis()
+//        Log.i("Manager", "Start Move Fetch at $time")
+//        apiManager.fetchMoveList ({ resultList ->
+//            val moveList = resultList as ArrayList<Move>
+//            moveList.forEachIndexed {  index: Int, move: Move ->
+//                val url = move.url
+//                apiManager.fetchMoveFullInfo (url, { moveFullInfo ->
+//                    // Notify changes
+//                    moveFullInfoMap[moveFullInfo.id] = moveFullInfo
+//                    if (moveFullInfoMap.size == APIManager.NUM_OF_MOVES) {
+//                        time = System.currentTimeMillis() - time
+//                        Log.i("Manager", "Got all moves at $time")
+//                    }
+//                }, {
+//                    Log.i("Manager", "Pokemon Info Fetch error in manager")
+//                })
+//            }
+//
+//
+//        }, {
+//            Log.i("Manager", "Pokemon List Fetch error in manager")
+//        })
     }
 
     private fun initializePokedexNameImage() {
