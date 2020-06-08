@@ -1,5 +1,6 @@
 package com.elitefour.pokedex.ui.itemlist
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.elitefour.pokedex.interfaces.OnItemListReadyListener
@@ -13,10 +14,6 @@ class ItemViewModel: ViewModel(), OnItemListReadyListener {
     fun init(manager: ItemListManager) {
         itemListManager = manager
         itemListReady.value = false
-    }
-
-    fun getItemList(): ArrayList<Item> {
-        return itemListManager.getItemList()
     }
 
     override fun itemListReady() {

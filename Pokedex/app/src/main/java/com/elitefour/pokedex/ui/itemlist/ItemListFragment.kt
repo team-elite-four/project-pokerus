@@ -2,16 +2,20 @@ package com.elitefour.pokedex.ui.itemlist
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
+import com.elitefour.pokedex.adapter.ItemListAdapter
 import com.elitefour.pokedex.managers.ItemListManager
+import kotlinx.android.synthetic.main.fragment_item_list.*
 
 
 /**
@@ -21,11 +25,16 @@ import com.elitefour.pokedex.managers.ItemListManager
  */
 class ItemListFragment : Fragment() {
     private val itemVM: ItemViewModel by viewModels()
+    private lateinit var itemListManager: ItemListManager
+    private lateinit var itemListAdapter: ItemListAdapter
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        val itemListManager: ItemListManager = (context.applicationContext as PokedexApp).itemListManager
+        Log.i("lol", "Fragment start")
+
+        itemListManager = (context.applicationContext as PokedexApp).itemListManager
+        itemListManager.initializeItemList()
         itemVM.init(itemListManager)
     }
 
@@ -43,5 +52,17 @@ class ItemListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
+            if (success and itemVM.itemListReady.value!!) {
+                Log.i("lmao", "item vm init")
+                initAdapter()
+            }
+        })
+    }
+
+    private fun initAdapter() {
+        itemListAdapter = ItemListAdapter(itemListManager.getItemList())
+        rvItemList.adapter = itemListAdapter
     }
 }

@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/pokeImage"
+        android:id="@+id/ivItemImage"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:scaleType="fitXY"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pokeName"
+        android:id="@+id/tvItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -28,7 +28,7 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pokeImage"
+        app:layout_constraintStart_toEndOf="@+id/ivItemImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Item" />
 
