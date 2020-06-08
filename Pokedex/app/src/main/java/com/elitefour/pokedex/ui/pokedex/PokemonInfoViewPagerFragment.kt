@@ -9,6 +9,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 
 import com.elitefour.pokedex.R
+import com.elitefour.pokedex.adapter.PokeInfoCollectionAdapter
 import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment
 import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment.Companion.POKEMON_URL_BUNDLE_KEY
 import com.google.android.material.tabs.TabLayout
@@ -34,7 +35,6 @@ class PokedexInfoViewPagerFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         arguments.let { bundle ->
             bundle?.let{ bundle1 ->
                 bundle1.getString(POKEMON_URL_BUNDLE_KEY)?.let {
@@ -43,11 +43,15 @@ class PokedexInfoViewPagerFragment : Fragment() {
             }
         }
         pokeInfoCollectionAdapter = PokeInfoCollectionAdapter(this, url)
-        viewPager = view.findViewById(R.id.poke_info_pager)
+        viewPager = view.findViewById(R.id.pokemon_info_pager)
         viewPager.adapter = pokeInfoCollectionAdapter
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "OBJECT ${(position + 1)}"
+            when (position) {
+                0 -> tab.text = "General"
+                1 -> tab.text = "Moves"
+                2 -> tab.text = "Other"
+            }
         }.attach()
     }
 
@@ -56,18 +60,4 @@ class PokedexInfoViewPagerFragment : Fragment() {
     }
 }
 
-class PokeInfoCollectionAdapter(fragment: Fragment, urlInit: String) : FragmentStateAdapter(fragment) {
-    private val url = urlInit
-
-    override fun getItemCount(): Int = 3
-
-    override fun createFragment(position: Int): Fragment {
-        // Return a NEW fragment instance in createFragment(int)
-        val fragment = PokemonInfoFragment()
-        fragment.arguments = Bundle().apply {
-            putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, url)
-        }
-        return fragment
-    }
-}
 
