@@ -9,11 +9,13 @@ import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
+import com.elitefour.pokedex.ui.movelist.MoveListFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexInfoViewPagerFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
-import com.elitefour.pokedex.ui.pokedex.pokepager.PokemonInfoFragment
+import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment
 import com.elitefour.pokedex.ui.setting.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -54,7 +56,9 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
             var selectedFragment: Fragment = PokedexFragment() // default
             when (menuItem.itemId) {
                 R.id.navigation_pokedex -> selectedFragment = PokedexFragment()
+                R.id.navigation_move_list -> selectedFragment = MoveListFragment()
                 R.id.navigation_item_list -> selectedFragment = ItemListFragment()
+                R.id.navigation_favorite-> selectedFragment = TeamListFragment()
                 R.id.navigation_setting -> selectedFragment = SettingFragment()
             }
             supportFragmentManager
@@ -72,7 +76,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     override fun onPokemonClicked(pokemon: Pokemon) {
         var pokedexInfoViewPagerFragment = PokedexInfoViewPagerFragment()
-        //pokedexVM.setCu
         val pokemonBundle = Bundle().apply {
             putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
         }

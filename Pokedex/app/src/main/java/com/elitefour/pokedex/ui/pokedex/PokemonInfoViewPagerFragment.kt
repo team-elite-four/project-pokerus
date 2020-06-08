@@ -9,8 +9,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 
 import com.elitefour.pokedex.R
-import com.elitefour.pokedex.ui.pokedex.pokepager.PokemonInfoFragment
-import com.elitefour.pokedex.ui.pokedex.pokepager.PokemonInfoFragment.Companion.POKEMON_URL_BUNDLE_KEY
+import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment
+import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment.Companion.POKEMON_URL_BUNDLE_KEY
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -30,7 +30,7 @@ class PokedexInfoViewPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pokedex_info_view_pager, container, false)
+        return inflater.inflate(R.layout.fragment_pokemon_info_view_pager, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,7 +59,7 @@ class PokedexInfoViewPagerFragment : Fragment() {
 class PokeInfoCollectionAdapter(fragment: Fragment, urlInit: String) : FragmentStateAdapter(fragment) {
     private val url = urlInit
 
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
         // Return a NEW fragment instance in createFragment(int)

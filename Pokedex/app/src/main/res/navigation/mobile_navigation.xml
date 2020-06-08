@@ -12,10 +12,22 @@
         tools:layout="@layout/fragment_pokedex" />
 
     <fragment
+        android:id="@+id/navigation_move_list"
+        android:name="com.elitefour.pokedex.ui.movelist.MoveListFragment"
+        android:label="@string/title_move_list"
+        tools:layout="@layout/fragment_move_list" />
+
+    <fragment
         android:id="@+id/navigation_item_list"
         android:name="com.elitefour.pokedex.ui.itemlist.ItemListFragment"
         android:label="@string/title_item_list"
         tools:layout="@layout/fragment_item_list" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.elitefour.pokedex.ui.favorites.TeamListFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_team_list" />
 
     <fragment
         android:id="@+id/navigation_setting"

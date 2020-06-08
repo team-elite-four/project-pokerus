@@ -7,9 +7,19 @@
         android:title="@string/title_pokedex" />
 
     <item
+        android:id="@+id/navigation_move_list"
+        android:icon="@drawable/ic_move_list_temp_24dp"
+        android:title="@string/title_move_list" />
+
+    <item
         android:id="@+id/navigation_item_list"
         android:icon="@drawable/ic_item_list_temp_24dp"
         android:title="@string/title_item_list" />
+
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_favorite_temp_24dp"
+        android:title="@string/title_favorite" />
 
     <item
         android:id="@+id/navigation_setting"

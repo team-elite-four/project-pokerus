@@ -7,31 +7,13 @@
     android:background="@color/backgroundMediumDefault"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".ui.pokedex.pokepager.PokemonInfoFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/poke_type_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/poke_name_container">
-
-        <TextView
-            android:id="@+id/pokeType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type"
-            android:textAlignment="textStart"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".ui.pokedex.pokemoninfopager.PokemonInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/poke_name_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +40,26 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/poke_type_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poke_name_container">
+
+        <TextView
+            android:id="@+id/pokeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/detail_btn"
         android:layout_width="wrap_content"
@@ -65,7 +67,7 @@
         android:text="Detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/poke_name_container" />
+        app:layout_constraintTop_toBottomOf="@+id/poke_type_container" />
 
     <ImageView
         android:id="@+id/pokeImage"

@@ -1,4 +1,4 @@
-package com.elitefour.pokedex.ui.pokedex.pokepager
+package com.elitefour.pokedex.ui.pokedex.pokemoninfopager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
