@@ -1,8 +1,6 @@
 package com.elitefour.pokedex.adapter
 
-import android.content.res.ColorStateList
-import android.opengl.Visibility
-import android.util.Log
+import android.R.color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.model.Pokemon
-import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.squareup.picasso.Picasso
+
 
 class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
 
@@ -76,7 +74,7 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
                     pokeType2.background.setTint(itemView.context.getColor(getColorResource(type)))
                     pokeType2.visibility = View.VISIBLE
                 } else {
-                    pokeType2.visibility = View.INVISIBLE
+                    pokeType2.visibility = View.GONE
                 }
                 // Display first type
                 if (types.isNotEmpty()) {
