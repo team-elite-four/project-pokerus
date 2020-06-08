@@ -6,7 +6,11 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Move(
     val name: String,
-    val url: String
+    val url: String,
+    var damage_class: String?,
+    var type: String?,
+    var power: Int?
+
 ): Parcelable
 
 data class MoveFullInfo(
