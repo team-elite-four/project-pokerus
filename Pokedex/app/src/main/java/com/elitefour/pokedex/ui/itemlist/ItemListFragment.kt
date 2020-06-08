@@ -59,6 +59,8 @@ class ItemListFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        itemLoading.visibility = View.GONE
+        rvItemList.visibility = View.VISIBLE
         itemListAdapter = ItemListAdapter(itemListManager.getItemList())
         rvItemList.adapter = itemListAdapter
     }
