@@ -13,6 +13,7 @@ import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
 import com.elitefour.pokedex.ui.movelist.MoveListFragment
+import com.elitefour.pokedex.ui.movelist.MoveListViewModel
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexInfoViewPagerFragment
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     private val pokedexVM: PokedexViewModel by viewModels()
+    private val movelistVM: MoveListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         // Connect view model for the pokedex fragment
         val app = PokedexApp.getApp(this)
         pokedexVM.init(app.pokedexManager)
+        movelistVM.init(app.moveListManager)
 
         // We still decide not to use navigation controller for now
         // because we cannot fully utilize its mechanics to achieve our expected behavior.
@@ -107,8 +110,8 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         TODO("Not yet implemented")
     }
 
-    override fun onMoveClicked(move: Move) {
-        TODO("Not yet implemented")
+    override fun onMoveClicked(move: MoveFullInfo) {
+        Log.i("Elite", "move clicked! $move")
     }
 
 }

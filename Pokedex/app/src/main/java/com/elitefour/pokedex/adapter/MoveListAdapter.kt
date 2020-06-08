@@ -70,7 +70,7 @@ class MoveListAdapter(moveListInitial: List<MoveFullInfo>): RecyclerView.Adapter
         private val moveClass = itemView.findViewById<Button>(R.id.moveClass)
 
         fun bind(moveFullInfo: MoveFullInfo, position: Int) {
-            moveName.text = moveFullInfo.name
+            moveName.text = moveFullInfo.name.capitalize()
             moveDmg.text = moveFullInfo.power?.toString()
             moveFullInfo.type?.let { type ->
                 moveType.text = type.name
