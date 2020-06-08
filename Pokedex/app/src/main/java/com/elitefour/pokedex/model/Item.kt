@@ -2,7 +2,8 @@ package com.elitefour.pokedex.model
 
 data class Item (
     val name: String,
-    val url: String
+    val url: String,
+    val imgUrl: String
 )
 
 data class ItemInfo (

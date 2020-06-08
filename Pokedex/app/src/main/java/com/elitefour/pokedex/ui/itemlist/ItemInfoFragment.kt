@@ -14,8 +14,6 @@ import com.elitefour.pokedex.R
  * create an instance of this fragment.
  */
 class ItemInfoFragment : Fragment() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -5,7 +5,7 @@
     style="@style/RecyclerListItemTheme">
 
     <ImageView
-        android:id="@+id/pokeImage"
+        android:id="@+id/ivItemImage"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:scaleType="fitXY"
@@ -30,14 +30,14 @@
         tools:text="#0" />
 
     <TextView
-        android:id="@+id/pokeName"
+        android:id="@+id/tvItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:textSize="25sp"
         android:textColor="@color/textDarkDefault"
         android:layout_marginStart="12dp"
-        app:layout_constraintStart_toEndOf="@+id/pokeImage"
+        app:layout_constraintStart_toEndOf="@+id/ivItemImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Pokemon" />
 
@@ -51,8 +51,8 @@
         android:text="@string/unknown"
         android:textColor="@color/textLightDefault"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pokeImage"
-        app:layout_constraintTop_toBottomOf="@+id/pokeName" />
+        app:layout_constraintStart_toEndOf="@+id/ivItemImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
 
     <Button
         android:id="@+id/pokeType2"
@@ -66,7 +66,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pokeType1"
-        app:layout_constraintTop_toBottomOf="@+id/pokeName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
