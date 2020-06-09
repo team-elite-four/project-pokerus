@@ -3,13 +3,15 @@ package com.elitefour.pokedex.managers
 import android.content.Context
 import android.util.Log
 import com.elitefour.pokedex.PokedexApp
-import com.elitefour.pokedex.interfaces.OnItemListReadyListener
+import com.elitefour.pokedex.interfaces.OnItemReadyListener
 import com.elitefour.pokedex.model.Item
+import com.elitefour.pokedex.model.ItemInfo
 
 class ItemListManager(context: Context) {
     private var itemList: ArrayList<Item> = ArrayList()
+    private lateinit var itemInfo: ItemInfo
     private val apiManager = (context.applicationContext as PokedexApp).apiManager
-    var onItemListReadyListener: OnItemListReadyListener? = null
+    var onItemReadyListener: OnItemReadyListener? = null
 
 
     fun initializeItemList() {
@@ -22,13 +24,26 @@ class ItemListManager(context: Context) {
                     itemList[index] = item.copy(imgUrl = apiManager.fetchItemImageUrl(item.name))
                 }
             }
-            onItemListReadyListener?.itemListReady()
+            onItemReadyListener?.itemListReady()
         }, {
             Log.i("Manager", "Fail to fetch item list")
         })
     }
 
+    fun initializeItemInfo(itemUrl: String) {
+        apiManager.fetchItemInfo(itemUrl, {info ->
+            itemInfo = info
+            onItemReadyListener?.itemInfoReady()
+        }, {
+            Log.i("Manager", "Fail to fetch item info from $itemUrl")
+        })
+    }
+
     fun getItemList(): ArrayList<Item> {
         return itemList
+    }
+
+    fun getItemInfo(): ItemInfo {
+        return itemInfo
     }
 }

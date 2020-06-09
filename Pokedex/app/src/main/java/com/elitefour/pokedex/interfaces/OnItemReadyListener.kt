@@ -1,5 +1,6 @@
 package com.elitefour.pokedex.interfaces
 
-interface OnItemListReadyListener {
+interface OnItemReadyListener {
     fun itemListReady()
+    fun itemInfoReady()
 }

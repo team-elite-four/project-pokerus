@@ -14,6 +14,11 @@ import com.elitefour.pokedex.R
  * create an instance of this fragment.
  */
 class ItemInfoFragment : Fragment() {
+    companion object {
+        const val TAG = "ITEM_TAG"
+        const val ITEM_INFO_URL = "ITEM_INFO_URL"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,7 +32,8 @@ class ItemInfoFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_item_info, container, false)
     }
 
-    companion object {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
     }
 }
