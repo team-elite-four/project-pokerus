@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.MoveListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Move
+import com.elitefour.pokedex.model.MoveFullInfo
+import kotlinx.android.synthetic.main.fragment_move_list.*
 
 /**
  * A simple [Fragment] subclass.
@@ -43,10 +46,24 @@ class MoveListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        move_search_view.setOnClickListener {
+            move_search_view.onActionViewExpanded()
+        }
+        initAdapter()
+
+//        moveListVM.pokedexNameImageSuccess.observe(viewLifecycleOwner,  Observer { success ->
+//            if (success) {
+//                initAdapter()
+//            }
+//        })
     }
 
     private fun initAdapter() {
-
+        moveListAdapter = MoveListAdapter(moveListVM.getFullMoveList())
+        rvMove.adapter = moveListAdapter
+        moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
+            mainActivityListener?.onMoveClicked(moveFullInfo)
+        }
     }
 
     companion object {

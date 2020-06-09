@@ -46,8 +46,8 @@ class PokedexFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        search_view.setOnClickListener {
-            search_view.onActionViewExpanded()
+        pokedex_search_view.setOnClickListener {
+            pokedex_search_view.onActionViewExpanded()
         }
 
         pokedexVM.pokedexNameImageSuccess.observe(viewLifecycleOwner,  Observer { success ->

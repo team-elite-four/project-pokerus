@@ -13,12 +13,12 @@ import kotlinx.android.synthetic.main.item_item.view.*
 
 class ItemListAdapter(private var itemList: List<Item>): RecyclerView.Adapter<ItemListAdapter.ItemListViewHolder>() {
     inner class ItemListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val ivItemImage = itemView.findViewById<ImageView>(R.id.ivItemImage)
-        val tvItemName = itemView.findViewById<TextView>(R.id.tvItemName)
+        private val ivItemImage = itemView.findViewById<ImageView>(R.id.ivItemImage)
+        private val tvItemName = itemView.findViewById<TextView>(R.id.tvItemName)
 
         fun bind(item: Item) {
             Picasso.get().load(item.imgUrl).into(ivItemImage)
-            tvItemName.text = item.name
+            tvItemName.text = item.name.capitalize()
         }
     }
 

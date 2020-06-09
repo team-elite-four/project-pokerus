@@ -16,6 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ProgressBar>
 
+    <SearchView
+        android:id="@+id/item_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="700dp"
+        android:background="@color/backgroundLightDefault"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItemList"
         android:layout_width="0dp"
@@ -26,6 +37,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/item_search_view"
         tools:listitem="@layout/item_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

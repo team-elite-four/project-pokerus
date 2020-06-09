@@ -27,8 +27,7 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: PokemonListViewHolder, position: Int) {
-        val pokemon = pokemonList[position]
-        holder.bind(pokemon, position)
+        holder.bind(pokemonList[position], position)
     }
 
     private fun getColorResource(type: String): Int {

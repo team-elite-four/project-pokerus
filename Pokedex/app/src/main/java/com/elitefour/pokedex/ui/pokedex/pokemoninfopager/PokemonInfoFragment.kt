@@ -64,7 +64,7 @@ class PokemonInfoFragment : Fragment() {
     private fun updateUI(view: View) {
         Picasso.get().load(pokemonFullInfo.imageURL).into(ivItemImage)
         tvItemName.text = pokemonFullInfo.name.capitalize()
-        pokeID.text = pokemonFullInfo.id.toString()
+        pokeID.text = "# ${pokemonFullInfo.id}"
         pokeBaseExp.text = "${pokemonFullInfo.base_experience} EXP"
         pokemonFullInfo.types.let {types ->
             // Display second type

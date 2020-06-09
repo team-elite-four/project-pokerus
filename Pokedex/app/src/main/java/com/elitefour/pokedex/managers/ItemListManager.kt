@@ -14,7 +14,6 @@ class ItemListManager(context: Context) {
 
     fun initializeItemList() {
         apiManager.fetchItemList({list ->
-            Log.i("Manager", "item list fetch success")
             itemList = list as ArrayList<Item>
             itemList.forEachIndexed {index: Int, item: Item ->
                 itemList[index] = item.copy(imgUrl = apiManager.fetchItemImageUrl(item.name))
