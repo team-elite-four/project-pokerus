@@ -11,6 +11,7 @@ import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
 import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
+import com.elitefour.pokedex.ui.itemlist.ItemInfoFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
 import com.elitefour.pokedex.ui.movelist.MoveListFragment
 import com.elitefour.pokedex.ui.movelist.MoveListViewModel
@@ -106,7 +107,12 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     override fun onItemClicked(item: Item) {
-        TODO("Not yet implemented")
+        var itemInfoFragment = ItemInfoFragment.getInstance(item.url)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, itemInfoFragment, ItemInfoFragment.TAG)
+            .addToBackStack(ItemInfoFragment.TAG)
+            .commit()
     }
 
     override fun onMoveClicked(moveFullInfo: MoveFullInfo) {

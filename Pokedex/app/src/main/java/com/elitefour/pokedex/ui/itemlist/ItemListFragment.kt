@@ -2,19 +2,17 @@ package com.elitefour.pokedex.ui.itemlist
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.GridLayoutManager
 import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.ItemListAdapter
+import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.managers.ItemListManager
 import kotlinx.android.synthetic.main.fragment_item_list.*
 
@@ -28,6 +26,7 @@ class ItemListFragment : Fragment() {
     private val itemVM: ItemViewModel by viewModels()
     private lateinit var itemListManager: ItemListManager
     private lateinit var itemListAdapter: ItemListAdapter
+    private lateinit var mainActivityListener: OnClickListenerExtension
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -35,10 +34,10 @@ class ItemListFragment : Fragment() {
         itemListManager = (context.applicationContext as PokedexApp).itemListManager
         itemListManager.initializeItemList()
         itemVM.init(itemListManager)
-    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        if (context is OnClickListenerExtension) {
+            mainActivityListener = context
+        }
     }
 
     override fun onCreateView(
@@ -55,6 +54,7 @@ class ItemListFragment : Fragment() {
         itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {
                 initAdapter()
+                setItemClickListener()
             }
         })
     }
@@ -64,5 +64,11 @@ class ItemListFragment : Fragment() {
         rvItemList.visibility = View.VISIBLE
         itemListAdapter = ItemListAdapter(itemListManager.getItemList())
         rvItemList.adapter = itemListAdapter
+    }
+
+    private fun setItemClickListener() {
+        itemListAdapter.onItemClickListener = {item ->
+            mainActivityListener.onItemClicked(item)
+        }
     }
 }
