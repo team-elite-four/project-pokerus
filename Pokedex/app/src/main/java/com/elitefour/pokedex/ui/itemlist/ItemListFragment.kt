@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.GridLayoutManager
 import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
@@ -59,6 +60,8 @@ class ItemListFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        itemLoading.visibility = View.GONE
+        rvItemList.visibility = View.VISIBLE
         itemListAdapter = ItemListAdapter(itemListManager.getItemList())
         rvItemList.adapter = itemListAdapter
     }

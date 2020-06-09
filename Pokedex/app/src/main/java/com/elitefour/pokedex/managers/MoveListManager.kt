@@ -2,9 +2,7 @@ package com.elitefour.pokedex.managers
 
 import android.content.Context
 import android.util.Log
-import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
-import com.elitefour.pokedex.model.Pokemon
 import com.google.gson.Gson
 import java.io.IOException
 
@@ -27,6 +25,7 @@ class MoveListManager(context: Context)  {
                 Log.i("Manager", "Error adding move $n")
             }
         }
+        moveListFullInfoReady = true
     }
 
     /**

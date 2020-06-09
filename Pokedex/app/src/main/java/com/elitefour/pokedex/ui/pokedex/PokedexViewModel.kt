@@ -20,6 +20,13 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
 
     fun init(pokedexManager: PokedexManager) {
 
+        // If we leave app this VM is destroyed. So the pokedexTypesuccess will be set to false
+        // even tho it is true since we ONLY left the app
+        if (pokedexManager.pokedexNameImageReady && pokedexManager.pokedexTypeReady) {
+            pokedexFullInfoSuccess.value = true
+            pokedexTypeSuccess.value = true
+        }
+
         this.pokedexManager = pokedexManager
         if (!pokedexManager.pokedexNameImageReady or !pokedexManager.pokedexTypeReady) {
             pokedexManager.onPokedexReadyListener = this
