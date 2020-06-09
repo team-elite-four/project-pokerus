@@ -1,5 +1,6 @@
 package com.elitefour.pokedex.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,14 +11,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
+import com.elitefour.pokedex.model.MoveInfo
+import org.w3c.dom.Text
 
-class MoveListAdapter(moveListInitial: List<MoveFullInfo>): RecyclerView.Adapter<MoveListAdapter.MoveListViewHolder>() {
+
+class MoveListAdapter(moveListInitial: List<MoveFullInfo>, moveInfoList: List<MoveInfo>? = null): RecyclerView.Adapter<MoveListAdapter.MoveListViewHolder>() {
 
     private var moveList: List<MoveFullInfo> = moveListInitial
+    private var moveInfoList: List<MoveInfo>? = moveInfoList
     var onMoveClickListener: ((moveFullInfo: MoveFullInfo) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoveListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_move, parent, false)
+
+        val view = if (moveInfoList == null) {
+            LayoutInflater.from(parent.context).inflate(R.layout.item_move, parent, false)
+        } else {
+            LayoutInflater.from(parent.context).inflate(R.layout.item_pokemon_move, parent, false)
+        }
         return MoveListViewHolder(view)
     }
 
@@ -26,7 +36,7 @@ class MoveListAdapter(moveListInitial: List<MoveFullInfo>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: MoveListViewHolder, position: Int) {
-        holder.bind(moveList[position])
+        holder.bind(moveList[position], moveInfoList?.get(position))
     }
 
     private fun getClassColorResource(type: String): Int {
@@ -67,17 +77,36 @@ class MoveListAdapter(moveListInitial: List<MoveFullInfo>): RecyclerView.Adapter
         private val moveDmg = itemView.findViewById<TextView>(R.id.moveDmg)
         private val moveType = itemView.findViewById<Button>(R.id.moveType)
         private val moveClass = itemView.findViewById<Button>(R.id.moveClass)
+        private val moveLearnLevel = itemView.findViewById<TextView>(R.id.moveLearnLevel)
 
-        fun bind(moveFullInfo: MoveFullInfo) {
+        fun bind(moveFullInfo: MoveFullInfo, moveInfo: MoveInfo?) {
             moveName.text = moveFullInfo.name.capitalize()
             moveDmg.text = moveFullInfo.power.toString()
             moveType.text = moveFullInfo.type.name
             moveType.background.setTint(itemView.context.getColor(getTypeColorResource(moveFullInfo.type.name)))
             moveClass.text = moveFullInfo.damage_class.name
             moveClass.background.setTint(itemView.context.getColor(getClassColorResource(moveFullInfo.damage_class.name)))
+            if (moveInfo != null) {
+                bindExtraMoveInfo(moveInfo, moveLearnLevel)
+            }
             itemView.setOnClickListener {
                 onMoveClickListener?.invoke(moveFullInfo)
             }
         }
+
+        private fun bindExtraMoveInfo(moveInfo: MoveInfo, moveLearnLevel: TextView){
+            val learningInfo = moveInfo.version_group_details.last()
+            if (learningInfo.move_learn_method.name == "level-up") {
+                moveLearnLevel.text = "Lv. ${learningInfo.level_learned_at}"
+            } else if (learningInfo.move_learn_method.name == "machine") {
+                moveLearnLevel.text = "TM/HM"
+            } else if (learningInfo.move_learn_method.name == "tutor") {
+                moveLearnLevel.text = "Tutor"
+            } else {
+                moveLearnLevel.text = "Other"
+            }
+        }
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.elitefour.pokedex.ui.movelist
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.elitefour.pokedex.managers.APIManager
@@ -12,15 +13,15 @@ class MoveListViewModel: ViewModel() {
 
     private lateinit var moveListManager: MoveListManager
 
-    //    var moveListSuccess = MutableLiveData<Boolean>(false)
-    var moveListFiltered = MutableLiveData<ArrayList<MoveFullInfo>>()
+    private var moveListFiltered = MutableLiveData<ArrayList<MoveFullInfo>>()
 
     fun init(moveListManager: MoveListManager) {
         this.moveListManager = moveListManager
         this.moveListFiltered.value = moveListManager.getMoveFullInfoList() as ArrayList<MoveFullInfo>
     }
 
-    fun filterMoveList(moveList: ArrayList<MoveInfo>) {
+    fun convertMoveList(moveList: ArrayList<MoveInfo>) {
+        moveListFiltered.value = getFullMoveList()
         var filteredList: ArrayList<MoveFullInfo> = ArrayList()
         moveListFiltered.value?.let { fullMoveList->
             moveList.forEach {moveInfo ->
@@ -35,7 +36,7 @@ class MoveListViewModel: ViewModel() {
 
 
     // Assumes the manager always will be able to get full info at init
-    fun getFilteredMoveList(): ArrayList<MoveFullInfo> {
+    fun getConvertedMoveList(): ArrayList<MoveFullInfo> {
         return moveListFiltered.value!!
     }
 
@@ -44,7 +45,7 @@ class MoveListViewModel: ViewModel() {
         return moveListManager.getMoveFullInfoList() as ArrayList<MoveFullInfo>
     }
 
-    fun getIndexFromPokemonURL(url: String): Int {
+    private fun getIndexFromPokemonURL(url: String): Int {
         val arr = url.split("/")
         val limit = MoveListManager.NUM_OF_MOVES
         val id = arr[arr.lastIndex-1].toInt()

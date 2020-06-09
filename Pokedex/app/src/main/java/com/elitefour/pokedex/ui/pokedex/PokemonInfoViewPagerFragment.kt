@@ -5,13 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokeInfoCollectionAdapter
-import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment
-import com.elitefour.pokedex.ui.pokedex.pokemoninfopager.PokemonInfoFragment.Companion.POKEMON_URL_BUNDLE_KEY
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -24,7 +23,6 @@ class PokedexInfoViewPagerFragment : Fragment() {
 
     private lateinit var pokeInfoCollectionAdapter: PokeInfoCollectionAdapter
     private lateinit var viewPager: ViewPager2
-    private lateinit var url: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +33,7 @@ class PokedexInfoViewPagerFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        arguments.let { bundle ->
-            bundle?.let{ bundle1 ->
-                bundle1.getString(POKEMON_URL_BUNDLE_KEY)?.let {
-                    this.url = it
-                }
-            }
-        }
-        pokeInfoCollectionAdapter = PokeInfoCollectionAdapter(this, url)
+        pokeInfoCollectionAdapter = PokeInfoCollectionAdapter(this)
         viewPager = view.findViewById(R.id.pokemon_info_pager)
         viewPager.adapter = pokeInfoCollectionAdapter
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
@@ -50,13 +41,9 @@ class PokedexInfoViewPagerFragment : Fragment() {
             when (position) {
                 0 -> tab.text = "General"
                 1 -> tab.text = "Moves"
-                2 -> tab.text = "Other"
+                2 -> tab.text = "Description"
             }
         }.attach()
-    }
-
-    companion object {
-        val TAG = PokedexInfoViewPagerFragment::class.simpleName
     }
 }
 

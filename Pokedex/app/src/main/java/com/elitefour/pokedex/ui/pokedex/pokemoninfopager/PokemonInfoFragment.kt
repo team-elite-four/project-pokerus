@@ -24,15 +24,6 @@ class PokemonInfoFragment : Fragment() {
 
     private val pokedexVM: PokedexViewModel by activityViewModels()
     private lateinit var pokemonFullInfo: PokemonFullInfo
-    private var url: String? = null
-
-    companion object {
-        val TAG: String = PokemonInfoFragment::class.java.simpleName
-        const val POKEMON_URL_BUNDLE_KEY = "pokemon_key"
-        fun getInstance(): PokemonInfoFragment {
-            return PokemonInfoFragment()
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,20 +35,16 @@ class PokemonInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments.let { url ->
-            this.url = url?.getString(POKEMON_URL_BUNDLE_KEY)
-        }
+        val url = pokedexVM.getCurrentPokemon().url
         pokedexVM.pokedexFullInfoSuccess.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {
-                url?.let { url ->
-                    pokedexVM.getPokemonFullInfo(url)?.let{
-                        pokemonFullInfo = it
-                        updateUI(view)
-                    }
+                if (pokedexVM.getPokemonFullInfo(url) != null) {
+                    pokemonFullInfo = pokedexVM.getPokemonFullInfo(url)!!
+                    updateUI(view)
                 }
             }
         })
-        url?.let { pokedexVM.initializePokemonFullInfo(it) }
+        pokedexVM.initializePokemonFullInfo(url)
     }
 
     // We need to decide on what information we include
@@ -117,6 +104,13 @@ class PokemonInfoFragment : Fragment() {
             "steel" -> R.color.typeSteel
             "water" -> R.color.typeWater
             else -> R.color.typeUnknown
+        }
+    }
+
+    companion object {
+        val TAG: String = PokemonInfoFragment::class.java.simpleName
+        fun getInstance(): PokemonInfoFragment {
+            return PokemonInfoFragment()
         }
     }
 }

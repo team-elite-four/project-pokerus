@@ -12,20 +12,26 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
 
     private lateinit var pokedexManager: PokedexManager
 
-    var pokedexNameImageSuccess = MutableLiveData<Boolean>()
-    var pokedexTypeSuccess = MutableLiveData<Boolean>()
-    var pokedexFullInfoSuccess = MutableLiveData<Boolean>()
+    var pokedexNameImageSuccess = MutableLiveData<Boolean>(false)
+    var pokedexTypeSuccess = MutableLiveData<Boolean>(false)
+    var pokedexFullInfoSuccess = MutableLiveData<Boolean>(false)
+
+    private lateinit var currentPokemon: Pokemon
 
     fun init(pokedexManager: PokedexManager) {
-
-        pokedexNameImageSuccess.value = false
-        pokedexTypeSuccess.value = false
-        pokedexFullInfoSuccess.value = false
 
         this.pokedexManager = pokedexManager
         if (!pokedexManager.pokedexNameImageReady or !pokedexManager.pokedexTypeReady) {
             pokedexManager.onPokedexReadyListener = this
         }
+    }
+
+    fun setCurrentPokemon(pokemon: Pokemon) {
+        currentPokemon = pokemon
+    }
+
+    fun getCurrentPokemon(): Pokemon {
+        return currentPokemon
     }
 
     /**

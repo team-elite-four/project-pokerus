@@ -50,12 +50,6 @@ class MoveListFragment : Fragment() {
             move_search_view.onActionViewExpanded()
         }
         initAdapter()
-
-//        moveListVM.pokedexNameImageSuccess.observe(viewLifecycleOwner,  Observer { success ->
-//            if (success) {
-//                initAdapter()
-//            }
-//        })
     }
 
     private fun initAdapter() {
