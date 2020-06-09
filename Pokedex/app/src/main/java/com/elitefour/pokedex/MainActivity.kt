@@ -94,16 +94,16 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     override fun onPokemonClicked(pokemon: Pokemon) {
         var pokedexInfoViewPagerFragment = PokedexInfoViewPagerFragment()
-        val pokemonBundle = Bundle().apply {
-            putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
-        }
-        pokedexInfoViewPagerFragment.arguments = pokemonBundle
+        pokedexVM.setCurrentPokemon(pokemon)
+//        val pokemonBundle = Bundle().apply {
+//            putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
+//        }
+//        pokedexInfoViewPagerFragment.arguments = pokemonBundle
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_host_fragment, pokedexInfoViewPagerFragment, PokemonInfoFragment.TAG)
             .addToBackStack(PokemonInfoFragment.TAG)
             .commit()
-        Log.i(TAG, pokemon.toString())
     }
 
     override fun onItemClicked(item: Item) {

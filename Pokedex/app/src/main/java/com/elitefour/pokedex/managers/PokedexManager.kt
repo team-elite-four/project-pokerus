@@ -112,6 +112,7 @@ class PokedexManager(context: Context) {
 
     /**
      * Using the given ID, fetch the pokemon from the hash map
+     * We guarantee that this function is called after the initializePokemonFullInfo function
      * @param id the id of the pokemon
      */
     fun getPokemonFullInfo(id: Int): PokemonFullInfo? {

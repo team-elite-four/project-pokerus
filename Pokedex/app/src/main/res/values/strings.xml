@@ -28,6 +28,7 @@
     <string name="steel">Steel</string>
     <string name="fairy">Fairy</string>
     <string name="unknown">\?\?\?</string>
+    <string name="damage">Damage</string>
 
 
 </resources>

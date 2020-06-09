@@ -66,11 +66,11 @@ data class Version (
 
 data class MoveInfo (
     val move: Move,
-    val version_group_detail: VersionGroupDetail
+    val version_group_details: List<VersionGroupDetail>
 )
 
 data class VersionGroupDetail (
-    val level_learn_at: Int,
+    val level_learned_at: Int,
     val move_learn_method: MoveLearnMethod,
     val version_group: VersionGroup
 )
