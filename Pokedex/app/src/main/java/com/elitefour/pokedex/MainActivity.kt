@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     companion object {
         val TAG = "elite"
+        val PREF = "USER_PREF"
     }
 
     private val pokedexVM: PokedexViewModel by viewModels()

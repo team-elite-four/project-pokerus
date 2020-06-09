@@ -18,14 +18,31 @@ class FavoritesViewModel: ViewModel() {
         favoritesParseSuccess.value = true
     }
 
-    fun addFavorites(pokemon: Pokemon) {
+
+    /**
+     * @param pokemon the information about this pokemon to add to favorites
+     * @return true if pokemon is fully initialized otherwise false
+     */
+    fun addFavorites(pokemon: Pokemon): Boolean {
+        if (pokemon == null || pokemon.types.isNullOrEmpty()) {
+            return false
+        }
         favoritesManager.addFavorites(pokemon)
         favoritesModified.value = favoritesModified.value?.plus(1)
+        return true
     }
 
-    fun removeFavorites(pokemon: Pokemon) {
+    /**
+     * @param pokemon the information about this pokemon to add to favorites
+     * @return true if pokemon is fully initialized otherwise false
+     */
+    fun removeFavorites(pokemon: Pokemon): Boolean {
+        if (pokemon == null || pokemon.types.isNullOrEmpty()) {
+            return false
+        }
         favoritesManager.removeFavorites(pokemon)
         favoritesModified.value = favoritesModified.value?.plus(1)
+        return true
     }
 
 
