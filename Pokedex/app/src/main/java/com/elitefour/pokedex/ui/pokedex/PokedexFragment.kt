@@ -60,8 +60,11 @@ class PokedexFragment : Fragment() {
                 initAdapter()
             }
         })
-
+        Log.i("elite", "We do viewCreate")
+        Log.i("elite", pokedexVM.pokedexFullInfoSuccess!!.value.toString())
+        Log.i("elite", pokedexVM.pokedexTypeSuccess!!.value.toString())
         if (pokedexVM.pokedexNameImageSuccess.value!! and pokedexVM.pokedexTypeSuccess.value!!) {
+            Log.i("elite", "We do initAdapter")
             initAdapter()
         }
     }
