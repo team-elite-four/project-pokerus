@@ -6,16 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.MoveListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
-import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
 import kotlinx.android.synthetic.main.fragment_move_list.*
+import kotlinx.android.synthetic.main.fragment_pokedex.*
 
 /**
  * A simple [Fragment] subclass.
@@ -50,12 +49,40 @@ class MoveListFragment : Fragment() {
             move_search_view.onActionViewExpanded()
         }
         initAdapter()
+
+        move_search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                move_search_view.clearFocus()
+                move_search_view.setQuery("", false)
+                if (query != null) {
+                    updateAdapter(moveListVM.getQueriedMoveList(query))
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    updateAdapter(moveListVM.getQueriedMoveList(newText))
+                }
+                return true
+            }
+        })
     }
 
     private fun initAdapter() {
         moveListAdapter = MoveListAdapter(moveListVM.getFullMoveList())
         rvMove.adapter = moveListAdapter
         moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
+            pokedex_search_view.clearFocus()
+            mainActivityListener?.onMoveClicked(moveFullInfo)
+        }
+    }
+
+    private fun updateAdapter(moveFullInfo: ArrayList<MoveFullInfo>) {
+        moveListAdapter = MoveListAdapter(moveFullInfo)
+        rvMove.adapter = moveListAdapter
+        moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
+            pokedex_search_view.clearFocus()
             mainActivityListener?.onMoveClicked(moveFullInfo)
         }
     }

@@ -12,6 +12,7 @@ class PokedexManager(context: Context) {
     var pokedexTypeReady: Boolean = false
     var onPokedexReadyListener: OnPokedexReadyListener? = null
     private var pokemonList: ArrayList<Pokemon> = ArrayList()
+    private var queriedPokemonList: ArrayList<Pokemon> = ArrayList()
     private var pokemonFullInfoMap: HashMap<Int, PokemonFullInfo> = HashMap()
     private var pokemonTypeMap: MutableMap<Type, List<PokemonSlot>> = mutableMapOf()
     private var apiManager: APIManager = (context.applicationContext as PokedexApp).apiManager
@@ -111,8 +112,33 @@ class PokedexManager(context: Context) {
     }
 
     /**
+     * @return returns the queried result of the pokemon list
+     */
+    fun getQueriedPokemonList(query: String): ArrayList<Pokemon> {
+        queriedPokemonList = ArrayList()
+        pokemonList.forEach {pokemon:Pokemon ->
+            val idQuery = getIDFromPokemonURL(pokemon.url).toString() == query
+            val nameQuery = pokemon.name.contains(query)
+            var type1Query = false
+            var type2Query = false
+            if (pokemon.types != null) {
+                if (pokemon.types.isNotEmpty()) {
+                    type1Query = pokemon.types[0].type.name.startsWith(query)
+                }
+                if ((pokemon.types.size == 2)) {
+                    type2Query = pokemon.types[1].type.name.startsWith(query)
+                }
+            }
+            if (idQuery or nameQuery or type1Query or type2Query) {
+                queriedPokemonList.add(pokemon)
+            }
+        }
+        return queriedPokemonList
+    }
+
+    /**
      * Using the given ID, fetch the pokemon from the hash map
-     * We guarantee that this function is called after the initializePokemonFullInfo function
+     * We should guarantee that this function is called after the initializePokemonFullInfo function
      * @param id the id of the pokemon
      */
     fun getPokemonFullInfo(id: Int): PokemonFullInfo? {

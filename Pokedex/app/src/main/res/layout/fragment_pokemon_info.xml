@@ -125,6 +125,16 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:id="@+id/div1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/poke_base_exp_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/poke_base_stat_container"
         android:layout_width="match_parent"
@@ -133,19 +143,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/poke_base_exp_container">
+        app:layout_constraintTop_toBottomOf="@+id/div1">
 
         <TextView
             android:id="@+id/pokeBaseStatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="12dp"
+
             android:text="Base Stats"
             android:textAlignment="textStart"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+
+        <TextView
+            android:id="@+id/pokeHpStatBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f0554d"
+            app:layout_constraintBottom_toTopOf="@+id/pokeAttStatText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pokeBaseStatText" />
         <TextView
             android:id="@+id/pokeHpStatText"
             android:layout_width="wrap_content"
@@ -155,7 +175,6 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeBaseStatText" />
-
         <TextView
             android:id="@+id/pokeHpStat"
             android:layout_width="wrap_content"
@@ -167,6 +186,14 @@
             app:layout_constraintTop_toBottomOf="@id/pokeBaseStatText" />
 
         <TextView
+            android:id="@+id/pokeAttStatBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff7d12"
+            app:layout_constraintBottom_toTopOf="@+id/pokeDefStatText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pokeHpStatText" />
+        <TextView
             android:id="@+id/pokeAttStatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -175,7 +202,6 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeHpStatText" />
-
         <TextView
             android:id="@+id/pokeAttStat"
             android:layout_width="wrap_content"
@@ -187,6 +213,14 @@
             app:layout_constraintTop_toBottomOf="@id/pokeHpStatText" />
 
         <TextView
+            android:id="@+id/pokeDefStatBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1da6f5"
+            app:layout_constraintBottom_toTopOf="@+id/pokeSpAttStatText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pokeAttStatText" />
+        <TextView
             android:id="@+id/pokeDefStatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -195,7 +229,6 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeAttStatText" />
-
         <TextView
             android:id="@+id/pokeDefStat"
             android:layout_width="wrap_content"
@@ -207,6 +240,14 @@
             app:layout_constraintTop_toBottomOf="@id/pokeAttStatText" />
 
         <TextView
+            android:id="@+id/pokeSpAttStatBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a858fc"
+            app:layout_constraintBottom_toTopOf="@+id/pokeSpDefStatText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pokeDefStatText" />
+        <TextView
             android:id="@+id/pokeSpAttStatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -215,7 +256,6 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeDefStatText" />
-
         <TextView
             android:id="@+id/pokeSpAttStat"
             android:layout_width="wrap_content"
@@ -227,6 +267,14 @@
             app:layout_constraintTop_toBottomOf="@id/pokeDefStatText" />
 
         <TextView
+            android:id="@+id/pokeSpDefStatBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a5e329"
+            app:layout_constraintBottom_toTopOf="@+id/pokeSpdStatText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pokeSpAttStatText" />
+        <TextView
             android:id="@+id/pokeSpDefStatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -235,7 +283,6 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeSpAttStatText" />
-
         <TextView
             android:id="@+id/pokeSpDefStat"
             android:layout_width="wrap_content"
@@ -247,6 +294,14 @@
             app:layout_constraintTop_toBottomOf="@id/pokeSpAttStatText" />
 
         <TextView
+            android:id="@+id/pokeSpdStatBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ede326"
+            app:layout_constraintBottom_toBottomOf="@id/pokeSpdStatText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pokeSpDefStatText" />
+        <TextView
             android:id="@+id/pokeSpdStatText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -255,7 +310,6 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeSpDefStatText" />
-
         <TextView
             android:id="@+id/pokeSpdStat"
             android:layout_width="wrap_content"
@@ -265,7 +319,6 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pokeSpDefStatText" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

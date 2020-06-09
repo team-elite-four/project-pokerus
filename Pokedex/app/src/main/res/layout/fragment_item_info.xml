@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundLightDefault"
+    android:background="@color/backgroundWhite"
+    android:padding="16dp"
     android:clickable="true"
     android:focusable="true">
 
@@ -16,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone"></ProgressBar>
+        tools:visibility="gone" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clItemInfo"
@@ -35,10 +36,9 @@
             android:id="@+id/ivItemImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="10dp"
             app:srcCompat="@drawable/ic_launcher_foreground">
 
         </androidx.appcompat.widget.AppCompatImageView>
@@ -47,12 +47,34 @@
             android:id="@+id/tvItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:textSize="25dp"
             android:text="TextView"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivItemImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivItemImage" />
+            app:layout_constraintTop_toTopOf="@+id/ivItemImage"
+            tools:text="Item Name" />
+
+
+        <View
+            android:id="@+id/div1"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/ivItemImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvItemFlavorTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Item Description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/div1" />
+
 
         <TextView
             android:id="@+id/tvItemFlavorText"
@@ -61,41 +83,103 @@
             android:layout_marginTop="30dp"
             android:textSize="15dp"
             android:textStyle="italic"
-            android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
+            android:text="Descriptions"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
+            app:layout_constraintTop_toBottomOf="@+id/tvItemFlavorTextTitle"
+            tools:text="Flavor Text Description" />
+
+
+        <View
+            android:id="@+id/div2"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/tvItemFlavorText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvItemEffectTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Item Effect"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/div2" />
 
         <TextView
             android:id="@+id/tvEffectText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="TextView"
+            android:text="Effect Descriptions"
+            android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvItemFlavorText" />
+            app:layout_constraintTop_toBottomOf="@+id/tvItemEffectTextTitle"
+            tools:text="Effect Text Description" />
+
+        <View
+            android:id="@+id/div3"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvEffectText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvCostTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cost"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div3" />
 
         <TextView
             android:id="@+id/tvCostText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="83dp"
-            android:text="TextView"
+            android:text="Cost:"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/div3"
+            tools:text="Cost" />
+
+        <View
+            android:id="@+id/div4"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvCostTitle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEffectText" />
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvHeldPokemonTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Can be found in the wild on"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div4" />
 
         <TextView
             android:id="@+id/tvPokemonHeld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/textHighlightDefault"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCostText" />
+            app:layout_constraintTop_toBottomOf="@+id/tvHeldPokemonTitle" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

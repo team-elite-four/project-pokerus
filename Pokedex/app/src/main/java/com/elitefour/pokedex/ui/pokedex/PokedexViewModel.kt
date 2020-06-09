@@ -41,6 +41,10 @@ class PokedexViewModel : ViewModel(), OnPokedexReadyListener{
         return currentPokemon
     }
 
+    fun getQueriedPokemonList(query: String): ArrayList<Pokemon> {
+        return pokedexManager.getQueriedPokemonList(query)
+    }
+
     /**
      * @return the current pokemon list from the PokedexManager
      */
