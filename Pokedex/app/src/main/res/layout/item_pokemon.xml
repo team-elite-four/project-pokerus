@@ -37,7 +37,7 @@
         tools:text="#0" />
 
     <TextView
-        android:id="@+id/tvItemName"
+        android:id="@+id/tvPokemonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:singleLine="true"
@@ -59,7 +59,7 @@
         android:textColor="@color/textLightDefault"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivItemImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMoveName" />
 
     <Button
         android:id="@+id/pokeType2"
@@ -73,7 +73,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pokeType1"
-        app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMoveName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

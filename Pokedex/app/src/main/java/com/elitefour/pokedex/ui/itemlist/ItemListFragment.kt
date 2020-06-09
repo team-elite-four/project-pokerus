@@ -19,11 +19,6 @@ import com.elitefour.pokedex.model.Item
 import kotlinx.android.synthetic.main.fragment_item_list.*
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ItemListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ItemListFragment : Fragment() {
     private val itemVM: ItemViewModel by viewModels()
     private lateinit var itemListManager: ItemListManager

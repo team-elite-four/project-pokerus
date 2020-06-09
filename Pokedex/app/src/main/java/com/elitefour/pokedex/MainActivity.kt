@@ -13,6 +13,7 @@ import com.elitefour.pokedex.model.Pokemon
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemInfoFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
+import com.elitefour.pokedex.ui.movelist.MoveInfoFragment
 import com.elitefour.pokedex.ui.movelist.MoveListFragment
 import com.elitefour.pokedex.ui.movelist.MoveListViewModel
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
@@ -95,10 +96,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     override fun onPokemonClicked(pokemon: Pokemon) {
         var pokedexInfoViewPagerFragment = PokedexInfoViewPagerFragment()
         pokedexVM.setCurrentPokemon(pokemon)
-//        val pokemonBundle = Bundle().apply {
-//            putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
-//        }
-//        pokedexInfoViewPagerFragment.arguments = pokemonBundle
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_host_fragment, pokedexInfoViewPagerFragment, PokemonInfoFragment.TAG)
@@ -116,7 +113,12 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     override fun onMoveClicked(moveFullInfo: MoveFullInfo) {
-        Log.i("Elite", "move clicked! $moveFullInfo")
+        movelistVM.setCurrentMove(moveFullInfo)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, MoveInfoFragment(), MoveInfoFragment.TAG)
+            .addToBackStack(MoveInfoFragment.TAG)
+            .commit()
     }
 
 }
