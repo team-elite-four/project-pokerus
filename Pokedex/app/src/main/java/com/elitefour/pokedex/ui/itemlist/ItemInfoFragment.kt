@@ -15,6 +15,7 @@ import com.elitefour.pokedex.R
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.managers.ItemListManager
 import com.elitefour.pokedex.model.ItemInfo
+import com.elitefour.pokedex.model.ItemNameLang
 import com.elitefour.pokedex.model.Pokemon
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_item_info.*
@@ -85,7 +86,8 @@ class ItemInfoFragment : Fragment() {
     private fun showInfo(itemInfo: ItemInfo) {
         itemDetailLoading.visibility = View.GONE
         clItemInfo.visibility = View.VISIBLE
-        tvItemName.text = "${itemInfo.name}"
+        val name = findItemName(itemInfo.names)
+        tvItemName.text = "${name}"
         tvItemFlavorText.text = "\"${itemInfo.flavor_text_entries[0].text}\""
         tvEffectText.text = "${itemInfo.effect_entries[0].effect}"
         tvCostText.text = itemInfo.cost.toString()
@@ -98,5 +100,15 @@ class ItemInfoFragment : Fragment() {
         tvPokemonHeld.setOnClickListener {
             mainActivityListener.onPokemonClicked(pokemon)
         }
+    }
+
+    private fun findItemName(names: List<ItemNameLang>): String {
+        var name = ""
+        names.forEach { nameLang ->
+            if (nameLang.language.name == "en") {
+                name = nameLang.name
+            }
+        }
+        return name
     }
 }

@@ -17,6 +17,7 @@ data class ItemInfo (
     val held_by_pokemon: List<HeldPokemon>,
     val id: Int,
     val name: String,
+    val names: List<ItemNameLang>,
     val sprites: ItemSprite
 )
 
@@ -33,6 +34,11 @@ data class ItemFlavorTextEntry (
 data class HeldPokemon (
     val pokemon: Pokemon,
     val version_details: List<VersionGroupRarity>
+)
+
+data class ItemNameLang(
+    val language: Language,
+    val name: String
 )
 
 data class VersionGroupRarity (
