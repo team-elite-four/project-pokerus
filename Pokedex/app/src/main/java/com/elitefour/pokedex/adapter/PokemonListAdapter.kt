@@ -55,14 +55,14 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
     }
 
     inner class PokemonListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val pokeNumber = itemView.findViewById<TextView>(R.id.pokeID)
+        private val pokeID = itemView.findViewById<TextView>(R.id.pokeID)
         private val pokeName = itemView.findViewById<TextView>(R.id.tvItemName)
         private val pokeImage = itemView.findViewById<ImageView>(R.id.ivItemImage)
         private val pokeType1 = itemView.findViewById<Button>(R.id.pokeType1)
         private val pokeType2 = itemView.findViewById<Button>(R.id.pokeType2)
 
         fun bind(pokemon: Pokemon, position: Int) {
-            pokeNumber.text = "# ${position+1}"
+            pokeID.text = "# ${getIDFromPokemonURL(pokemon.url)}"
             pokeName.text = pokemon.name.capitalize()
             pokemon.types?.let {types ->
                 // Display second type
@@ -87,6 +87,11 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
                 onPokemonClickListener?.invoke(pokemon)
             }
 
+        }
+
+        private fun getIDFromPokemonURL(url: String): Int {
+            val arr = url.split("/")
+            return arr[arr.lastIndex-1].toInt()
         }
     }
 }

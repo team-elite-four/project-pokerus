@@ -1,9 +1,7 @@
 package com.elitefour.pokedex.ui.movelist
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.managers.MoveListManager
 
 import com.elitefour.pokedex.model.MoveFullInfo
@@ -34,6 +32,9 @@ class MoveListViewModel: ViewModel() {
         }
     }
 
+    fun getQueriedMoveList(query: String): ArrayList<MoveFullInfo> {
+        return moveListManager.getQueriedMoveList(query)
+    }
 
     // Assumes the manager always will be able to get full info at init
     fun getConvertedMoveList(): ArrayList<MoveFullInfo> {

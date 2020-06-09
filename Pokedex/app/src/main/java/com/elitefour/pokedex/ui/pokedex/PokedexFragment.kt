@@ -1,22 +1,24 @@
 package com.elitefour.pokedex.ui.pokedex
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.SearchView
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Pokemon
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_item_list.*
 import kotlinx.android.synthetic.main.fragment_pokedex.*
+
 
 class PokedexFragment : Fragment() {
 
@@ -28,6 +30,8 @@ class PokedexFragment : Fragment() {
     private val pokedexVM: PokedexViewModel by activityViewModels()
     private lateinit var pokemonListAdapter: PokemonListAdapter
     private var mainActivityListener: OnClickListenerExtension? = null
+
+    private lateinit var inputMethodManager: InputMethodManager
 
 
     override fun onCreateView(
@@ -42,6 +46,7 @@ class PokedexFragment : Fragment() {
         if (context is OnClickListenerExtension) {
             mainActivityListener = context
         }
+        inputMethodManager = getSystemService(context, InputMethodManager::class.java)!!
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,6 +55,25 @@ class PokedexFragment : Fragment() {
         pokedex_search_view.setOnClickListener {
             pokedex_search_view.onActionViewExpanded()
         }
+        rvPokemon.setOnTouchListener { v, event ->
+            inputMethodManager.hideSoftInputFromWindow(pokedex_search_view.windowToken, 0)
+        }
+        pokedex_search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                pokedex_search_view.clearFocus()
+                pokedex_search_view.setQuery("", false)
+                if (query != null) {
+                    updateAdapter(pokedexVM.getQueriedPokemonList(query))
+                }
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    updateAdapter(pokedexVM.getQueriedPokemonList(newText))
+                }
+                return true
+            }
+        })
 
         pokedexVM.pokedexNameImageSuccess.observe(viewLifecycleOwner,  Observer { success ->
             if (success and pokedexVM.pokedexTypeSuccess.value!!) {
@@ -61,13 +85,6 @@ class PokedexFragment : Fragment() {
                 initAdapter()
             }
         })
-        Log.i("elite", "We do viewCreate")
-        Log.i("elite", pokedexVM.pokedexFullInfoSuccess!!.value.toString())
-        Log.i("elite", pokedexVM.pokedexTypeSuccess!!.value.toString())
-        if (pokedexVM.pokedexNameImageSuccess.value!! and pokedexVM.pokedexTypeSuccess.value!!) {
-            Log.i("elite", "We do initAdapter")
-            initAdapter()
-        }
     }
 
     private fun initAdapter() {
@@ -76,6 +93,16 @@ class PokedexFragment : Fragment() {
         pokemonListAdapter = PokemonListAdapter(pokedexVM.getPokemonList())
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
+            pokedex_search_view.clearFocus()
+            mainActivityListener?.onPokemonClicked(pokemon)
+        }
+    }
+
+    private fun updateAdapter(pokemonList: ArrayList<Pokemon>) {
+        pokemonListAdapter = PokemonListAdapter(pokemonList)
+        rvPokemon.adapter = pokemonListAdapter
+        pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
+            pokedex_search_view.clearFocus()
             mainActivityListener?.onPokemonClicked(pokemon)
         }
     }

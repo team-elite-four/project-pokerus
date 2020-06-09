@@ -9,6 +9,7 @@ import java.io.IOException
 class MoveListManager(context: Context)  {
     var moveListFullInfoReady: Boolean = false
     private var moveFullInfoList: ArrayList<MoveFullInfo> = ArrayList()
+    private var queriedMoveFullInfoList: ArrayList<MoveFullInfo> = ArrayList()
 
     companion object {
         const val NUM_OF_MOVES = 728 // All moves
@@ -33,6 +34,22 @@ class MoveListManager(context: Context)  {
      */
     fun getMoveFullInfoList(): List<MoveFullInfo> {
         return moveFullInfoList
+    }
+
+    /**
+     * @return returns the queried result of the pokemon list
+     */
+    fun getQueriedMoveList(query: String): ArrayList<MoveFullInfo> {
+        queriedMoveFullInfoList = ArrayList()
+        moveFullInfoList.forEach { move: MoveFullInfo ->
+            if (move.name.contains(query) or
+                (query == move.power.toString()) or
+                (query == move.type.name) or
+                (query == move.damage_class.name)) {
+                queriedMoveFullInfoList.add(move)
+            }
+        }
+        return queriedMoveFullInfoList
     }
 
     private fun getGsonFromAsset(context: Context, fileName: String): MoveFullInfo? {
