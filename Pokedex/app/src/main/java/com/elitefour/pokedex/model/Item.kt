@@ -14,7 +14,7 @@ data class ItemInfo (
     val effect_entries: List<EffectEntry>,
     val flavor_text_entries: List<ItemFlavorTextEntry>,
     val game_indices: List<GameIndex>,
-    val held_by_pokemon: List<Pokemon>,
+    val held_by_pokemon: List<HeldPokemon>,
     val id: Int,
     val name: String,
     val sprites: ItemSprite
@@ -28,6 +28,16 @@ data class ItemFlavorTextEntry (
     val language: Language,
     val text: String,
     val version_group: VersionGroup
+)
+
+data class HeldPokemon (
+    val pokemon: Pokemon,
+    val version_details: List<VersionGroupRarity>
+)
+
+data class VersionGroupRarity (
+    val rarity: Int,
+    val version: VersionGroup
 )
 
 // ArmMask Added this for Pokemon.kt
