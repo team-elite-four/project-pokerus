@@ -15,6 +15,7 @@ import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Pokemon
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_item_list.*
 import kotlinx.android.synthetic.main.fragment_pokedex.*
 
 class PokedexFragment : Fragment() {
@@ -70,6 +71,8 @@ class PokedexFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        pokedexLoading.visibility = View.GONE
+        rvPokemon.visibility = View.VISIBLE
         pokemonListAdapter = PokemonListAdapter(pokedexVM.getPokemonList())
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->

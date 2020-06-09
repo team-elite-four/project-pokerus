@@ -1,18 +1,23 @@
 package com.elitefour.pokedex.ui.pokedex.pokemoninfopager
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.annotation.Dimension
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.model.PokemonFullInfo
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_pokemon_info.*
+import okhttp3.internal.Util
 
 
 /**
@@ -75,12 +80,24 @@ class PokemonInfoFragment : Fragment() {
     }
 
     private fun displayBaseStat() {
+        //val target = 50
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 65f, resources.displayMetrics)
         pokeHpStat.text = pokemonFullInfo.stats[0].base_stat.toString()
+        pokeHpStatBar.width = dpToPx(pokemonFullInfo.stats[0].base_stat * 2)
         pokeAttStat.text = pokemonFullInfo.stats[1].base_stat.toString()
+        pokeAttStatBar.width = dpToPx(pokemonFullInfo.stats[1].base_stat * 2)
         pokeDefStat.text = pokemonFullInfo.stats[2].base_stat.toString()
+        pokeDefStatBar.width = dpToPx(pokemonFullInfo.stats[2].base_stat * 2)
         pokeSpAttStat.text = pokemonFullInfo.stats[3].base_stat.toString()
+        pokeSpAttStatBar.width = dpToPx(pokemonFullInfo.stats[3].base_stat * 2)
         pokeSpDefStat.text = pokemonFullInfo.stats[4].base_stat.toString()
+        pokeSpDefStatBar.width = dpToPx(pokemonFullInfo.stats[4].base_stat * 2)
         pokeSpdStat.text = pokemonFullInfo.stats[5].base_stat.toString()
+        pokeSpdStatBar.width = dpToPx(pokemonFullInfo.stats[5].base_stat * 2)
+    }
+
+    private fun dpToPx(dp: Int): Int {
+        return (dp * resources.displayMetrics.density).toInt()
     }
 
     private fun getColorResource(type: String): Int {
