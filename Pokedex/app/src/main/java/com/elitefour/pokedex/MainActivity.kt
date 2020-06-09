@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     override fun onItemClicked(item: Item) {
-        TODO("Not yet implemented")
+        Log.i("Elite", "image url: ${item.imgUrl}")
     }
 
     override fun onMoveClicked(moveFullInfo: MoveFullInfo) {

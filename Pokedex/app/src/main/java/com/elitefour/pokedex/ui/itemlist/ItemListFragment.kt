@@ -15,6 +15,7 @@ import com.elitefour.pokedex.PokedexApp
 
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.ItemListAdapter
+import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.managers.ItemListManager
 import kotlinx.android.synthetic.main.fragment_item_list.*
 
@@ -28,6 +29,7 @@ class ItemListFragment : Fragment() {
     private val itemVM: ItemViewModel by viewModels()
     private lateinit var itemListManager: ItemListManager
     private lateinit var itemListAdapter: ItemListAdapter
+    private lateinit var mainActivityListener: OnClickListenerExtension
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -35,6 +37,10 @@ class ItemListFragment : Fragment() {
         itemListManager = (context.applicationContext as PokedexApp).itemListManager
         itemListManager.initializeItemList()
         itemVM.init(itemListManager)
+
+        if (context is OnClickListenerExtension) {
+            mainActivityListener = context
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +61,7 @@ class ItemListFragment : Fragment() {
         itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {
                 initAdapter()
+                setItemClickListener()
             }
         })
     }
@@ -64,5 +71,11 @@ class ItemListFragment : Fragment() {
         rvItemList.visibility = View.VISIBLE
         itemListAdapter = ItemListAdapter(itemListManager.getItemList())
         rvItemList.adapter = itemListAdapter
+    }
+
+    private fun setItemClickListener() {
+        itemListAdapter.onItemClickListener = {item ->
+            mainActivityListener.onItemClicked(item)
+        }
     }
 }

@@ -15,8 +15,12 @@ class ItemListManager(context: Context) {
     fun initializeItemList() {
         apiManager.fetchItemList({list ->
             itemList = list as ArrayList<Item>
-            itemList.forEachIndexed {index: Int, item: Item ->
-                itemList[index] = item.copy(imgUrl = apiManager.fetchItemImageUrl(item.name))
+            itemList.forEachIndexed { index: Int, item: Item ->
+                if (item.name.startsWith("tm")) {
+                    itemList[index] = item.copy(imgUrl = APIManager.TM_ITEM_IMAGE_URL)
+                } else {
+                    itemList[index] = item.copy(imgUrl = apiManager.fetchItemImageUrl(item.name))
+                }
             }
             onItemListReadyListener?.itemListReady()
         }, {

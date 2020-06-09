@@ -25,6 +25,7 @@ class APIManager(context: Context) {
         private const val NUM_OF_POKEMONS = 807 // Excluding pokemon from sword and shield
         private const val NUM_OF_ITEMS = 954 // All items
         const val NUM_OF_TYPES = 18 // Total of 18 types
+        const val TM_ITEM_IMAGE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png"
     }
 
     /**

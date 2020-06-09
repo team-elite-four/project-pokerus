@@ -7,16 +7,22 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elitefour.pokedex.R
+import com.elitefour.pokedex.managers.APIManager
 import com.elitefour.pokedex.model.Item
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_item.view.*
 
 class ItemListAdapter(private var itemList: List<Item>): RecyclerView.Adapter<ItemListAdapter.ItemListViewHolder>() {
+    var onItemClickListener: ((item: Item) -> Unit)? = null
+
     inner class ItemListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val ivItemImage = itemView.findViewById<ImageView>(R.id.ivItemImage)
 
         fun bind(item: Item) {
             Picasso.get().load(item.imgUrl).into(ivItemImage)
+            itemView.setOnClickListener {
+                onItemClickListener?.invoke(item)
+            }
         }
     }
 
