@@ -31,12 +31,16 @@ class ItemListManager(context: Context) {
     }
 
     fun initializeItemInfo(itemUrl: String) {
-        apiManager.fetchItemInfo(itemUrl, {info ->
-            itemInfo = info
-            onItemReadyListener?.itemInfoReady()
-        }, {
-            Log.i("Manager", "Fail to fetch item info from $itemUrl")
-        })
+        itemUrl?.let {itemUrl ->
+            Log.i("Manager", "Item info:")
+            apiManager.fetchItemInfo(itemUrl, {info ->
+                itemInfo = info
+                onItemReadyListener?.itemInfoReady()
+                Log.i("Manager", "Item info: $info")
+            }, {
+                Log.i("Manager", "Fail to fetch item info from $itemUrl")
+            })
+        }
     }
 
     fun getItemList(): ArrayList<Item> {

@@ -107,11 +107,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     override fun onItemClicked(item: Item) {
-        var itemInfoFragment = ItemInfoFragment()
-        val itemBundle = Bundle().apply {
-            putString(ItemInfoFragment.ITEM_INFO_URL, item.url)
-        }
-        itemInfoFragment.arguments = itemBundle
+        var itemInfoFragment = ItemInfoFragment.getInstance(item.url)
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_host_fragment, itemInfoFragment, ItemInfoFragment.TAG)

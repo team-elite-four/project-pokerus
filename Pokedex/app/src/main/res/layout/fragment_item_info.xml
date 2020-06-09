@@ -9,7 +9,7 @@
     android:focusable="true">
 
     <ProgressBar
-        android:id="@+id/itemLoading"
+        android:id="@+id/itemDetailLoading"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,18 +18,19 @@
         app:layout_constraintTop_toTopOf="parent"></ProgressBar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clItemInfo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivItemImage"
-            android:layout_width="178dp"
-            android:layout_height="178dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -7,7 +7,7 @@ data class Item (
 )
 
 data class ItemInfo (
-    val attributes: String,
+    /*val attributes: String,
     val baby_trigger_for: String?,
     val category: Category,
     val effect_entries: List<EffectEntry>,
@@ -15,8 +15,12 @@ data class ItemInfo (
     val game_indices: List<GameIndex>,
     val held_by_pokemon: List<Pokemon>,
     val id: Int,
-    val name: String,
-    val sprites: Sprites
+    val name: String,*/
+    val sprites: ItemSprite
+)
+
+data class ItemSprite (
+    val default: String
 )
 
 // ArmMask Added this for Pokemon.kt
