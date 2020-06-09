@@ -31,13 +31,13 @@
         android:id="@+id/rvItemList"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:spanCount="5"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@+id/item_search_view"
-        tools:listitem="@layout/item_item" />
+        app:layout_constraintTop_toBottomOf="@id/item_search_view"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
