@@ -75,6 +75,10 @@ class ItemInfoFragment : Fragment() {
         itemDetailLoading.visibility = View.GONE
         clItemInfo.visibility = View.VISIBLE
         val itemInfo = itemListManager.getItemInfo()
+        tvItemName.text = "${itemInfo.name}"
+        tvItemFlavorText.text = "\"${itemInfo.flavor_text_entries[0].text}\""
+        tvEffectText.text = "${itemInfo.effect_entries[0].effect}"
+        tvCostText.text = itemInfo.cost.toString()
         Picasso.get().load(itemInfo.sprites.default).into(ivItemImage)
     }
 }
