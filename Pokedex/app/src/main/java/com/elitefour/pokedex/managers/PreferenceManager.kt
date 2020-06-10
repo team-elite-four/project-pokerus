@@ -11,7 +11,7 @@ class PreferenceManager(private var context: Context) {
     }
 
     fun getStringPreference(tag: String): String? {
-        return sharedPreferences.getString(tag, "default value")
+        return sharedPreferences.getString(tag, null)
     }
 
     fun removeStringPreference(tag: String) {

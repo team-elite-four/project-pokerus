@@ -2,6 +2,7 @@ package com.elitefour.pokedex.ui.favorites
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.managers.FavoritesManager
 import com.elitefour.pokedex.model.Pokemon
 
@@ -13,8 +14,12 @@ class FavoritesViewModel: ViewModel() {
     var favoritesParseSuccess = MutableLiveData<Boolean>(false)
     var favoritesModified = MutableLiveData<Int>(0)
 
+    fun init(favoritesManager: FavoritesManager) {
+        this.favoritesManager = favoritesManager
+    }
+
     fun getFavorites(): ArrayList<Pokemon>{
-        return ArrayList()
+        return favoritesManager.favoritesList
         favoritesParseSuccess.value = true
     }
 
@@ -43,6 +48,10 @@ class FavoritesViewModel: ViewModel() {
         favoritesManager.removeFavorites(pokemon)
         favoritesModified.value = favoritesModified.value?.plus(1)
         return true
+    }
+
+    fun containsFavorites(pokemon: Pokemon): Boolean {
+        return favoritesManager.favoritesList.contains(pokemon)
     }
 
 

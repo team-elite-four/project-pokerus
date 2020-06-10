@@ -1,6 +1,7 @@
 package com.elitefour.pokedex.managers
 
 import android.content.Context
+import android.util.Log
 import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.model.FavoritesCollection
 import com.elitefour.pokedex.model.Pokemon
@@ -11,12 +12,14 @@ import java.io.IOException
 
 class FavoritesManager(context: Context) {
     var favoritesReady: Boolean = false
-    private var favoritesList: ArrayList<Pokemon> = ArrayList()
-    private var preferenceManager: PreferenceManager = PokedexApp.getApp(context).preferenceManager
+    var favoritesList: ArrayList<Pokemon> = ArrayList()
+    private lateinit var preferenceManager: PreferenceManager
 
 
     init {
+        preferenceManager = (context.applicationContext as PokedexApp).preferenceManager
         preferenceManager.getStringPreference(KEY)?.let {
+            Log.i("Manager", it)
             favoritesList = Gson().fromJson(it, FavoritesCollection::class.java).favorites
             favoritesReady = true
         }
@@ -29,12 +32,10 @@ class FavoritesManager(context: Context) {
 
     fun addFavorites(pokemon: Pokemon) {
         favoritesList.add(pokemon)
-        updateFavorites()
     }
 
     fun removeFavorites(pokemon: Pokemon) {
         favoritesList.remove(pokemon)
-        updateFavorites()
     }
 
     private fun updateFavorites() {

@@ -26,8 +26,8 @@ class PokedexApp: Application()  {
         pokedexManager = PokedexManager(this)
         moveListManager = MoveListManager(this)
         itemListManager = ItemListManager(this)
-        favoritesManager = FavoritesManager(this)
         preferenceManager = PreferenceManager(this)
+        favoritesManager = FavoritesManager(this)
     }
 
 }
