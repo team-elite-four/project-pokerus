@@ -14,7 +14,6 @@ import com.elitefour.pokedex.adapter.MoveListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.MoveFullInfo
 import kotlinx.android.synthetic.main.fragment_move_list.*
-import kotlinx.android.synthetic.main.fragment_pokedex.*
 
 /**
  * A simple [Fragment] subclass.
@@ -73,16 +72,13 @@ class MoveListFragment : Fragment() {
         moveListAdapter = MoveListAdapter(moveListVM.getFullMoveList())
         rvMove.adapter = moveListAdapter
         moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
+            move_search_view.clearFocus()
             mainActivityListener?.onMoveClicked(moveFullInfo)
         }
     }
 
-    private fun updateAdapter(moveFullInfo: ArrayList<MoveFullInfo>) {
-        moveListAdapter = MoveListAdapter(moveFullInfo)
-        rvMove.adapter = moveListAdapter
-        moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
-            mainActivityListener?.onMoveClicked(moveFullInfo)
-        }
+    private fun updateAdapter(moveList: ArrayList<MoveFullInfo>) {
+        moveListAdapter.change(moveList)
     }
 
     companion object {

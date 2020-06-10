@@ -90,6 +90,7 @@ class ItemListFragment : Fragment() {
 
     private fun setItemClickListener() {
         itemListAdapter.onItemClickListener = {item ->
+            item_search_view.clearFocus()
             mainActivityListener.onItemClicked(item)
         }
     }

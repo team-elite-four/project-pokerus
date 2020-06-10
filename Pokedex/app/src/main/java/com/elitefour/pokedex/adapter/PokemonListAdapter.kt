@@ -54,6 +54,11 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
         }
     }
 
+    fun change(newPokemonList: List<Pokemon>) {
+        pokemonList = newPokemonList
+        notifyDataSetChanged()
+    }
+
     inner class PokemonListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val pokeID = itemView.findViewById<TextView>(R.id.pokeID)
         private val pokeName = itemView.findViewById<TextView>(R.id.tvPokemonName)

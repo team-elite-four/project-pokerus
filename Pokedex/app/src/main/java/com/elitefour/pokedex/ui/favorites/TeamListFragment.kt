@@ -44,8 +44,6 @@ class TeamListFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        Log.i("VM", "hello")
-        Log.i("VM", favoritesVM.getFavorites().toString())
         favoritesAdapter = FavoritesAdapter(favoritesVM.getFavorites())
         rvFavorites.adapter = favoritesAdapter
         favoritesAdapter.onPokemonClickListener = { pokemon: Pokemon ->

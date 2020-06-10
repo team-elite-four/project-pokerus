@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.PokemonListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
+import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Pokemon
 import kotlinx.android.synthetic.main.fragment_pokedex.*
 
@@ -93,15 +94,12 @@ class PokedexFragment : Fragment() {
         pokemonListAdapter = PokemonListAdapter(pokedexVM.getPokemonList())
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
+            pokedex_search_view.clearFocus()
             mainActivityListener?.onPokemonClicked(pokemon)
         }
     }
 
     private fun updateAdapter(pokemonList: ArrayList<Pokemon>) {
-        pokemonListAdapter = PokemonListAdapter(pokemonList)
-        rvPokemon.adapter = pokemonListAdapter
-        pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
-            mainActivityListener?.onPokemonClicked(pokemon)
-        }
+        pokemonListAdapter.change(pokemonList)
     }
 }

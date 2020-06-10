@@ -29,6 +29,7 @@ class FavoritesManager(context: Context) {
 
     fun clearFavorites() {
         preferenceManager.removeStringPreference(KEY)
+        favoritesList =  ArrayList()
     }
 
     fun addFavorites(pokemon: Pokemon) {
