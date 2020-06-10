@@ -3,7 +3,7 @@ package com.elitefour.pokedex.managers
 import android.content.Context
 import com.elitefour.pokedex.MainActivity
 
-class PreferenceManager(private var context: Context) {
+class PreferenceManager(context: Context) {
     private val sharedPreferences = context.getSharedPreferences(MainActivity.PREF, Context.MODE_PRIVATE)
 
     fun editStringPreference(tag: String, input: String) {

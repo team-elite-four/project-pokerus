@@ -21,13 +21,12 @@ class PokedexApp: Application()  {
 
     override fun onCreate() {
         super.onCreate()
-
+        // preferenceManager = PreferenceManager(this)
         apiManager = APIManager(this)
         pokedexManager = PokedexManager(this)
         moveListManager = MoveListManager(this)
         itemListManager = ItemListManager(this)
-        favoritesManager = FavoritesManager(this)
-        preferenceManager = PreferenceManager(this)
+        // favoritesManager = FavoritesManager(this)
     }
 
 }

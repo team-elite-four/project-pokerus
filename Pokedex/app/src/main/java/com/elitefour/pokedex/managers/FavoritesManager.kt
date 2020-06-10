@@ -10,9 +10,10 @@ import org.json.JSONObject
 import java.io.IOException
 
 class FavoritesManager(context: Context) {
+
     var favoritesReady: Boolean = false
     private var favoritesList: ArrayList<Pokemon> = ArrayList()
-    private var preferenceManager: PreferenceManager = PokedexApp.getApp(context).preferenceManager
+    private var preferenceManager: PreferenceManager = (context.applicationContext as PokedexApp).preferenceManager
 
 
     init {
