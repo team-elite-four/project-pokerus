@@ -10,6 +10,7 @@ import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
 import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.ui.favorites.FavoritesViewModel
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemInfoFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     private val pokedexVM: PokedexViewModel by viewModels()
     private val movelistVM: MoveListViewModel by viewModels()
+    private  val favoritesVM: FavoritesViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         val app = PokedexApp.getApp(this)
         pokedexVM.init(app.pokedexManager)
         movelistVM.init(app.moveListManager)
+        favoritesVM.init(app.favoritesManager)
 
         // We still decide not to use navigation controller for now
         // because we cannot fully utilize its mechanics to achieve our expected behavior.

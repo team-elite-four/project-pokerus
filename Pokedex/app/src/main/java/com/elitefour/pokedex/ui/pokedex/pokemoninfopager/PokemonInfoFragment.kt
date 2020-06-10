@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.elitefour.pokedex.R
+import com.elitefour.pokedex.model.FavoritesCollection
 import com.elitefour.pokedex.model.PokemonFullInfo
+import com.elitefour.pokedex.ui.favorites.FavoritesViewModel
 import com.elitefour.pokedex.ui.pokedex.PokedexViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_pokemon_info.*
@@ -28,6 +30,7 @@ import okhttp3.internal.Util
 class PokemonInfoFragment : Fragment() {
 
     private val pokedexVM: PokedexViewModel by activityViewModels()
+    private val favoritesVM: FavoritesViewModel by activityViewModels()
     private lateinit var pokemonFullInfo: PokemonFullInfo
 
     override fun onCreateView(
@@ -40,7 +43,23 @@ class PokemonInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val url = pokedexVM.getCurrentPokemon().url
+        val pokemon = pokedexVM.getCurrentPokemon()
+        val url = pokemon.url
+        if (favoritesVM.containsFavorites(pokemon)) {
+            favorite_btn.text = "UnFavorite"
+        }
+
+        favorite_btn.setOnClickListener {
+            favoritesVM.updateFavorites(pokemon)
+            if (favoritesVM.containsFavorites(pokemon)) {
+                favorite_btn.text = "UnFavorite"
+            } else {
+                favorite_btn.text = "Favorite"
+            }
+        }
+
+
+
         pokedexVM.pokedexFullInfoSuccess.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {
                 if (pokedexVM.getPokemonFullInfo(url) != null) {
