@@ -73,7 +73,6 @@ class MoveListFragment : Fragment() {
         moveListAdapter = MoveListAdapter(moveListVM.getFullMoveList())
         rvMove.adapter = moveListAdapter
         moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
-            pokedex_search_view.clearFocus()
             mainActivityListener?.onMoveClicked(moveFullInfo)
         }
     }
@@ -82,7 +81,6 @@ class MoveListFragment : Fragment() {
         moveListAdapter = MoveListAdapter(moveFullInfo)
         rvMove.adapter = moveListAdapter
         moveListAdapter.onMoveClickListener = { moveFullInfo: MoveFullInfo ->
-            pokedex_search_view.clearFocus()
             mainActivityListener?.onMoveClicked(moveFullInfo)
         }
     }

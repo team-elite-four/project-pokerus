@@ -18,6 +18,8 @@ import com.elitefour.pokedex.model.ItemInfo
 import com.elitefour.pokedex.model.Pokemon
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_item_info.*
+import kotlinx.android.synthetic.main.fragment_item_info.ivItemImage
+import kotlinx.android.synthetic.main.item_pokemon.*
 
 /**
  * A simple [Fragment] subclass.

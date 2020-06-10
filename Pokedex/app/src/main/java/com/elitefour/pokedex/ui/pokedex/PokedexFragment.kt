@@ -93,7 +93,6 @@ class PokedexFragment : Fragment() {
         pokemonListAdapter = PokemonListAdapter(pokedexVM.getPokemonList())
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
-            pokedex_search_view.clearFocus()
             mainActivityListener?.onPokemonClicked(pokemon)
         }
     }
@@ -102,7 +101,6 @@ class PokedexFragment : Fragment() {
         pokemonListAdapter = PokemonListAdapter(pokemonList)
         rvPokemon.adapter = pokemonListAdapter
         pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
-            pokedex_search_view.clearFocus()
             mainActivityListener?.onPokemonClicked(pokemon)
         }
     }
