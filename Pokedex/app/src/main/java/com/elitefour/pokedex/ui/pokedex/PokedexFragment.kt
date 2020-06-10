@@ -98,10 +98,6 @@ class PokedexFragment : Fragment() {
     }
 
     private fun updateAdapter(pokemonList: ArrayList<Pokemon>) {
-        pokemonListAdapter = PokemonListAdapter(pokemonList)
-        rvPokemon.adapter = pokemonListAdapter
-        pokemonListAdapter.onPokemonClickListener = { pokemon: Pokemon ->
-            mainActivityListener?.onPokemonClicked(pokemon)
-        }
+        pokemonListAdapter.change(pokemonList)
     }
 }

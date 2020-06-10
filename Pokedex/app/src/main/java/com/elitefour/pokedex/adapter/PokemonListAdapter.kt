@@ -12,7 +12,7 @@ import com.elitefour.pokedex.model.Pokemon
 import com.squareup.picasso.Picasso
 
 
-class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
+class PokemonListAdapter(private var pokemonListInitial: List<Pokemon>): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
 
     private var pokemonList: List<Pokemon> = pokemonListInitial
     var onPokemonClickListener: ((pokemon: Pokemon) -> Unit)? = null
@@ -52,6 +52,11 @@ class PokemonListAdapter(pokemonListInitial: List<Pokemon>): RecyclerView.Adapte
             "water" -> R.color.typeWater
             else -> R.color.typeUnknown
         }
+    }
+
+    fun change(newPokemonList: List<Pokemon>) {
+        pokemonListInitial = newPokemonList
+        notifyDataSetChanged()
     }
 
     inner class PokemonListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
