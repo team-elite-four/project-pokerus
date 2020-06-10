@@ -1,32 +1,33 @@
 package com.elitefour.pokedex.managers
 
 import android.content.Context
+import android.util.Log
+import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.model.FavoritesCollection
 import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.model.PokemonCollection
 import com.google.gson.Gson
+import org.json.JSONObject
 import java.io.IOException
 
 class FavoritesManager(context: Context) {
     var favoritesReady: Boolean = false
-    private var favoritesList: ArrayList<Pokemon> = ArrayList()
+    var favoritesList: ArrayList<Pokemon> = ArrayList()
+    private lateinit var preferenceManager: PreferenceManager
 
 
-
-
-
-    private fun getGsonFromAsset(context: Context, fileName: String): ArrayList<Pokemon>? {
-        var jsonString: String? = null
-        val gson = Gson()
-        try {
-            jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
-        } catch (ioException: IOException) {
-            ioException.printStackTrace()
+    init {
+        preferenceManager = (context.applicationContext as PokedexApp).preferenceManager
+        preferenceManager.getStringPreference(KEY)?.let {
+            Log.i("Manager", it)
+            favoritesList = Gson().fromJson(it, FavoritesCollection::class.java).favorites
+            favoritesReady = true
         }
-        return gson.fromJson(jsonString, FavoritesCollection::class.java).favorites
+
     }
 
     fun clearFavorites() {
-
+        preferenceManager.removeStringPreference(KEY)
     }
 
     fun addFavorites(pokemon: Pokemon) {
@@ -36,4 +37,18 @@ class FavoritesManager(context: Context) {
     fun removeFavorites(pokemon: Pokemon) {
         favoritesList.remove(pokemon)
     }
+
+    private fun updateFavorites() {
+        preferenceManager.editStringPreference(KEY, toJsonText())
+    }
+
+    private fun toJsonText(): String {
+        return Gson().toJson(FavoritesCollection(favoritesList))
+    }
+
+    companion object {
+        val TAG = FavoritesManager::class.simpleName
+        val KEY = "FAVORITES"
+    }
+
 }

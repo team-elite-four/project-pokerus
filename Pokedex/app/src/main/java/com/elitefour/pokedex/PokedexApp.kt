@@ -2,10 +2,7 @@ package com.elitefour.pokedex
 
 import android.app.Application
 import android.content.Context
-import com.elitefour.pokedex.managers.APIManager
-import com.elitefour.pokedex.managers.ItemListManager
-import com.elitefour.pokedex.managers.MoveListManager
-import com.elitefour.pokedex.managers.PokedexManager
+import com.elitefour.pokedex.managers.*
 
 class PokedexApp: Application()  {
 
@@ -19,6 +16,8 @@ class PokedexApp: Application()  {
     lateinit var pokedexManager: PokedexManager
     lateinit var moveListManager: MoveListManager
     lateinit var itemListManager: ItemListManager
+    lateinit var favoritesManager: FavoritesManager
+    lateinit var preferenceManager: PreferenceManager
 
     override fun onCreate() {
         super.onCreate()
@@ -27,6 +26,8 @@ class PokedexApp: Application()  {
         pokedexManager = PokedexManager(this)
         moveListManager = MoveListManager(this)
         itemListManager = ItemListManager(this)
+        preferenceManager = PreferenceManager(this)
+        favoritesManager = FavoritesManager(this)
     }
 
 }

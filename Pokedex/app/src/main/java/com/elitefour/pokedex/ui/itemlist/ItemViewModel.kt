@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.elitefour.pokedex.interfaces.OnItemReadyListener
 import com.elitefour.pokedex.managers.ItemListManager
+import com.elitefour.pokedex.model.Item
 
 class ItemViewModel: ViewModel(), OnItemReadyListener {
     private lateinit var itemListManager: ItemListManager
@@ -16,6 +17,13 @@ class ItemViewModel: ViewModel(), OnItemReadyListener {
         itemListReady.value = false
         itemInfoReady.value = false
         itemListManager.onItemReadyListener = this
+    }
+
+    /**
+     * @return returns the queried result of the item list
+     */
+    fun getQueriedItemList(query: String): ArrayList<Item> {
+        return itemListManager.getQueriedItemList(query)
     }
 
     override fun itemListReady() {

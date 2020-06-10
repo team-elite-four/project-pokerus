@@ -9,6 +9,7 @@ import com.elitefour.pokedex.model.ItemInfo
 
 class ItemListManager(context: Context) {
     private var itemList: ArrayList<Item> = ArrayList()
+    private var queriedItemList: ArrayList<Item> = ArrayList()
     private lateinit var itemInfo: ItemInfo
     private val apiManager = (context.applicationContext as PokedexApp).apiManager
     var onItemReadyListener: OnItemReadyListener? = null
@@ -41,6 +42,20 @@ class ItemListManager(context: Context) {
                 Log.i("Manager", "Fail to fetch item info from $itemUrl")
             })
         }
+    }
+
+    /**
+     * @return returns the queried result of the item list
+     */
+    fun getQueriedItemList(query: String): ArrayList<Item> {
+        queriedItemList = ArrayList()
+        itemList.forEach {item: Item ->
+            val nameQuery = item.name.contains(query)
+            if (nameQuery) {
+                queriedItemList.add(item)
+            }
+        }
+        return queriedItemList
     }
 
     fun getItemList(): ArrayList<Item> {

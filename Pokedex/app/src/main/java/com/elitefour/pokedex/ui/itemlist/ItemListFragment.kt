@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.elitefour.pokedex.PokedexApp
@@ -14,14 +15,10 @@ import com.elitefour.pokedex.R
 import com.elitefour.pokedex.adapter.ItemListAdapter
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.managers.ItemListManager
+import com.elitefour.pokedex.model.Item
 import kotlinx.android.synthetic.main.fragment_item_list.*
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ItemListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ItemListFragment : Fragment() {
     private val itemVM: ItemViewModel by viewModels()
     private lateinit var itemListManager: ItemListManager
@@ -51,6 +48,26 @@ class ItemListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        item_search_view.setOnClickListener {
+            item_search_view.onActionViewExpanded()
+        }
+        item_search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                item_search_view.clearFocus()
+                item_search_view.setQuery("", false)
+                if (query != null) {
+                    updateAdapter(itemVM.getQueriedItemList(query))
+                }
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    updateAdapter(itemVM.getQueriedItemList(newText))
+                }
+                return true
+            }
+        })
+
         itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {
                 initAdapter()
@@ -65,6 +82,12 @@ class ItemListFragment : Fragment() {
         itemListAdapter = ItemListAdapter(itemListManager.getItemList())
         rvItemList.adapter = itemListAdapter
     }
+
+    private fun updateAdapter(itemList: ArrayList<Item>) {
+        itemListAdapter = ItemListAdapter(itemList)
+        rvItemList.adapter = itemListAdapter
+    }
+
 
     private fun setItemClickListener() {
         itemListAdapter.onItemClickListener = {item ->

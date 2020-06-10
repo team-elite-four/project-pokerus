@@ -12,6 +12,7 @@ class MoveListViewModel: ViewModel() {
     private lateinit var moveListManager: MoveListManager
 
     private var moveListFiltered = MutableLiveData<ArrayList<MoveFullInfo>>()
+    private lateinit var currentMove: MoveFullInfo
 
     fun init(moveListManager: MoveListManager) {
         this.moveListManager = moveListManager
@@ -44,6 +45,14 @@ class MoveListViewModel: ViewModel() {
     // Assumes the manager always will be able to get full info at init
     fun getFullMoveList(): ArrayList<MoveFullInfo> {
         return moveListManager.getMoveFullInfoList() as ArrayList<MoveFullInfo>
+    }
+
+    fun setCurrentMove(move: MoveFullInfo) {
+        currentMove = move
+    }
+
+    fun getCurrentMove(): MoveFullInfo {
+        return currentMove
     }
 
     private fun getIndexFromPokemonURL(url: String): Int {

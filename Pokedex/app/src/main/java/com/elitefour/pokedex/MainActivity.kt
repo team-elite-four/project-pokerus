@@ -10,9 +10,11 @@ import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Move
 import com.elitefour.pokedex.model.MoveFullInfo
 import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.ui.favorites.FavoritesViewModel
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemInfoFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
+import com.elitefour.pokedex.ui.movelist.MoveInfoFragment
 import com.elitefour.pokedex.ui.movelist.MoveListFragment
 import com.elitefour.pokedex.ui.movelist.MoveListViewModel
 import com.elitefour.pokedex.ui.pokedex.PokedexFragment
@@ -30,10 +32,12 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     companion object {
         val TAG = "elite"
+        val PREF = "USER_PREF"
     }
 
     private val pokedexVM: PokedexViewModel by viewModels()
     private val movelistVM: MoveListViewModel by viewModels()
+    private  val favoritesVM: FavoritesViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +48,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         val app = PokedexApp.getApp(this)
         pokedexVM.init(app.pokedexManager)
         movelistVM.init(app.moveListManager)
+        favoritesVM.init(app.favoritesManager)
 
         // We still decide not to use navigation controller for now
         // because we cannot fully utilize its mechanics to achieve our expected behavior.
@@ -95,10 +100,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     override fun onPokemonClicked(pokemon: Pokemon) {
         var pokedexInfoViewPagerFragment = PokedexInfoViewPagerFragment()
         pokedexVM.setCurrentPokemon(pokemon)
-//        val pokemonBundle = Bundle().apply {
-//            putString(PokemonInfoFragment.POKEMON_URL_BUNDLE_KEY, pokemon.url)
-//        }
-//        pokedexInfoViewPagerFragment.arguments = pokemonBundle
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_host_fragment, pokedexInfoViewPagerFragment, PokemonInfoFragment.TAG)
@@ -116,7 +117,12 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
     }
 
     override fun onMoveClicked(moveFullInfo: MoveFullInfo) {
-        Log.i("Elite", "move clicked! $moveFullInfo")
+        movelistVM.setCurrentMove(moveFullInfo)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, MoveInfoFragment(), MoveInfoFragment.TAG)
+            .addToBackStack(MoveInfoFragment.TAG)
+            .commit()
     }
 
 }
