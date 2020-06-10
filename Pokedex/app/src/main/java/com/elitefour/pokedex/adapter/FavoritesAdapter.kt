@@ -54,13 +54,13 @@ class FavoritesAdapter(initList: ArrayList<Pokemon>): RecyclerView.Adapter<Favor
 
     inner class PokemonListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val pokeNumber = itemView.findViewById<TextView>(R.id.pokeID)
-        private val pokeName = itemView.findViewById<TextView>(R.id.tvItemName)
+        private val pokeName = itemView.findViewById<TextView>(R.id.tvPokemonName)
         private val pokeImage = itemView.findViewById<ImageView>(R.id.ivItemImage)
         private val pokeType1 = itemView.findViewById<Button>(R.id.pokeType1)
         private val pokeType2 = itemView.findViewById<Button>(R.id.pokeType2)
 
         fun bind(pokemon: Pokemon, position: Int) {
-            pokeNumber.text = "# ${position+1}"
+            pokeNumber.text = "# ${getIDFromPokemonURL(pokemon.url)}"
             pokeName.text = pokemon.name.capitalize()
             pokemon.types?.let {types ->
                 // Display second type
@@ -84,7 +84,11 @@ class FavoritesAdapter(initList: ArrayList<Pokemon>): RecyclerView.Adapter<Favor
             itemView.setOnClickListener {
                 onPokemonClickListener?.invoke(pokemon)
             }
+        }
 
+        private fun getIDFromPokemonURL(url: String): Int {
+            val arr = url.split("/")
+            return arr[arr.lastIndex-1].toInt()
         }
     }
 }

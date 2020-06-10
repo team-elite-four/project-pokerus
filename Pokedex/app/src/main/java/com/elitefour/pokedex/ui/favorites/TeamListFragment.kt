@@ -20,7 +20,7 @@ class TeamListFragment : Fragment() {
 
 
     private val favoritesVM: FavoritesViewModel by activityViewModels()
-    private lateinit var favoritesAdapter: PokemonListAdapter
+    private lateinit var favoritesAdapter: FavoritesAdapter
     private var mainActivityListener: OnClickListenerExtension? = null
 
     override fun onCreateView(
@@ -44,8 +44,9 @@ class TeamListFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        Log.i("VM", "hello")
         Log.i("VM", favoritesVM.getFavorites().toString())
-        favoritesAdapter = PokemonListAdapter(favoritesVM.getFavorites())
+        favoritesAdapter = FavoritesAdapter(favoritesVM.getFavorites())
         rvFavorites.adapter = favoritesAdapter
         favoritesAdapter.onPokemonClickListener = { pokemon: Pokemon ->
             mainActivityListener?.onPokemonClicked(pokemon)
