@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.SearchView
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.elitefour.pokedex.PokedexApp
@@ -25,16 +27,17 @@ class ItemListFragment : Fragment() {
     private lateinit var itemListAdapter: ItemListAdapter
     private lateinit var mainActivityListener: OnClickListenerExtension
 
+    private lateinit var inputMethodManager: InputMethodManager
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
-        itemListManager = (context.applicationContext as PokedexApp).itemListManager
-        itemListManager.initializeItemList()
-        itemVM.init(itemListManager)
-
         if (context is OnClickListenerExtension) {
             mainActivityListener = context
         }
+        itemListManager = (context.applicationContext as PokedexApp).itemListManager
+        itemListManager.initializeItemList()
+        itemVM.init(itemListManager)
+        inputMethodManager = getSystemService(context, InputMethodManager::class.java)!!
     }
 
     override fun onCreateView(
@@ -48,6 +51,9 @@ class ItemListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        rvItemList.setOnTouchListener { v, event ->
+            inputMethodManager.hideSoftInputFromWindow(item_search_view.windowToken, 0)
+        }
         item_search_view.setOnClickListener {
             item_search_view.onActionViewExpanded()
         }
@@ -67,7 +73,6 @@ class ItemListFragment : Fragment() {
                 return true
             }
         })
-
         itemVM.itemListReady.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {
                 initAdapter()
