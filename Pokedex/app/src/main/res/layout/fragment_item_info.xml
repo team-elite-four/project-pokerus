@@ -79,7 +79,7 @@
             android:id="@+id/tvItemFlavorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="Descriptions"
             android:textSize="15dp"
             android:textStyle="italic"
@@ -110,7 +110,7 @@
 
         <ScrollView
             android:id="@+id/svEffectText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="150dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -120,7 +120,7 @@
                 android:id="@+id/tvEffectText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="Effect Descriptions"
                 tools:text="Effect Text Description" />
 
@@ -178,7 +178,7 @@
             android:id="@+id/tvPokemonHeld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:text="TextView"
             android:textColor="@color/textHighlightDefault"
             android:visibility="gone"

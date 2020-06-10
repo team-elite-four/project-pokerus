@@ -84,8 +84,7 @@ class ItemListFragment : Fragment() {
     }
 
     private fun updateAdapter(itemList: ArrayList<Item>) {
-        itemListAdapter = ItemListAdapter(itemList)
-        rvItemList.adapter = itemListAdapter
+        itemListAdapter.change(itemList)
     }
 
 

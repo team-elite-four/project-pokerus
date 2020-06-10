@@ -38,4 +38,9 @@ class ItemListAdapter(private var itemList: List<Item>): RecyclerView.Adapter<It
     override fun onBindViewHolder(holder: ItemListViewHolder, position: Int) {
         holder.bind(itemList[position])
     }
+
+    fun change(newItemList: List<Item>) {
+        itemList = newItemList
+        notifyDataSetChanged()
+    }
 }

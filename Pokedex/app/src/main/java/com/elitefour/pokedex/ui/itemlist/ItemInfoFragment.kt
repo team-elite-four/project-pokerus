@@ -14,9 +14,7 @@ import com.elitefour.pokedex.PokedexApp
 import com.elitefour.pokedex.R
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.managers.ItemListManager
-import com.elitefour.pokedex.model.ItemInfo
-import com.elitefour.pokedex.model.ItemNameLang
-import com.elitefour.pokedex.model.Pokemon
+import com.elitefour.pokedex.model.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_item_info.*
 import kotlinx.android.synthetic.main.fragment_item_info.ivItemImage
@@ -88,10 +86,9 @@ class ItemInfoFragment : Fragment() {
     private fun showInfo(itemInfo: ItemInfo) {
         itemDetailLoading.visibility = View.GONE
         clItemInfo.visibility = View.VISIBLE
-        val name = findItemName(itemInfo.names)
-        tvItemName.text = "${name}"
-        tvItemFlavorText.text = "\"${itemInfo.flavor_text_entries[0].text}\""
-        tvEffectText.text = "${itemInfo.effect_entries[0].effect}"
+        tvItemName.text = "${findItemName(itemInfo.names)}"
+        tvItemFlavorText.text = "\"${findItemFlavorText(itemInfo.flavor_text_entries)}\""
+        tvEffectText.text = "${findEffectText(itemInfo.effect_entries)}"
         tvCostText.text = itemInfo.cost.toString()
         Picasso.get().load(itemInfo.sprites.default).into(ivItemImage)
     }
@@ -112,5 +109,25 @@ class ItemInfoFragment : Fragment() {
             }
         }
         return name
+    }
+
+    private fun findItemFlavorText(flavorTextEntry: List<ItemFlavorTextEntry>): String {
+        var flavorText = ""
+        for (item in flavorTextEntry) {
+            if (item.language.name == "en") {
+                flavorText = item.text
+            }
+        }
+        return flavorText
+    }
+
+    private fun findEffectText(effectEntry: List<EffectEntry>): String {
+        var effectText = ""
+        for (entry in effectEntry) {
+            if (entry.language.name == "en") {
+                effectText = entry.effect
+            }
+        }
+        return effectText
     }
 }
