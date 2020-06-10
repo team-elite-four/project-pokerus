@@ -22,6 +22,11 @@ class FavoritesViewModel: ViewModel() {
     }
 
 
+    fun clearFavorites(){
+        favoritesManager.clearFavorites()
+    }
+
+
     /**
      * @param pokemon the information about this pokemon to add to favorites
      * @return true if pokemon is fully initialized otherwise false

@@ -39,6 +39,11 @@ class MoveListAdapter(moveListInitial: List<MoveFullInfo>, moveInfoList: List<Mo
         holder.bind(moveList[position], moveInfoList?.get(position))
     }
 
+    fun change(newMoveList: List<MoveFullInfo>) {
+        moveList = newMoveList
+        notifyDataSetChanged()
+    }
+
     private fun getClassColorResource(type: String): Int {
         return when(type) {
             "physical" -> R.color.classPhysical

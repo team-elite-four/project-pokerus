@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.elitefour.pokedex.interfaces.OnClickListenerExtension
 import com.elitefour.pokedex.model.Item
 import com.elitefour.pokedex.model.Move
@@ -14,6 +15,7 @@ import com.elitefour.pokedex.ui.favorites.FavoritesViewModel
 import com.elitefour.pokedex.ui.favorites.TeamListFragment
 import com.elitefour.pokedex.ui.itemlist.ItemInfoFragment
 import com.elitefour.pokedex.ui.itemlist.ItemListFragment
+import com.elitefour.pokedex.ui.itemlist.ItemViewModel
 import com.elitefour.pokedex.ui.movelist.MoveInfoFragment
 import com.elitefour.pokedex.ui.movelist.MoveListFragment
 import com.elitefour.pokedex.ui.movelist.MoveListViewModel
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
 
     private val pokedexVM: PokedexViewModel by viewModels()
     private val movelistVM: MoveListViewModel by viewModels()
-    private  val favoritesVM: FavoritesViewModel by viewModels()
+    private val favoritesVM: FavoritesViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,20 +83,6 @@ class MainActivity : AppCompatActivity(), OnClickListenerExtension {
         navView.setOnNavigationItemReselectedListener {
             supportFragmentManager.popBackStack()
         }
-
-        //val obj = getGsonFromAsset("ugh/5.json")
-        //Log.i("YES", obj.toString())
-    }
-
-    private fun getGsonFromAsset(fileName: String): MoveFullInfo {
-        var jsonString: String = ""
-        try {
-            jsonString = this.assets.open(fileName).bufferedReader().use { it.readText() }
-        } catch (ioException: IOException) {
-            ioException.printStackTrace()
-        }
-        val gson = Gson()
-        return gson.fromJson(jsonString, MoveFullInfo::class.java)
     }
 
     override fun onPokemonClicked(pokemon: Pokemon) {
