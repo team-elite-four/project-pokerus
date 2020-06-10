@@ -50,8 +50,15 @@ class PokemonInfoFragment : Fragment() {
         }
 
         favorite_btn.setOnClickListener {
-            //favoritesVM.updateFavorites()
+            favoritesVM.updateFavorites(pokemon)
+            if (favoritesVM.containsFavorites(pokemon)) {
+                favorite_btn.text = "UnFavorite"
+            } else {
+                favorite_btn.text = "Favorite"
+            }
         }
+
+
 
         pokedexVM.pokedexFullInfoSuccess.observe(viewLifecycleOwner,  Observer { success ->
             if (success) {

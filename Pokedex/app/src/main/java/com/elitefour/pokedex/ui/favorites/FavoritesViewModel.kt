@@ -12,7 +12,6 @@ class FavoritesViewModel: ViewModel() {
     private lateinit var favoritesManager: FavoritesManager
 
     var favoritesParseSuccess = MutableLiveData<Boolean>(false)
-    var favoritesModified = MutableLiveData<Int>(0)
 
     fun init(favoritesManager: FavoritesManager) {
         this.favoritesManager = favoritesManager
@@ -20,7 +19,6 @@ class FavoritesViewModel: ViewModel() {
 
     fun getFavorites(): ArrayList<Pokemon>{
         return favoritesManager.favoritesList
-        favoritesParseSuccess.value = true
     }
 
 
@@ -33,7 +31,6 @@ class FavoritesViewModel: ViewModel() {
             return false
         }
         favoritesManager.addFavorites(pokemon)
-        favoritesModified.value = favoritesModified.value?.plus(1)
         return true
     }
 
@@ -46,8 +43,15 @@ class FavoritesViewModel: ViewModel() {
             return false
         }
         favoritesManager.removeFavorites(pokemon)
-        favoritesModified.value = favoritesModified.value?.plus(1)
         return true
+    }
+
+    fun updateFavorites(pokemon: Pokemon) {
+        if (containsFavorites(pokemon)) {
+            removeFavorites(pokemon)
+        } else {
+            addFavorites(pokemon)
+        }
     }
 
     fun containsFavorites(pokemon: Pokemon): Boolean {

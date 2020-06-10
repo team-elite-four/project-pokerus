@@ -32,10 +32,12 @@ class FavoritesManager(context: Context) {
 
     fun addFavorites(pokemon: Pokemon) {
         favoritesList.add(pokemon)
+        updateFavorites()
     }
 
     fun removeFavorites(pokemon: Pokemon) {
         favoritesList.remove(pokemon)
+        updateFavorites()
     }
 
     private fun updateFavorites() {
