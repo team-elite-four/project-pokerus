@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="elite" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f4ee042-65ce-4500-9635-483a614d3fb2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/project-pokerus.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/elitefour/pokedex/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move101.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move102.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move103.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move104.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move105.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move106.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move107.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move108.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move109.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move110.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move111.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move112.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move113.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move114.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move115.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move116.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move117.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move118.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move119.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move120.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move121.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move122.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move123.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move124.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move125.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move126.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move127.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move128.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move129.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move130.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move131.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move132.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move133.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move134.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move135.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move136.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move137.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move138.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move139.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move14.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move140.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move141.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move142.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move143.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move144.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move145.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move146.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move147.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move148.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move149.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move15.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move150.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move151.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move152.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move153.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move154.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move155.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move156.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move157.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move158.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move159.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move16.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move160.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move161.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move162.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move163.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move164.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move165.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move166.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move167.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move168.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move169.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move17.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move170.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move171.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move172.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move173.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move174.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move175.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move176.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move177.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move178.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move179.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move18.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move180.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move181.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move182.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move183.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move184.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move185.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move186.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move187.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move188.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move189.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move19.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move190.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move191.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move192.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move193.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move194.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move195.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move196.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move197.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move198.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move199.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move202.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move203.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move204.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move205.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move206.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move207.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move208.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move209.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move21.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move210.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move211.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move212.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move213.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move214.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move215.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move216.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move217.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move218.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move219.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move22.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move220.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move221.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move222.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move223.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move224.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move225.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move226.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move227.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move228.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move229.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move23.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move230.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move231.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move232.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move233.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move234.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move235.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move236.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move237.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move238.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move239.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move24.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move240.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move241.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move242.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move243.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move244.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move245.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move246.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move247.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move248.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move249.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move25.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move250.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move251.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move252.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move253.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move254.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move255.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move256.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move257.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move258.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move259.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move26.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move260.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move261.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move262.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move263.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move264.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move265.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move266.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move267.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move268.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move269.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move27.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move270.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move271.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move272.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move273.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move274.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move275.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move276.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move277.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move278.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move279.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move28.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move280.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move281.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move282.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move283.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move284.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move285.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move286.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move287.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move288.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move289.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move29.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move290.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move291.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move292.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move293.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move294.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move295.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move296.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move297.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move298.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move299.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move30.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move300.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move301.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move302.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move303.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move304.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move305.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move306.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move307.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move308.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move309.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move31.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move310.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move311.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move312.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move313.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move314.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move315.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move316.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move317.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move318.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move319.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move32.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move320.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move321.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move322.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move323.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move324.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move325.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move326.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move327.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move328.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move329.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move33.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move330.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move331.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move332.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move333.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move334.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move335.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move336.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move337.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move338.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move339.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move34.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move340.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move341.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move342.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move343.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move344.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move345.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move346.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move347.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move348.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move349.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move35.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move350.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move351.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move352.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move353.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move354.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move355.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move356.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move357.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move358.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move359.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move36.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move360.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move361.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move362.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move363.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move364.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move365.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move366.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move367.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move368.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move369.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move37.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move370.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move371.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move372.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move373.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move374.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move375.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move376.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move377.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move378.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move379.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move38.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move380.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move381.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move382.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move383.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move384.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move385.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move386.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move387.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move388.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move389.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move39.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move390.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move391.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move392.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move393.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move394.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move395.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move396.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move397.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move398.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move399.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move40.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move401.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move402.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move403.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move404.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move405.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move406.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move407.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move408.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move409.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move41.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move410.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move411.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move412.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move413.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move414.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move415.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move416.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move417.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move418.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move419.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move42.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move420.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move421.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move422.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move423.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move424.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move425.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move426.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move427.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move428.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move429.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move43.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move430.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move431.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move432.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move433.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move434.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move435.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move436.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move437.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move438.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move439.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move44.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move440.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move441.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move442.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move443.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move444.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move445.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move446.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move447.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move448.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move449.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move45.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move450.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move451.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move452.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move453.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move454.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move455.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move456.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move457.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move458.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move459.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move46.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move460.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move461.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move462.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move463.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move464.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move465.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move466.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move467.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move468.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move469.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move47.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move470.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move471.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move472.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move473.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move474.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move475.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move476.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move477.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move478.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move479.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move48.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move480.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move481.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move482.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move483.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move484.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move485.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move486.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move487.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move488.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move489.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move49.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move490.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move491.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move492.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move493.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move494.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move495.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move496.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move497.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move498.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move499.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move50.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move501.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move502.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move503.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move504.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move505.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move506.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move507.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move508.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move509.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move51.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move510.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move511.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move512.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move513.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move514.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move515.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move516.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move517.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move518.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move519.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move52.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move520.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move521.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move522.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move523.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move524.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move525.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move526.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move527.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move528.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move529.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move53.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move530.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move531.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move532.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move533.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move534.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move535.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move536.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move537.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move538.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move539.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move54.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move540.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move541.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move542.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move543.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move544.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move545.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move546.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move547.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move548.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move549.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move55.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move550.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move551.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move552.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move553.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move554.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move555.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move556.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move557.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move558.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move559.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move56.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move560.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move561.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move562.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move563.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move564.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move565.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move566.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move567.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move568.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move569.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move57.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move570.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move571.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move572.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move573.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move574.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move575.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move576.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move577.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move578.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move579.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move58.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move580.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move581.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move582.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move583.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move584.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move585.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move586.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move587.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move588.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move589.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move59.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move590.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move591.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move592.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move593.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move594.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move595.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move596.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move597.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move598.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move599.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move60.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move600.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move601.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move602.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move603.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move604.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move605.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move606.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move607.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move608.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move609.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move61.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move610.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move611.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move612.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move613.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move614.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move615.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move616.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move617.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move618.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move619.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move62.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move620.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move621.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move622.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move623.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move625.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move626.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move627.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move628.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move629.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move63.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move630.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move631.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move632.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move633.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move634.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move635.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move636.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move637.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move638.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move639.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move64.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move640.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move641.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move642.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move643.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move644.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move645.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move646.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move647.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move648.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move649.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move65.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move650.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move651.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move652.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move653.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move654.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move655.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move656.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move657.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move658.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move659.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move66.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move660.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move661.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move662.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move663.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move664.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move665.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move666.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move667.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move668.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move669.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move67.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move670.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move671.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move672.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move673.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move674.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move675.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move676.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move677.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move678.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move679.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move68.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move680.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move681.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move682.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move683.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move684.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move685.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move686.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move687.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move688.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move689.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move69.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move690.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move691.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move692.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move693.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move694.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move695.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move696.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move697.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move698.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move699.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move70.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move700.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move701.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move702.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move703.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move704.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move705.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move706.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move707.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move708.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move709.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move71.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move710.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move711.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move712.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move713.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move714.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move715.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move716.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move717.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move718.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move719.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move72.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move720.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move721.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move722.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move723.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move724.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move725.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move726.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move727.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move728.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move73.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move74.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move75.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move76.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move77.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move78.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move79.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move80.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move81.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move82.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move83.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move84.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move85.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move86.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move87.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move88.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move89.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move90.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move91.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move92.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move93.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move94.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move95.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move96.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move97.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move98.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/move_list/move99.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher_temp-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/PokedexApp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/adapter/FavoritesAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/adapter/ItemListAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/adapter/MoveListAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/adapter/PokeInfoCollectionAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/adapter/PokemonListAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/interfaces/OnClickListenerExtension.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/interfaces/OnItemReadyListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/interfaces/OnPokedexReadyListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/managers/APIManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/managers/FavoritesManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/managers/ItemListManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/managers/MoveListManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/managers/PokedexManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/managers/PreferenceManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Ability.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/FavoritesCollection.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Item.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/ItemCollection.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Move.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/MoveCollection.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Pokemon.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/PokemonCollection.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Species.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Stat.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/model/TypeCollection.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/SearchBarFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/favorites/FavoritesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/favorites/TeamListFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/itemlist/ItemInfoFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/itemlist/ItemListFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/itemlist/ItemViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/movelist/MoveInfoFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/movelist/MoveListFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/movelist/MoveListViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/pokedex/PokedexFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/pokedex/PokedexViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/pokedex/PokemonInfoViewPagerFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/pokedex/pokemoninfopager/PokemonDescriptionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/pokedex/pokemoninfopager/PokemonInfoFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/pokedex/pokemoninfopager/PokemonMoveListFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/elitefour/pokedex/ui/setting/SettingFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favorite_temp_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_item_list_temp_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_temp_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_move_list_temp_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pokedex_list_temp_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_settings_temp_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pokedex_item_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pokedex_type_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_item_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_item_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_move_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_move_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pokedex.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pokemon_description.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pokemon_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pokemon_info_view_pager.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_pokemon_move_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search_bar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_team_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_move.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_move_minimum.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_pokemon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_pokemon_move.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/search_bar_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_temp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_temp_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_temp_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_temp_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_temp_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_temp_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_temp_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_temp_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_temp_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_temp_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_temp_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_temp_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/elitefour/pokedex/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid9204.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/replay_pid9204.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3_API_29]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="navigationResourceFile" />
+        <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cbeFi29LRjqFDG4h0aNBCorWkR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Properties" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.elitefour.pokedex.ui.pokedex.pokepager" />
+      <recent name="com.elitefour.pokedex.viewmodel" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Development\Git\project-pokerus\Pokedex\app\src\main\res" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Pokedex.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f4ee042-65ce-4500-9635-483a614d3fb2" name="Default Changelist" comment="" />
+      <created>1590801617080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590801617080</updated>
+    </task>
+    <task id="LOCAL-00001" summary="README.me push">
+      <created>1590806579008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590806579009</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created view model for the first nav portion called pokedex.">
+      <created>1590894534059</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590894534059</updated>
+    </task>
+    <task id="LOCAL-00003" summary="modified pokedexfragment, created recycler view adapter. Next to implement: onclick">
+      <created>1590982757680</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590982757680</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added OnClick for every Pokemon in the Dex">
+      <created>1591078497658</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591078497658</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated all strings to strings.xml for localization">
+      <created>1608770054600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608770054600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit of empty android activity" />
+    <MESSAGE value="README.me push" />
+    <MESSAGE value="Created view model for the first nav portion called pokedex." />
+    <MESSAGE value="modified pokedexfragment, created recycler view adapter. Next to implement: onclick" />
+    <MESSAGE value="Added OnClick for every Pokemon in the Dex" />
+    <MESSAGE value="Updated all strings to strings.xml for localization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated all strings to strings.xml for localization" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="669" y="111" key="#app" timestamp="1608423255446">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="669" y="111" key="#app/0.0.1920.1050/1920.-794.2560.1409@0.0.1920.1050" timestamp="1608423255446" />
+    <state x="2656" y="-434" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608775290018">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state x="2656" y="-434" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608775290018" />
+    <state x="3047" y="-299" key="AndroidCreateXmlResourceDialog" timestamp="1608768350422">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state x="3047" y="-299" key="AndroidCreateXmlResourceDialog/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608768350422" />
+    <state x="2830" y="-520" key="CommitChangelistDialog2" timestamp="1608770050286">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state x="2830" y="-520" key="CommitChangelistDialog2/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608770050286" />
+    <state width="2516" height="403" key="GridCell.Tab.0.bottom" timestamp="1608768362267">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state width="2516" height="403" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608768362267" />
+    <state width="2516" height="403" key="GridCell.Tab.0.center" timestamp="1608768362267">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state width="2516" height="403" key="GridCell.Tab.0.center/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608768362267" />
+    <state width="2516" height="403" key="GridCell.Tab.0.left" timestamp="1608768362267">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state width="2516" height="403" key="GridCell.Tab.0.left/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608768362267" />
+    <state width="2516" height="403" key="GridCell.Tab.0.right" timestamp="1608768362267">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state width="2516" height="403" key="GridCell.Tab.0.right/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608768362267" />
+    <state x="2702" y="-444" key="SettingsEditor" timestamp="1608775280614">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state x="2702" y="-444" key="SettingsEditor/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608775280614" />
+    <state x="2793" y="-369" key="Vcs.Push.Dialog.v2" timestamp="1608770061609">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state x="2793" y="-369" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608770061609" />
+    <state x="2971" y="-376" key="git4idea.branch.GitSmartOperationDialog" timestamp="1608677608495">
+      <screen x="1920" y="-794" width="2560" height="1409" />
+    </state>
+    <state x="2971" y="-376" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1050/1920.-794.2560.1409@1920.-794.2560.1409" timestamp="1608677608495" />
+  </component>
+</project>
