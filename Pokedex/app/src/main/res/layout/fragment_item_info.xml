@@ -46,7 +46,7 @@
             android:id="@+id/tvItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/n_a"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/ivItemImage"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +69,7 @@
             android:id="@+id/tvItemFlavorTextTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item Description"
+            android:text="@string/item_description"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/div1" />
@@ -80,13 +80,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Descriptions"
-            android:textSize="15dp"
+            android:text="@string/n_a"
+            android:textSize="15sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvItemFlavorTextTitle"
-            tools:text="Flavor Text Description" />
+            tools:text="@string/n_a" />
 
 
         <View
@@ -103,7 +103,7 @@
             android:id="@+id/tvItemEffectTextTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Item Effect"
+            android:text="@string/item_effect"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/div2" />
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Effect Descriptions"
+                android:text="@string/n_a"
                 tools:text="Effect Text Description" />
 
         </ScrollView>
@@ -140,8 +140,8 @@
             android:id="@+id/tvCostTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cost"
-            android:textSize="20dp"
+            android:text="@string/cost"
+            android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/div3" />
 
@@ -149,7 +149,7 @@
             android:id="@+id/tvCostText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cost:"
+            android:text="@string/cost_colon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/div3"
             app:layout_constraintBottom_toTopOf="@id/div4"
@@ -169,8 +169,8 @@
             android:id="@+id/tvHeldPokemonTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Can be found in the wild on"
-            android:textSize="20dp"
+            android:text="@string/found_in_the_wild"
+            android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/div4" />
 
@@ -179,7 +179,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="TextView"
+            android:text="@string/n_a"
             android:textColor="@color/textHighlightDefault"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
