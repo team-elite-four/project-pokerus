@@ -27,8 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Grant execute permission for gradlew
-        run: chmod +x ./Pokedex/gradlew
+        run: chmod +x ./gradlew
       - name: Run Gradle script
-        run: ./Pokedex/gradlew build
+        run: ./gradlew build
           
 
