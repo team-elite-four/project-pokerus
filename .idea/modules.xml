@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/project-pokerus.iml" filepath="$PROJECT_DIR$/.idea/project-pokerus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pokedex.iml" filepath="$PROJECT_DIR$/Pokedex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Pokedex.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Pokedex.app.iml" />
     </modules>
   </component>
 </project>
