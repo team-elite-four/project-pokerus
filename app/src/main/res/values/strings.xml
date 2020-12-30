@@ -9,6 +9,7 @@
     <string name="title_move_list">Move List</string>
     <string name="title_favorite">Favorite</string>
     <string name="search">search</string>
+    <!-- Pokemon Types -->
     <string name="normal">Normal</string>
     <string name="fire">Fire</string>
     <string name="fighting">Fighting</string>
@@ -28,7 +29,30 @@
     <string name="steel">Steel</string>
     <string name="fairy">Fairy</string>
     <string name="unknown">\?\?\?</string>
+
+
     <string name="damage">Damage</string>
+    <string name="clear_favorites">Clear Favorites</string>
+    <string name="made_by_team_elite_four">Made By - Team Elite Four</string>
+    <string name="type">Type</string>
+    <string name="base_experience">Base Experience</string>
+    <string name="_0_exp">0 EXP</string>
+    <string name="base_stats">Base Stats</string>
+    <string name="hp">HP</string>
+    <string name="attack">Attack</string>
+    <string name="defense">Defense</string>
+    <string name="special_attack">Special Attack</string>
+    <string name="special_defense">Special Defense</string>
+    <string name="n_a">n/a</string>
+    <string name="_0">0</string>
+    <string name="speed">Speed</string>
+    <string name="favorite">Favorite</string>
+    <string name="item_description">Item Description</string>
+    <string name="item_effect">Item Effect</string>
+    <string name="cost">Cost</string>
+    <string name="cost_colon">Cost:</string>
+    <string name="found_in_the_wild">Can be found in the wild on</string>
+    <string name="description">Description</string>
 
 
 </resources>

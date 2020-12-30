@@ -15,14 +15,14 @@
         android:id="@+id/moveDmgText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="6sp"
         android:singleLine="true"
+        android:text="@string/damage"
         android:textColor="@color/textDarkDefault"
         android:textSize="20sp"
-        android:text="Damage"
-        android:layout_marginRight="6dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/moveDmg"/>
+        app:layout_constraintEnd_toStartOf="@id/moveDmg"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/moveDmg"

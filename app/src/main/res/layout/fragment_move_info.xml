@@ -14,7 +14,7 @@
         android:id="@+id/tvMoveName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Move Name"
+        android:text="@string/n_a"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -65,8 +65,8 @@
         android:id="@+id/tvMoveEffectTextTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/n_a"
         android:textSize="20sp"
-        android:text="Move Effect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/div2" />
 
@@ -74,7 +74,7 @@
         android:id="@+id/tvEffectText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Effect Descriptions"
+        android:text="@string/n_a"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMoveEffectTextTitle"
         tools:text="Effect Text Description" />

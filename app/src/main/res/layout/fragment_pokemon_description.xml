@@ -21,7 +21,7 @@
         android:id="@+id/pokemonDescriptionName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pokemon Name"
+        android:text="@string/n_a"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/pokemonDescriptionImage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,8 +44,8 @@
         android:id="@+id/pokemonDescriptionFlavorTextTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/description"
         android:textSize="20sp"
-        android:text="Description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/div1" />
 
@@ -54,7 +54,7 @@
         android:id="@+id/pokemonDescriptionFlavorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description Content"
+        android:text="@string/n_a"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pokemonDescriptionFlavorTextTitle"
         tools:text="Flavor Text Description" />
